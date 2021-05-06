@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Agujas</title>
+	<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+
+
+
+
+
+<body>
+	   
+<!--     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">INSTANT</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#works">Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+
+	<div id="headerwrap2">
+	    <div class="container">
+			<div class="row">
+				<p class="hip"><a href="../index.html">Home</a> 
+				<div class="col-lg-6 col-lg-offset-3">
+					<h1>Aguja de Buffon</h1>
+					<h5>Tomás Basile Álvarez</h5>
+				</div>
+			</div><! --/row -->
+	    </div> <!-- /container -->
+	</div><! --/headerwrap -->
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+
+<h2>Planteamiento</h2>
+<p>En el siglo XVIII Georges Louis Leclerc, conde de Buffon, plantea el siguiente problema:</p>
+<p>Empezamos con una hoja de papel con renglones dibujados a una distancia L entre ellos. Luego tomamos una aguja con tambi&eacute;n una longitud L y la lanzamos sobre el papel, dejando que caiga en un lugar aleatorio del papel y con una direcci&oacute;n aleatoria. El problema es, &iquest;cu&aacute;l es la probabilidad de que la aguja corte uno de los renglones?</p>
+<p>Por ejemplo, en la imagen siguiente vemos los renglones separados por una distancia L marcados con l&iacute;neas negras horizontales. Luego, hemos lanzado de forma aleatoria cuatro agujas sobre el papel (cada una con una longitud L) y vemos que en este caso 3 de ellas cortan un rengl&oacute;n (las pintadas de verde) y la aguja pintada de rojo no cort&oacute; ning&uacute;n rengl&oacute;n. Nos preguntamos, para cada una de las agujas, cu&aacute;l fue la probabilidad de que corte uno de los renglones.&nbsp;</p>
+<center>
+<img class = "smallimg" src="images/agujas.PNG" alt="agujas">
+<figcaption>Dibujo de agujas cayendo sobre renglones</figcaption>
+</center>
+
+<p>El problema as&iacute; descrito no parece muy llamativo, pero lo incre&iacute;ble es el resultado que se obtiene. Resulta que la probabilidad de que una aguja corte una de las l&iacute;neas es de 0.6366... !!! (es decir, un 63.66%). Mmmmm dicho as&iacute; no resulta demasiado sorprendente, pero qu&eacute; tal si les digo que esta probabildiad es exactamente igual a 2/&pi;!!</p>
+<p>Pero, &iquest;por qu&eacute; aparece el n&uacute;mero &pi; en un problema que no parece tener nada que ver con c&iacute;rculos ni con nada com&uacute;nmente asociado a &pi;? &iquest;Cu&aacute;l es la conexi&oacute;n aqu&iacute;?</p>
+<p><br></p>
+<p>Antes de responder esta pregunta, veremos que podemos usar este resultado para idear una forma interesante de calcular el n&uacute;mero &pi;, &iexcl;que s&oacute;lo requiere usar agujas, un papel y contar! Para ello, seguimos el siguiente procedimiento:</p>
+<ol>
+    <li>Marcamos un papel con renglones separados por una distancia L (para ser espec&iacute;ficos, digamos que 1cm).</li>
+    <li>Lanzamos N agujas de longitud 1cm sobre el papel (o bien lanzamos una sola aguja N veces).&nbsp;</li>
+    <li>Contamos el n&uacute;mero de agujas que cortan alguno de los renglones y lo llamamos n.</li>
+    <li>Como la probabilidad de que una aguja corte un rengl&oacute;n es de &nbsp;<span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>2/&pi;</span>, si lanzamos muchas agujas, la proporci&oacute;n n/N de agujas que cortan un rengl&oacute;n entre el n&uacute;mero total de agujas se ir&aacute; acercando al valor <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>2/&pi;</span> . Entonces, usando que n/N = <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>2/&pi;</span>, llegamos a la siguiente forma de aproximar <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;:</span></li>
+</ol>
+<p><span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'><span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;</span> = 2N / n&nbsp;</span></p>
+<p>&iexcl;Lo que nos permite aproximar <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;</span> usando s&oacute;lo agujas!</span></p>
+<p> Si no quieres perder tiempo lanzando agujas sobre un papel, tenemos preparado el siguiente programa interactivo que simula el lanzamiento de las agujas.&nbsp;</span></p>
+<p style="text-align: justify;">Puedes apretar los botones de abajo para lanzar distintas cantidades de agujas sobre los renglones horizontales dibujados. Al lanzar agujas sobre el papel, &eacute;stas se colorean de verde si la aguja corta uno de los renglones y sino se colorea de rojo. Luego, se cuenta el n&uacute;mero N de agujas totales lanzadas y el n&uacute;mero n de agujas que cortan un rengl&oacute;n. Y con estos dos n&uacute;meros se calcula <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;</span> usando la relaci&oacute;n mencionada antes <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;</span> = 2N / n. Intenta lanzar varias agujas y ve c&oacute;mo la aproximaci&oacute;n de <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;</span> se va acercando al valor real conforme lanzas m&aacute;s agujas sobre el papel. Se presenta tambi&eacute;n el error porcentual de la aproximaci&oacute;n con respecto al verdadero valor de <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;.&nbsp;</span></p>
+<p><br></p>
+<center>
+<iframe src="p5js/indexagujas.html" width="535" height="705">
+</iframe>
+</center>
+<p><br></p>
+<p> Vemos que este m&eacute;todo funciona, &iexcl;podemos aproximar <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;</span> usando solamente agujas! Las aproximaciones al lanzar s&oacute;lo unos cuantos miles de agujas suelen tener un error porcentual de menos del 1%, pero si pudi&eacute;ramos lanzar millones de agujas, lograr&iacute;amos aproximaciones de <span style='color: rgb(0, 0, 0); font-family: "Times New Roman"; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>&pi;</span> mucho m&aacute;s exactas.&nbsp;</span></p>
+<p><br></p>
+<hr>
+<h2> Explicaci&oacute;n </h2>
+<p>Ahora justificaremos el procedimiento para aproximar &pi; descrito en la secci&oacute;n anterior. Para ello, debemos de demostrar que la probabilidad de que una aguja lanzada aleatoriamente sobre la hoja corte un rengl&oacute;n es de 2/&pi; como dijimos al principio.&nbsp;</p>
+<p>Primero hay que traducir el problema a uno puramente matem&aacute;tico. Para ello, lo primero que notamos es que podemos describir la posici&oacute;n y direcci&oacute;n en la que cae una aguja usando 3 n&uacute;meros, la coordenada x &nbsp;y la coordenada y en la que cae el centro de la aguja y el &aacute;ngulo de la aguja respecto a la horizontal.</p>
+<p>Necesitamos encontrar la relaci&oacute;n entre estas 3 variables que asegura que la aguja va a cortar o no uno de los renglones.</p>
+<p>Para ello, utiliza la siguiente animaci&oacute;n para variar la el valor de la coordenada x y de la coordenada y del centro de la aguja y para variar el &aacute;ngulo. Busca las condiciones que se requieren para que la aguja corte uno de los renglones.&nbsp;</p>
+<p><br></p>	
+<center>
+<iframe src="p5js/indexagujaexplicacion.html" width="535" height="705">
+</iframe>
+</center>
+
+<p>Despu&eacute;s de variar un poco la coordenada x, la coordenada y y el &aacute;ngulo, podr&aacute;s convencerte de lo siguiente:</p>
+<ol>
+    <li>El valor de la coordenada x no es importante para determinar si la aguja corta o no un rengl&oacute;n, debido a que los renglones son horizontales.</li>
+    <li>Podemos restringir el &aacute;ngulo entre 0 y 180 grados, ya que despu&eacute;s de girar la aguja 180 grados, se vuelve a ver igual que antes.</li>
+    <li>El valor de la coordenada y no es muy pr&aacute;ctico para determinar si la aguja corta o no un rengl&oacute;n, algo m&aacute;s significativo para determinar esto es que la distancia del centro de la aguja al rengl&oacute;n m&aacute;s cercano (que marcamos por d) sea lo menor posible.</li>
+    <li>Los mejores &aacute;ngulos para asegurar que la aguja corte uno de los renglones son los &aacute;ngulos cercanos a 90 grados.</li>
+</ol>
+<p><br></p>
+<p>Estas observacinoes nos permiten replantear un poco el problema. Primero, el punto 1 nos dice que podemos olvidarnos por completo de la coordenada x de la aguja, pues no es importante. Y el punto 3 nos dice que quiz&aacute; convenga m&aacute;s definir una variable &nbsp;d &nbsp;que represente la distancia desde el centro de la aguja hasta el rengl&oacute;n m&aacute;s cercano. Esta variable d puede tomar cualquier valor entre 0 (si el centro de la aguja cae justo en un rengl&oacute;n) y 0.5 (si el centro de la aguja cae justo entre dos renglones) y es un mejor indicador para determinar si la aguja corta o no un rengl&oacute;n. Por &uacute;ltimo, el punto 2 nos dice que conviene restringir el valor del &aacute;ngulo entre 0 y 180 grados.&nbsp;</p>
+<p>Entonces, s&oacute;lo hace falta considerar dos variables para saber si la aguja corta o no un rengl&oacute;n. La primera variable es la distancia &nbsp;d &nbsp;desde el centro de la aguja hasta el rengl&oacute;n m&aacute;s cercano y que puede tomar aleatoriamente cualquier valor entre 0 y 0.5. La segunda variable es el &aacute;ngulo (que denotaremos por t) de la aguja respecto a la horizontal, que puede tomar aleatoriamente cualquier valor entre 0 y 180 grados.&nbsp;</p>
+<p><u>Los valores de estas dos variables son lo &uacute;nico que se necesita para saber si la aguja corta o no un rengl&oacute;n</u>. Conocer estos dos valores para una aguja será suficiente para saber si la aguja corta o no un renglón, sin necesidad de "ver" la aguja. Ahora buscamos encontrar la condici&oacute;n que deben de cumplir las variables d y t para asegurar que la aguja corta un rengl&oacute;n.&nbsp;</p>
+<p>Para ello, primero intenta variar los valores de d y t en la siguiente animaci&oacute;n para encontrar la condici&oacute;n que se tiene que cumplir para que la aguja corte un rengl&oacute;n. En la animaci&oacute;n agragamos una l&iacute;nea vertical desde la punta de la aguja hasta la posici&oacute;n vertical del centro de la aguja, que denotamos por h.&nbsp;</p>
+<p style="text-align: justify;"><br></p>
+<center>
+<iframe src="p5js/indexagujaexplicacion2.html" width="535" height="405">
+</iframe>
+</center>	
+<p><br></p>
+<p>Despu&eacute;s de jugar un poco con la animaci&oacute;n, es f&aacute;cil convencenrse que la aguja va a cortar el rengl&oacute;n si y s&oacute;lo si la distancia h es mayor a la distancia d. &nbsp;</p>
+<p>Entonces, lo &uacute;nico que nos falta es calcular la distancia h. Es f&aacute;cil ver, usando un poco de trigonometr&iacute;a y usando que la aguja tiene una longitud de 1, que la distancia h es de 1/2 * sin(t). Entonces, la condici&oacute;n de que h sea mayor a d se puede traducir a que 1/2*sin(t) &gt; d.&nbsp;</p>
+<p><br></p>
+<p>Esto nos permite reescribir el problema original a un problema equivalente pero totalmente matem&aacute;tico.&nbsp;</p>
+<p>Dado un n&uacute;mero d elegido al azar entre 0 y 0.5 y un n&uacute;mero t elegido al azar entre 0 y 180 grados (estas elecciones equivalen a lanzar aleatoriamente una aguja sobre el papel) nos preguntamos cu&aacute;l es la probabilidad de que 1/2*sin(t) &gt; d (esta condici&oacute;n equivale a que la aguja corte uno de los renglones).&nbsp;</p>
+<p>Una vez que ya tenemos el problema replanteado matem&aacute;ticamente, lo podemos resolver de una manera m&aacute;s sencilla.&nbsp;</p>
+
+<p>Primero que nada, vamos a medir &nbsp;el &aacute;ngulo t en radianes, esto porque eventualmente necesitaremos realizar una integral, y siempre que queremos integrar o derivar funciones trigonom&eacute;tricas, es importante usar radianes en vez de grados (m&aacute;s informaci&oacute;n de esto en <a href="https://teachingcalculus.com/2012/10/12/951/#:~:text=Radians%20make%20it%20possible%20to,one%20unit%20along%20the%20circumference.&text=This%20keeps%20all%20the%20important,angle%2C%20on%20the%20same%20scale.">why radians?</a> ). Luego, el &aacute;ngulo t es un valor entre 0 y &pi;. Aqu&iacute; aparece por primera vez el valor de &pi;, vemos que aparece por la medida del &aacute;ngulo de la aguja (no debe sorprendernos que &pi; aparezca en algo relacionado con &aacute;ngulos, pues la definici&oacute;n de &aacute;ngulos est&aacute; muy relacionada con  &pi; ).&nbsp;</p>
+<p style="text-align: justify;">Entonces, buscamos la probabilidad de que dado un &aacute;ngulo t elegido al azar entre 0 y &pi; &nbsp;y un valor de d elegido al azar entre 0 y 0.5 se cumpla que &nbsp;1/2 * sin(t) &gt; d.</p>
+<p style="text-align: justify;">Para ello, podemos representar todas las posibles elecciones de (t,d) en un plano cartesiano en el que el eje horizontal represente el valor de t y el eje vertical represente el valor de d. De esta forma, cualquier punto en este plano cartesiano representa una selecci&oacute;n al azar de t y de d. No todos los puntos en este plano nos interesan, pues los &uacute;nicos que representan a una aguja son aqu&eacute;llos tales que 0 &leq; t &leq; &pi; y que 0 &leq; d &leq; 0.5.&nbsp;</p>
+<p style="text-align: justify;">Este plano d vs t est&aacute; representado en la siguiente imagen, en la que se resalta la regi&oacute;n del plano en la que las variables toman los valores v&aacute;lidos.</p>
+
+<p><br></p>
+
+<center>
+<img class = "smallimg" src="images/dibujo2.PNG" alt="Espacio de muestra">
+<figcaption>Posibles valores de d y t</figcaption>
+</center>
+
+<p><br></p>
+<p>Es importante recalcar que cada punto en este rect&aacute;ngulo representa un valor de d y de t v&aacute;lidos y por tanto representa la condici&oacute;n en la que cae la aguja. &nbsp;</p>
+<p>Pero no todos estos puntos representan a una aguja que corta un rengl&oacute;n, como dijimos antes, para que la aguja corte un rengl&oacute;n, se debe de cumplir que 1/2 sin(t) &gt; d. Podemos identificar esta condici&oacute;n en el plano d-t. Graficamos la curva d = 1/2 sin(t) y entonces, de todos los puntos dentro del rect&aacute;ngulo, los que representan agujas que cortan un rengl&oacute;n (los puntos que cumplen d &lt; 1/2 sin(t) ) se encuentran debajo de esta curva.&nbsp;</p>
+<p><br></p>
+<center>
+<img class = "smallimg" src="images/dibujo1.PNG" alt="Espacio de muestra">
+<figcaption>Posibles valores de d y t, los puntos dentro de la curva son aquéllos valores para los que la aguja corta un renglón</figcaption>
+</center>
+
+<p><br></p>
+<p>Nuevamente, en esta gr&aacute;fica los puntos dentro del rect&aacute;ngulo representan &nbsp;las posibles formas en las que puede caer una aguja, pero s&oacute;lamente los puntos debajo de la curva d &lt; 1/2 sin(t) representan a agujas que cortan un rengl&oacute;n.&nbsp;</p>
+<p>Evidentemente, si queremos calcular la proporci&oacute;n de agujas que cortan un rengl&oacute;n entre la cantidad total de posibles agujas, necesitamos usar la proporci&oacute;n del &aacute;rea debajo de la curva (representa las agujas que cortan un rengl&oacute;n) entre el &aacute;rea de todo el rect&aacute;ngulo (representa a todas las agujas).&nbsp;</p>
+<p>El &aacute;rea debajo de la curva se puede calcular realizando la integral de sin(t)/2 desde t=0 hasta t=&pi;, que se puede comprobar sencillamente que da un resultado de 1. Por otro lado, el &aacute;rea de todo el rect&aacute;ngulo se calcula usando base por altura y por tanto tiene un valor de &pi;/2.&nbsp;</p>
+<p>Entonces, la proporci&oacute;n del &aacute;rea bajo la curva entre el &aacute;rea de todo el rect&aacute;ngulo es de 1/(&pi;/2) = 2/&pi;. Y por lo dicho antes, &eacute;sta es la probabilidad de que una aguja lanzada al azar corte un rengl&oacute;n.&nbsp;</p>
+<p><br></p>
+<p>Esto termina la demostraci&oacute;n de que la probabilidad de que una aguja tirada al azar corte un rengl&oacute;n es de 2/&pi; y comprueba el procedimiento que desarrollamos antes para aproximar &pi;</p>
+<hr>
+<p><span style="font-size: 10px;">Elaborado por Tom&aacute;s Basile, 14/03/21 </span></p>
+
+
+	<div id="footerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-4">
+					<p><b>Ciudad de México</b></p>
+				</div>
+		
+				<div class="col-lg-4">
+					<p>tbasilealvarez@ciencias.unam.mx</p>
+				</div>
+			</div>
+		</div>
+	</div><! --/footerwrap -->
+	
+
+</body>
+</html>
