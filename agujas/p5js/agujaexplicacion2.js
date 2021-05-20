@@ -27,9 +27,10 @@ function draw() {
   stroke(0);
   fill(0);
   strokeWeight(0.8);
-  text("Distancia desde el cento de la aguja al renglón (d):",20,235);
+  text("Distance from the center of the needle to the line(d):",20,235);
+
   text(sliderd.value()/100,450,235);
-  text("Ángulo respecto a la horizontal (t) :",100,275);
+  text("Angle with respect to the horizontal (t) :",90,275);
   text(sliderang.value(),450,275);
 
   var esquina1x = x + 50 *cos(sliderang.value());
@@ -73,7 +74,7 @@ function draw() {
   strokeWeight(0.8);
   stroke(0);
   fill(0);
-  text("Distancia desde el centro de la aguja hasta el renglón más cercano",20,350);
+  text("Distance from the center of the needle to the closest line",20,350);
   strokeWeight(1.4)
   stroke(0,50,200);
   fill(0,50,200);
@@ -85,7 +86,7 @@ function draw() {
   strokeWeight(0.8);
   stroke(0);
   fill(0);
-  text("Altura desde la punta más cercana a un renglón hasta el centro de la aguja",20,370);
+  text("Height from the point of the needle to the center of the needle",20,370);
   strokeWeight(1)
   stroke(153,0,153);
   fill(153,0,153);

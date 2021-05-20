@@ -15,44 +15,44 @@ function setup() {
 
  strokeWeight(1);
 
- text("N = Total de agujas lanzadas:",280,520);
+ text("N = Total number of needles thrown:",280,520);
  text(tot,480,520);
 
- text("n = Agujas que cortan un renglón:",280,540);
+ text("n = needles that cut a line:",280,540);
  text(buenos,480,540);
 
- text("Aproximación de Pi (2*N/n): ",280,560);
+ text("Approximation of pi (2*N/n): ",280,560);
  text(Math.round(2*tot/buenos,5),480,560);
 
- text("Porcentaje de error: ",280 , 580 );
+ text("Error percentage: ",280 , 580 );
  text(abs(3.14159265-2*tot/buenos)/3.14159265*100,485,580 )
 
  text("%", 475,580);
- button1 = createButton("Tirar 1");
+ button1 = createButton("Throw 1");
  button1.position(20,610 );
  button1.mousePressed(agrega1);
 
- button5 = createButton("Tirar 5");
+ button5 = createButton("Throw 5");
  button5.position(120,610 );
  button5.mousePressed(agrega5);
 
- button10 = createButton("Tirar 10");
+ button10 = createButton("Throw 10");
  button10.position(220,610);
  button10.mousePressed(agrega10);
 
- button100 = createButton("Tirar 100");
+ button100 = createButton("Throw 100");
  button100.position(330,610 );
  button100.mousePressed(agrega100);
 
- button500 = createButton("Tirar 200");
+ button500 = createButton("Throw 200");
  button500.position(20,650 );
  button500.mousePressed(agrega200);
 
- button5000 = createButton("Tirar 500");
+ button5000 = createButton("Throw 500");
  button5000.position(130,650);
  button5000.mousePressed(agrega500);
 
- buttonres = createButton("Resetear");
+ buttonres = createButton("Reset");
  buttonres.position(230,650);
  buttonres.mousePressed(resetear);
  strokeWeight(2.5);
@@ -99,17 +99,20 @@ function Lineas(posx,posy,angu){
     stroke(0);
     line(0,499,530,499);
     strokeWeight(1);
-    text("N = Total de agujas lanzadas:",280,520);
+
+    text("N = Total number of needles thrown:",280,520);
     text(tot,480,520);
 
-    text("n = Agujas que cortan un renglón:",280,540);
+    text("n = needles that cut a line:",280,540);
     text(buenos,480,540);
 
-    text("Aproximación de Pi (2*N/n): ",280,560);
-    text(2*tot/buenos,480,560);
+    text("Approximation of pi (2*N/n): ",280,560);
+    text(Math.round(2*tot/buenos,5),480,560);
 
-    text("Porcentaje de error: ",280 , 580 );
+    text("Error percentage: ",280 , 580 );
     text(abs(3.14159265-2*tot/buenos)/3.14159265*100,485,580 )
+
+    
 
     text("%", 470,580);
     line(530,0,530,700);
