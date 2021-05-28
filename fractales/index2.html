@@ -4,14 +4,10 @@
   <meta charset="UTF-8">
   <title>Self Similar Fractals 2</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
-<script type="text/javascript"
-  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
 
 
 </head>
@@ -44,81 +40,81 @@
 <hr>
 
 <p> We continue our discussion of self similar fractals to consider now the construction of such fractals. </p>
-<p> We saw before that a self similar fractal is a set $E \subset R^2$ such that there exists a set of similary transformations $f_1, f_2, \cdots , f_n : R^2 \rightarrow R^2$ with:</p>
+<p> We saw before that a self similar fractal is a set \( E \subset R^2 \) such that there exists a set of similary transformations \( f_1, f_2, \cdots , f_n : R^2 \rightarrow R^2 \) with:</p>
 <ol>
-  <li> $f_i(E) \subset E \;\;\;\; \forall i$</li>
-  <li> $E = f_1(E) \cup f_2(E) \cup f_3(E) \cdots \cup f_n(E)$</li>
+  <li> \( f_i(E) \subset E \;\;\;\; \forall i \)</li>
+  <li> \( E = f_1(E) \cup f_2(E) \cup f_3(E) \cdots \cup f_n(E) \)</li>
 </ol>
 It is easy to see that actually, the first condition is a consequence of the second, but it is useful to include the first condition in order to better understand what the definition means. 
 </p>
 
 <p> And in the previous discussion, we started with some fractals and then found the functions that acted as self similarities on them. </p>
 <br>
-<p> Now we will follow the opposite approach, suppose we are given a couple of similar transformations $f_1, \cdots , f_n : R^2 \rightarrow R^2$ and we want to find the corresponding fractal $E$ such that it satisfies the to conditions of the definition (that is, such that the functions are self similarities of the set $E$ and together form the complete set $E$). </p>
+<p> Now we will follow the opposite approach, suppose we are given a couple of similar transformations \( f_1, \cdots , f_n : R^2 \rightarrow R^2 \) and we want to find the corresponding fractal E such that it satisfies the to conditions of the definition (that is, such that the functions are self similarities of the set E and together form the complete set E). </p>
 
-<p> How do we find this fractal $E$ given the functions?</p>
+<p> How do we find this fractal E given the functions?</p>
 
 <p> For this, we first need a couple of definitions:</p>
 
 <ul>
-  <li> <strong> IFS (Iterated function system): </strong>  It is a set of functions $\{f_1, \cdots , f_n\}$ with $f_i : R^2 \rightarrow R^2$ for all $1 \leq i \leq n$ such that they are also Contractions, that is: 
+  <li> <strong> IFS (Iterated function system): </strong>  It is a set of functions \( \{f_1, \cdots , f_n\} \) with \( f_i : R^2 \rightarrow R^2 \) for all \( 1 \leq i \leq n \) such that they are also Contractions, that is: 
   <center>
-    $|f_i(x) - f_i(t)| \leq r_i |x-y|$
+    $$ |f_i(x) - f_i(t)| \leq r_i |x-y| $$
   </center>
-  For all $x,y \in R^2$ and $0 \leq r_i < 1$. <br>
+  For all \( x,y \in R^2 \) and \( 0 \leq r_i < 1 \). <br>
   This means, each function of the family must contract distances.
   </li>
 
-  <li><strong> Hutchinson Operator: </strong>  Given a IFS, we define an operator $H: C(R^2) \rightarrow C(R^2)$ (where $C(R^2)$ denotes the set of all compact subsets of $R^2$) defined as: 
+  <li><strong> Hutchinson Operator: </strong>  Given a IFS, we define an operator \( H: C(R^2) \rightarrow C(R^2) \) (where \( C(R^2) \) denotes the set of all compact subsets of \( R^2 \) ) defined as: 
     <center>
-      $H(S) = f_1(S) \cup f_2(S) \cup \cdots \cup f_n(S)$
+      $$ H(S) = f_1(S) \cup f_2(S) \cup \cdots \cup f_n(S) $$
     </center>
-    Where $S$ is a compact set of $R^2$
+    Where S is a compact set of \( R^2 \)
   </li>
 </ul>
 
 <br> 
-With this, we can redefine our problem. Given a family of similarity transformations, we wanted to find the fractal $E$ defined by them (the set that satisfied the definition of a fractal with this family). <br>
-Now, we rewrite the problem as: given a IFS (we are restricting the similarity transformations to be contractions, we will see why later) we want to find the set $E$ such that $H(E) = E$ <br>
-We see that this is equivalent to the original problem because a set that satisfies $H(E) := f_1(E) \cup \cdots \cup f_n(E) = E$ automatically satisfies the second condition to be a fractal, and therefore, also the first. <br>
+With this, we can redefine our problem. Given a family of similarity transformations, we wanted to find the fractal E defined by them (the set that satisfied the definition of a fractal with this family). <br>
+Now, we rewrite the problem as: given a IFS (we are restricting the similarity transformations to be contractions, we will see why later) we want to find the set E such that \( H(E) = E \) <br>
+We see that this is equivalent to the original problem because a set that satisfies \( H(E) := f_1(E) \cup \cdots \cup f_n(E) = E \) automatically satisfies the second condition to be a fractal, and therefore, also the first. <br>
 
-<p> Given the Hutchinson operator, the set $E$ that satisfies $H(E) = E$ is called a fixed point</p>
+<p> Given the Hutchinson operator, the set $E$ that satisfies \( H(E) = E \) is called a fixed point</p>
 
-<p> Therefore, our problem reduces to: Given a IFS, we want to find the set $E$ that is a fixed point of $H$. This set will be the fractal with self similarities given by the functions $f_i$</p>
+<p> Therefore, our problem reduces to: Given a IFS, we want to find the set E that is a fixed point of H. This set will be the fractal with self similarities given by the functions \( f_i \)</p>
 
 <br>
-<p> To solve this problem, and find a method to obtain $E$,  we will need to use a well knwon theorem:</p>
+<p> To solve this problem, and find a method to obtain E,  we will need to use a well knwon theorem:</p>
 
 <hr>
 
-<strong> Fixed point theorem: </strong> If $(X,d)$ is a complete metric space and we have a contraction $T: X \rightarrow X$ (that is, it satisfies $d(T(s), T(q)) \leq r d(s,q)$ for all $s,q \in X$ and with $0 \leq 1$ ). <br>
-Then, there is a unique point $e \in X$ that is a fixed point of $T$, that is $T(e) = e$ <br>
-More over, we can find this unique element by an iterative method, we begin with any element $x_0 \in X$ and define the sequence $x_n = T(x_{n-1})$. <br>
-Then, it can be proven that $x_n \rightarrow e$
+<strong> Fixed point theorem: </strong> If \( (X,d) \) is a complete metric space and we have a contraction \( T: X \rightarrow X \) (that is, it satisfies \( d(T(s), T(q)) \leq r d(s,q) \) for all \( s,q \in X \) and with \( 0 \leq 1 \) ). <br>
+Then, there is a unique point \( e \in X \) that is a fixed point of T, that is \( T(e) = e \) <br>
+More over, we can find this unique element by an iterative method, we begin with any element \( x_0 \in X \) and define the sequence \( x_n = T(x_{n-1}) \). <br>
+Then, it can be proven that \( x_n \rightarrow e \).
 <hr>
 
 <br>
-This powerful theorem is just what we need. We want to find a fixed set of the operator $H: C(R^2) \rightarrow C(R^2)$. To use the theorem, we need to give $C(R^2)$ a complete metric. <br>
-Such a metric is well known and it is called the Hausdorff metric, defined as $d(A,B)= inf\{\epsilon \; | \; A \subset B_{\epsilon} \; , \; B \subset A_{\epsilon}\}$ for  $A, B \in C(R^2)$<br>
-Where we define $A_{\epsilon} = \{x \in R^2 \; | \; |x-a| \leq \epsilon \;\; \forall \; a \in A\}$ <br>
+This powerful theorem is just what we need. We want to find a fixed set of the operator \( H: C(R^2) \rightarrow C(R^2) \). To use the theorem, we need to give \( C(R^2) \) a complete metric. <br>
+Such a metric is well known and it is called the Hausdorff metric, defined as \( d(A,B)= inf\{\epsilon \; | \; A \subset B_{\epsilon} \; , \; B \subset A_{\epsilon}\} \) for  \( A, B \in C(R^2) \)<br>
+Where we define \( A_{\epsilon} = \{x \in R^2 \; | \; |x-a| \leq \epsilon \;\; \forall \; a \in A\} \) <br>
 
-<p> The details are not importante, suffice it to say, this gives a well defined metric in $C(R^2)$ and it can be proven that it is also a complete metric (the fact that we restricted ourselves to only compact subsets of $\R^2$ is necessary to prove completeness)</p>
+<p> The details are not importante, suffice it to say, this gives a well defined metric in \( C(R^2) \) and it can be proven that it is also a complete metric (the fact that we restricted ourselves to only compact subsets of \( R^2 \) is necessary to prove completeness)</p>
 
-<p> Moreover, to use the theorem we would need $H$ to be a contraction under this metric. This can be proven using the definition of $H$ and with the hipothesis that the functions $f_i$ are all contractions too (that is why we restricted the definition of IFS to include only contractions).</p>
+<p> Moreover, to use the theorem we would need $H$ to be a contraction under this metric. This can be proven using the definition of H and with the hipothesis that the functions \( f_i \) are all contractions too (that is why we restricted the definition of IFS to include only contractions).</p>
 
 <p> With this two facts, the theorem gives us a marvelous conclusion:</p>
 <ul>
-  <li> There is a unique subset $E \subset R^2$ such that $H(E) = E$ (that is, the fractal we are looking for)</li>
-  <li> We can reach this fractal by starting with any initial set $X_0 \in C(R^2)$ and  iterating as follows: $X_{n+1} = H(A_n) := \cup_{1 \leq i \leq n} f_i (A_n)$ <br> 
-  And we will have that $A_n \rightarrow E$ (convergence is defined in terms of the norm)</li>
+  <li> There is a unique subset \( E \subset R^2 \) such that H(E) = E (that is, the fractal we are looking for)</li>
+  <li> We can reach this fractal by starting with any initial set \( X_0 \in C(R^2) \) and  iterating as follows: \( X_{n+1} = H(A_n) := \cup_{1 \leq i \leq n} f_i (A_n) \) <br> 
+  And we will have that \( A_n \rightarrow E \) (convergence is defined in terms of the norm)</li>
 </ul>
 
 <p> This gives us a general method to find the fractal $E$ given the functions we want as self similarities:</p>
 <ol>
-  <li> Given the functions $f_1, \cdots, f_n$ we want as self similarities, define the Hutchinson operator as $H(S) = f_1(S) \cup f_2(S)\cup \cdots \cup f_n(S)$</li>
-  <li> Start with any initial set $X_0$</li>
-  <li> Define $X_{n+1} = H(X_n)</li>
-  <li> Continue iterating using the function $H$ until you will get arbitrarily close to the unique fractal $E$ having the defined similarities.</li>
+  <li> Given the functions \( f_1, \cdots, f_n \) we want as self similarities, define the Hutchinson operator as \( H(S) = f_1(S) \cup f_2(S)\cup \cdots \cup f_n(S) \)</li>
+  <li> Start with any initial set \( X_0 \)</li>
+  <li> Define \( X_{n+1} = H(X_n) \)</li>
+  <li> Continue iterating using the function H until you will get arbitrarily close to the unique fractal E having the defined similarities.</li>
 </ol>
 
 
@@ -131,18 +127,18 @@ We can now try out this method to the fractals we saw in the previous discussion
 
 We remember that this fractal had the following similarity transformations:
 <ol>
-  <li> $f_1$:  Scale by 1/2</li>
-  <li> $f_2$: Scale by 1/2 and translate in x direction by 1/2</li>
-  <li> $f_3$: Scale by 1/2 and translate in x direction by 1/4 and in y direction by $\sqrt{3}/4$</li>
+  <li> \( f_1 \):  Scale by 1/2</li>
+  <li> \( f_2 \): Scale by 1/2 and translate in x direction by 1/2</li>
+  <li> \( f_3 \): Scale by 1/2 and translate in x direction by 1/4 and in y direction by \( \sqrt{3}/4 \)</li>
 </ol>
 
-Now, if we want to find the fractal with these similarities (though we already know what we are going to get), we can define the Hutchinson operator as $H(S) = f_1(S) \cup f_2(S) \cup f_3(S)$. <br>
-And now, we can start with any set $X_0$ and iterate this operator many times to get closer and closer to the fractal. <br>
+Now, if we want to find the fractal with these similarities (though we already know what we are going to get), we can define the Hutchinson operator as \( H(S) = f_1(S) \cup f_2(S) \cup f_3(S) \). <br>
+And now, we can start with any set \( X_0 \) and iterate this operator many times to get closer and closer to the fractal. <br>
 <br>
 
 Use the following animation to do just that. <br>
-First, draw any set $X_0$ using your mouse. Then, the program automatically iterates $H$ a couple of times. See how each iterations consists on applying the 3 functions to every point on the page to get the next set of points. <br>
-Note that the animation doesn't erase earlier sets on the iteration. That is, if you are on the fifth iteration $X_5$, the animation still draws $X_4, X_3, X_2, X_1, X_0$ even though they are not part of the set you are on. This is done so you can see how the set changes with iterations <br> 
+First, draw any set \( X_0 \) using your mouse. Then, the program automatically iterates H a couple of times. See how each iterations consists on applying the 3 functions to every point on the page to get the next set of points. <br>
+Note that the animation doesn't erase earlier sets on the iteration. That is, if you are on the fifth iteration \( X_5 \), the animation still draws \( X_4, X_3, X_2, X_1, X_0 \) even though they are not part of the set you are on. This is done so you can see how the set changes with iterations <br> 
 <br>
 <p><br></p> 
 <center>
@@ -155,14 +151,14 @@ Note that the animation doesn't erase earlier sets on the iteration. That is, if
 
 We remember that this fractal had the following similarity transformations:
 <ol>
-  <li> $f_1$:  Scale by 1/3 </li>
-  <li> $f_2$: Scale by 1/3, rotate 60 degrees and translate in x direction by 1/3</li>
-  <li> $f_3$: Scale by 1/3, rotate -60 degrees and translate in x direction by 1/2 and in y direction by $\sqrt{3}/6$</li>
-  <li> $f_4$: Scale by 1/3 and translate in x direction by 2/3</li>
+  <li> \( f_1 \):  Scale by 1/3 </li>
+  <li> \( f_2 \): Scale by 1/3, rotate 60 degrees and translate in x direction by 1/3</li>
+  <li> \( f_3 \): Scale by 1/3, rotate -60 degrees and translate in x direction by 1/2 and in y direction by \( \sqrt{3}/6 \)</li>
+  <li> \( f_4 \): Scale by 1/3 and translate in x direction by 2/3</li>
 </ol>
 
-Now, if we want to find the fractal with these similarities, as before,  we can define the Hutchinson operator as $H(S) = f_1(S) \cup f_2(S) \cup f_3(S) \cup f_4(S)$. <br>
-And now, we can start with any set $X_0$ and iterate this operator many times to get closer and closer to the fractal. <br>
+Now, if we want to find the fractal with these similarities, as before,  we can define the Hutchinson operator as \( H(S) = f_1(S) \cup f_2(S) \cup f_3(S) \cup f_4(S) \). <br>
+And now, we can start with any set \( X_0 \) and iterate this operator many times to get closer and closer to the fractal. <br>
 <br>
 
 Use the following animation to do just that as with the Sierpinski triangle. <br>
@@ -179,12 +175,12 @@ Use the following animation to do just that as with the Sierpinski triangle. <br
 
 We remember that this fractal had the following similarity transformations:
 <ol>
-  <li> $f_1$:  Scale by 1/2, rotate -60 degrees and translate in x directoin by 1. </li>
-  <li> $f_2$: Scale by 1/2 and rotate 60 degrees.</li>
+  <li> \( f_1 \):  Scale by 1/2, rotate -60 degrees and translate in x directoin by 1. </li>
+  <li> \( f_2 \): Scale by 1/2 and rotate 60 degrees.</li>
 
 </ol>
 
-Now, if we want to find the fractal with these similarities, as before,  we can define the Hutchinson operator as $H(S) = f_1(S) \cup f_2(S) $. <br>
+Now, if we want to find the fractal with these similarities, as before,  we can define the Hutchinson operator as \( H(S) = f_1(S) \cup f_2(S) \). <br>
 And now, we can start with any set $X_0$ and iterate this operator many times to get closer and closer to the fractal. <br>
 <br>
 
