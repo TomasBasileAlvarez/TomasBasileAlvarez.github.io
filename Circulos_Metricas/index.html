@@ -59,15 +59,15 @@ The solution to these equations gives us our well known form of a circle: <br>
 <p> However, we can not define a norm however we want it, there most be some restrictions for a function to be interpreted as a norm, these are: </p>
 
 <ol>
-  <li>The norm must be a function that takes a point $$(x,y)$$ and gives a non negative real number $||(x,y)||$ <br> 
+  <li>The norm must be a function that takes a point \( (x,y) \) and gives a non negative real number \( ||(x,y)|| \) <br> 
     That is, norms cannot be negative, just as we would expect from a distance.
   </li>
-  <li> Positive Definiteness: For all $(x,y)$, if $||(x,y)|| = 0$ then $(x,y) = (0,0)$ <br>
+  <li> Positive Definiteness: For all \( (x,y) \), if \( ||(x,y)|| = 0 \) then \( (x,y) = (0,0) \) <br>
   That is, only the origin has a norm of 0, all other points have positive norms </li>
-  <li> Homogeneity: $||a(x,y)|| = |a| \cdot ||(x,y)||$ <br>
-  That is, if we scale the vector by a constant $a$, then the norm should be bigger by $|a|$ </li>
-  <li> Triangle inequality $||(x,y) + (w,z)|| \leq ||(x,y)|| + ||(w,z)||$ <br> 
-  That is, if we want to go from the origin to $(x+w,y+z)$, it is faster (or equally fast) to go directly than to go to $||(x,y)||$ and then to $||(x,y) + (w,z)||$.
+  <li> Homogeneity: \( ||a(x,y)|| = |a| \cdot ||(x,y)|| \) <br>
+  That is, if we scale the vector by a constant $a$, then the norm should be bigger by \( |a| \) </li>
+  <li> Triangle inequality  \( ||(x,y) + (w,z)|| \leq ||(x,y)|| + ||(w,z)|| \) <br> 
+  That is, if we want to go from the origin to \( (x+w,y+z) \), it is faster (or equally fast) to go directly than to go to \( ||(x,y)|| \) and then to \( ||(x,y) + (w,z)|| \).
   </li>
 </ol>
 
@@ -78,24 +78,24 @@ These are some pretty restrictive conditions, still, we can find a whole family 
 
 We define a new type of metric as:
 <center>
-  $||(x,y)||_p = (|x|^p + |y|^p)^{1/p}$
+  $$||(x,y)||_p = (|x|^p + |y|^p)^{1/p}$$
 </center>
-Where $p$ is a number with $p \geq 1$. We see that for $p=2$ we recover the old Euclidean metric, but for other values of $p$ we have other interesting norms. <br>
+Where \( p \) is a number with \( p \geq 1 \). We see that for \( p=2 \) we recover the old Euclidean metric, but for other values of \( p \) we have other interesting norms. <br>
 <p> Not all norms have this particular form, but we will study only these ones</p>
 <p> To actually call this a norm, we should prove tht it satisfies the requirements we mentioned. The first requirements are easy to see, but the last one requires a little more work and it is called the Minkowski inequality. </p>
 
 <hr>
 <h3> Circles in LP norm</h3>
 
-<p> Using this definition of norm, we can define circles in different norms. A unit circle in LP norm would be the set of all points with $||(x,y)||_p = 1$</p>
+<p> Using this definition of norm, we can define circles in different norms. A unit circle in LP norm would be the set of all points with \( ||(x,y)||_p = 1 \)</p>
 <p> That is, all points with:</p>
 <center>
-  $(|x|^p + |y|^p)^{1/p} = 1$ <br>
-  $\Rightarrow \;\; |x|^p + |y|^p = 1$
+  \( (|x|^p + |y|^p)^{1/p} = 1 \)<br>
+  \( \Rightarrow \;\; |x|^p + |y|^p = 1 \)
 </center>
-<p> This is a generalization of the definition of circle. For $p=2$ we obtain the Euclidean circle, while for any other value of $p \geq 1$, we get circles in different norms and they take different forms. </p>
+<p> This is a generalization of the definition of circle. For \( p=2 \) we obtain the Euclidean circle, while for any other value of \( p \geq 1 \), we get circles in different norms and they take different forms. </p>
 
-<p>  In the following interactive program, you can see how unit circles in different norms would look like. You can control the value of $p$ and see the set of solutions of $|x|^p  + |y|^p = 1$ (that is, the circle in $p$ norm).   </p>
+<p>  In the following interactive program, you can see how unit circles in different norms would look like. You can control the value of \( p \) and see the set of solutions of \( |x|^p  + |y|^p = 1 \) (that is, the circle in \( p \) norm).   </p>
 
 
 <center>
@@ -103,22 +103,22 @@ Where $p$ is a number with $p \geq 1$. We see that for $p=2$ we recover the old 
 </iframe>
 </center>
 
-<p> We can see that the 'circles' take funny forms for different values of $p$. </p>
+<p> We can see that the 'circles' take funny forms for different values of \( p \). </p>
 
 <strong> Special Cases</strong> <br>
 For special values of p, we get interesting drawings:
 <ul>
-  <li> $p=2$: <br>
+  <li> \( p=2 \): <br>
   For this value, we recover the original Euclidean metric and the drawing is a regular old circle
   </li>
-  <li> $p=1$ </li>
-  For this value, the equation the metric is $||(x,y) || = |x| + |y|$. <br>
-  That is, the distance to $||(x,y)||$ is found by adding the distance along the x axis and the distance along the y axis. That is, intuitively, in this norm, we 'cannot' move in diagonal, we can only move parallel to the axis. <br>
+  <li> \( p=1 \) </li>
+  For this value, the equation the metric is \( ||(x,y) || = |x| + |y| \). <br>
+  That is, the distance to \( ||(x,y)|| \) is found by adding the distance along the x axis and the distance along the y axis. That is, intuitively, in this norm, we 'cannot' move in diagonal, we can only move parallel to the axis. <br>
   This is called the Manhattan norm, because this would be the distance to move around a city like Manhattan. If we want to go from a certain point in Manhattan to a point 3 streets east and 1 street north, we cannot move in diagonal, we can only move in the directions determined by the city blocks but not in diagonal. <br>
   Therefore, the distance between these two points would be of 5 = 2+3. <br>
-  The metric for $p=1$ encapsulates this. <br>
-  <li> $p = \infty$</li>
-  Though this norm is not included in the program, we can think of it as the limit when $p$ gets larger. Therefore, if $p$ is very large, we have that $||(x,y)||_{\infty} = \lim_{p \rightarrow \infty} (|x|^p + |y|^p)^{1/p} = \max (|x|, |y|)$ <br>
+  The metric for \( p=1 \) encapsulates this. <br>
+  <li> \( p = \infty \)</li>
+  Though this norm is not included in the program, we can think of it as the limit when $p$ gets larger. Therefore, if \( p \) is very large, we have that \( ||(x,y)||_{\infty} = \lim_{p \rightarrow \infty} (|x|^p + |y|^p)^{1/p} = \max (|x|, |y|) \) <br>
   So, the distance to a point is equal to the maximum of tis coordinates.    
 </ul>
 
