@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Other Types of Circles</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../index.html">Home</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Other Types of Circles</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+<h2> What is a Circle?</h2>
+
+<p> A circle is simply the set of all points that are at the same distance from a cerain central point. </p>
+<p>  If we set the origin at (0,0), the unit circle would be the set of all points a distance 1 from the origin. We measure the distance from the origin to $(x,y)$ as $\sqrt{x^2 + y^2}$, so the unit circle would be the set of all coordinates $(x,y)$ satisfying the equation: </p>
+<center>
+  $1 = \sqrt{x^2 + y^2}$
+</center>
+The solution to this equations gives us our well known form of a circle: <br>
+
+<center>
+<img class = "smallimg" src="circle.PNG" alt="Unit Circle">
+<figcaption>Unit Circle </figcaption>
+</center>
+
+<p> The interesting thing is that we can generalize this idea. There seems to be no way to generalize it, what other types of circle could we think of? </p>
+<p> We see that we actually made an assumption when constructing the circle, our definition of distance. We defined the distance from the origin to (x,y) (which we will call norm) as:  </p>
+<center>
+  $||(x,y)|| = \sqrt{x^2 + y^2}$
+</center>
+<p> The norm is defined this way because that is how distances work in the real world. However, in mathematics we are free to define norms that don't have anything to do with the real world and see to what we are led by these definitions. </p>
+<p> However, we can not define a norm however we want it, there most be some restrictions for a function to be interpreted as a norm, these are: </p>
+
+<ol>
+  <li>The norm must be a function that takes a point $(x,y)$ and gives a non negative real number $||(x,y)||$ <br> 
+    That is, norms cannot be negative, just as we would expect from a distance.
+  </li>
+  <li> Positive Definiteness: For all $(x,y)$, if $||(x,y)|| = 0$ then $(x,y) = (0,0)$ <br>
+  That is, only the origin has a norm of 0, all other points have positive norms </li>
+  <li> Homogeneity: $||a(x,y)|| = |a| \cdot ||(x,y)||$ <br>
+  That is, if we scale the vector by a constant $a$, then the norm should be bigger by $|a|$ </li>
+  <li> Triangle inequality $||(x,y) + (w,z)|| \leq ||(x,y)|| + ||(w,z)||$ <br> 
+  That is, if we want to go from the origin to $(x+w,y+z)$, it is faster (or equally fast) to go directly than to go to $||(x,y)||$ and then to $||(x,y) + (w,z)||$.
+  </li>
+</ol>
+
+These are some pretty restrictive conditions, still, we can find a whole family of norms that fulfill these conditions. 
+
+<hr>
+<h3> LP Metric </h3>
+
+We define a new type of metric as:
+<center>
+  $||(x,y)||_p = (|x|^p + |y|^p)^{1/p}$
+</center>
+Where $p$ is a number with $p \geq 1$. We see that for $p=2$ we recover the old Euclidean metric, but for other values of $p$ we have other interesting norms. <br>
+<p> Not all norms have this particular form, but we will study only these ones</p>
+<p> To actually call this a norm, we should prove tht it satisfies the requirements we mentioned. The first requirements are easy to see, but the last one requires a little more work and it is called the Minkowski inequality. </p>
+
+<hr>
+<h3> Circles in LP norm</h3>
+
+<p> Using this definition of norm, we can define circles in different norms. A unit circle in LP norm would be the set of all points with $||(x,y)||_p = 1$</p>
+<p> That is, all points with:</p>
+<center>
+  $(|x|^p + |y|^p)^{1/p} = 1$ <br>
+  $\Rightarrow \;\; |x|^p + |y|^p = 1$
+</center>
+<p> This is a generalization of the definition of circle. For $p=2$ we obtain the Euclidean circle, while for any other value of $p \geq 1$, we get circles in different norms and they take different forms. </p>
+
+<p>  In the following interactive program, you can see how unit circles in different norms would look like. You can control the value of $p$ and see the set of solutions of $|x|^p  + |y|^p = 1$ (that is, the circle in $p$ norm).   </p>
+
+
+<center>
+<iframe src="principalhtml.html" width="605" height="755">
+</iframe>
+</center>
+
+<p> We can see that the 'circles' take funny forms for different values of $p$. </p>
+
+<strong> Special Cases</strong> <br>
+For special values of p, we get interesting drawings:
+<ul>
+  <li> $p=2$: <br>
+  For this value, we recover the original Euclidean metric and the drawing is a regular old circle
+  </li>
+  <li> $p=1$ </li>
+  For this value, the equation the metric is $||(x,y) || = |x| + |y|$. <br>
+  That is, the distance to $||(x,y)||$ is found by adding the distance along the x axis and the distance along the y axis. That is, intuitively, in this norm, we 'cannot' move in diagonal, we can only move parallel to the axis. <br>
+  This is called the Manhattan norm, because this would be the distance to move around a city like Manhattan. If we want to go from a certain point in Manhattan to a point 3 streets east and 1 street north, we cannot move in diagonal, we can only move in the directions determined by the city blocks but not in diagonal. <br>
+  Therefore, the distance between these two points would be of 5 = 2+3. <br>
+  The metric for $p=1$ encapsulates this. <br>
+  <li> $p = \infty$</li>
+  Though this norm is not included in the program, we can think of it as the limit when $p$ gets larger. Therefore, if $p$ is very large, we have that $||(x,y)||_{\infty} = \lim_{p \rightarrow \infty} (|x|^p + |y|^p)^{1/p} = \max (|x|, |y|)$ <br>
+  So, the distance to a point is equal to the maximum of tis coordinates.    
+</ul>
+
+
+
+
+
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
