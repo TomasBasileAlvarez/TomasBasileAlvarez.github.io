@@ -7,6 +7,9 @@
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
+  <script src=
+"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 <script type="text/javascript"
   src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
@@ -59,13 +62,13 @@ The solution to this equations gives us our well known form of a circle: <br>
 <p> The interesting thing is that we can generalize this idea. There seems to be no way to generalize it, what other types of circle could we think of? </p>
 <p> We see that we actually made an assumption when constructing the circle, our definition of distance. We defined the distance from the origin to (x,y) (which we will call norm) as:  </p>
 <center>
-  $||(x,y)|| = \sqrt{x^2 + y^2}$
+  $$||(x,y)|| = \sqrt{x^2 + y^2}$$
 </center>
 <p> The norm is defined this way because that is how distances work in the real world. However, in mathematics we are free to define norms that don't have anything to do with the real world and see to what we are led by these definitions. </p>
 <p> However, we can not define a norm however we want it, there most be some restrictions for a function to be interpreted as a norm, these are: </p>
 
 <ol>
-  <li>The norm must be a function that takes a point $(x,y)$ and gives a non negative real number $||(x,y)||$ <br> 
+  <li>The norm must be a function that takes a point $$(x,y)$$ and gives a non negative real number $||(x,y)||$ <br> 
     That is, norms cannot be negative, just as we would expect from a distance.
   </li>
   <li> Positive Definiteness: For all $(x,y)$, if $||(x,y)|| = 0$ then $(x,y) = (0,0)$ <br>
