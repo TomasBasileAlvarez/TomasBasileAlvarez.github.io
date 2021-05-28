@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Buffon's Needle</title>
+	<link rel="stylesheet" href="../assets/css/style.css">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+
+
+
+
+
+<body>
+	   
+<!--     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">INSTANT</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#works">Works</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+
+	<div id="headerwrap2">
+	    <div class="container">
+			<div class="row">
+				<p class="hip"><a href="../index.html">Home</a> 
+				<div class="col-lg-6 col-lg-offset-3">
+					<h1>Buffon's Needle</h1>
+					<h5>Tomás Basile</h5>
+				</div>
+			</div><! --/row -->
+	    </div> <!-- /container -->
+	</div><! --/headerwrap -->
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+
+<h2>Problem</h2>
+<p> In the 18th century Georges Louis Leclerc, Comte de Buffon, raises the following problem:</p>
+<p> We start off with a sheet of paper and draw on it horizontal lines separated by a distance $L$ between them. Then, we take a needle with length $L$ and we throw it randomly on the paper. The problem is, what is the probability that the needle will cross one of the horizontal lines? </p>
+<p> For example, in the following image we see the horizontal lines separated by a distance $L$. In the image we have already thrown four needles over the paper (wach with a length $L$) and we can see that in this case, three of them cross a horizontal line (the needles painted green) and the red needle does not. We ask ourselves, for each needle we throw, what are the chances of it crossing a line.   </p>
+
+
+<center>
+<img class = "smallimg" src="images/agujas.png" alt="agujas">
+<figcaption>Drawing of needles falling over the paper</figcaption>
+</center>
+
+<p> The problem described this way doesn't seem very interesting, but the incredible thing is the result we obtain. It turns out that the probability that the needle cuts one of the lines is 0.6366... !!!! (that is, 63.66%). Mmm that isn't very surprising, but what if I told you that this result is exactly equal to $2/\pi$   !!!! </p>
+<p> But, why does $\pi$ come up as a result in a problem that appears to have no connection with circles or anything related to $\pi$? What's the connection?</p>
+
+<p><br></p>
+
+<p> Before answering this question, we will see that we can use this result to fins an interesting way of calculating the number $\pi$. A way fo calculating $\pi$ that only requires needles, a piece of paper and counting. For that, we follow the next procedure: </p>
+
+
+<ol>
+    <li>We mark horizontal lines on the sheet of paper, separated by a distance $L$ (to be specific, say that $L = 1cm$) </li>
+    <li>We thow N needles of length $L$ in the paper (or we throw a single needle $N$ times) </li>
+    <li>We count the number of needles that cut a horizontal line and call this number $n$ </li>
+    <li> Because the probability that any one needle is $2/\pi$ (which we will prove later), if we were to throw many needles, the proportion $n/N$ of needles that cut a line over the total number of needles would approximate to the value $2/\pi$. Then, using that $n/N = 2 /\pi$, we get to the following wat to approximate $\pi$: </li>
+    <p>$\pi = 2N / n$ </p>
+</ol>
+
+<p> This is an amazing way to approximate $\pi$. </p>
+<p> If you don't want to lose time throwing needles, I have prepared the following interactive program that simulates it.</p>
+<p>You can press the buttons below to throw different amounts of needles over the paper with horizontal lines. When throwing the needles, these are colored green if the needle cuts one of the lines and red if it doesn't. Then, the program counts the amount $N$ of total needles thrown and the number $n$ of needles that cut a line. With these two numbers, we calculate pi as $\pi \simeq 2N/n$.  Try using the program and throwing many needles to see how this approximation approaches $\pi$ as you throw more needles. The program also calculates the porcentual error of the approximation with respect to the real value of $\pi$.</p>
+
+<p><br></p>
+<center>
+<iframe src="p5js/indexagujas.html" width="535" height="705">
+</iframe>
+</center>
+<p><br></p>
+<p> We see that the method works, albeit, it is a little unprecise. We can approximate $\pi$ using only needles! After throwing thousands of needles, the approximation to $\pi$ usually has an error of less than 1%, but if we could throw millions, we would get much better approximations of $\pi$. </p>
+<p><br></p>
+<hr>
+<h2> Solution </h2>
+<p> Now we will justify the procedure to approximate $\pi$ we developed earlier. For that, we must prove that the probability that a needle thrown randomly over the paper has a probability of $2 / \pi$ of crossing a line, as we said earlier. </p>
+<p> First we need to translate the problem to a purely mathematical one. For that, we note that we can describe the position and direction of the needle using 3 numbers (the x and y coordinates of the center of the needle and the angle it makes with the horizontal)</p>
+<p> We need to find the relation of these three variables that ensures that the needle will cut one of the lines</p>
+<p> For that, begin by using the following animation to change the values of the x and y coordinates and the angle. Try looking for the necessary conditions of these values so that the needle crosses a line.</p>
+
+<p><br></p>	
+<center>
+<iframe src="p5js/indexagujaexplicacion.html" width="535" height="705">
+</iframe>
+</center>
+
+
+<p> After playing around with the animation, you can convince yourself of the following:</p>
+
+<ol>
+    <li> The value of the $x$ coordinate is not important for determining if the needle cuts or not a line. This is because the lines are horizontal, and the x coordinate makes no difference. </li>
+    <li> We can keep the angle between 0 and 180 degrees, because after rotating the needle 180 degrees, it looks the same as if we hadn't rotated it.</li>
+    <li> The value of the y coordinate isn't very practical for determining if the needle cuts or not a line. Something better to determine this would be the distance from the middle of the needle to the closest line (which we determine by $d$) </li>
+    <li>The best angles to ensure a needle crosses a line are those close to 90 degrees.</li>
+</ol>
+<p><br></p>
+<p> These observations allow us to rethink the problem. First, point number 1 tells us that we can completely forget the x coordinate of the needle, since it is not important. Point number 3 tells us that it may be more convenient to define a variable $d$ that represents the distance from the center of the needle to the closest line. This variable $d$ can take any value from $0$ (if the center of the needle falls right on a line) and it is $0.5$ (if the center of the needle falls in the middle of two lines) and it is a better indicator to determine if the needle cuts or not a line. Lastly, point number 2 tells us that it is convenient to restric the value of the angle between 0 and 180 degrees. </p>
+
+<p> Then, we only need two variables to completely determine if a needle cuts a line or not. The first variable is the distance $d$ from the center of the needle to the closest line, and it can take any random value between 0 and 0.5. The second variable is the angle with respect to the horizontal, which we will denote by $t$ and can take any random value fromm 0 to 180 degrees. </p>
+
+<p> <u> The values of these two variables is the only thing needed to know if a needle cuts a line or not</u>.  Knowing these two values for a needle will be enough to determine if the needle cuts a line. Now we are looking for a mathematical condition for the variables $d$ and $t$ to determine if the needle cuts a line.</p>
+
+<p> for that, first try variating the values of $d$ and $t$ in the following animation to find a condition of these values such that the needle cuts a line. In the animation we add a vertical line from the top of the needle to the position of the center, and we denote its length by $h$. </p>
+
+<p style="text-align: justify;"><br></p>
+<center>
+<iframe src="p5js/indexagujaexplicacion2.html" width="535" height="405">
+</iframe>
+</center>	
+<p><br></p>
+<p> After playing a bit with this animation, it is easy to convince yourself that the needle cuts a line if and only if the distance $h$ is bigger than $d$ </p>
+<p> Then, the only thing we need is to calculate $h$. It is easy to see, using a bit of trigonometry and that the length of the hole needle is 1, that the distance $h$ is $1/2 \sin(t)$. Then, the condition that $h$ be bigger than $d$ is $1/2 \sin(t) > d$. </p>
+
+<p> So, a needle with values $d, t$ will cut a line if and only if $1/2 \sin(t) > d$. Once we have rewritten out problem mathematically, we can solve it easier. </p>
+
+<p> First of all, we will measure the angle $t$ in radians, this is because we will eventually need to integrate and when we integrate of differentiate a trigonometric function, we need to use radians instead of degrees (more information of this in <a href="https://teachingcalculus.com/2012/10/12/951/#:~:text=Radians%20make%20it%20possible%20to,one%20unit%20along%20the%20circumference.&text=This%20keeps%20all%20the%20important,angle%2C%20on%20the%20same%20scale.">why radians?</a> ). Then, the angle $t$ is a value between $0$ and $\pi$. Here $\pi$ appears for the first time as the limit of the value of the angle (we shouldn't be surprised by the appearance of $\pi$ in something related with angles, since the definition of radians is very related with $\pi$). </p>
+
+<p> Then, we are looking fot the probability that given a value of $t$ chosen randomly from $0$ to $\pi$ and a value of $d$ between $0$ and $0.5$ fulfill $1/2 \sin(t) > d$</p>
+
+<p> For that, we can represent all possible values of $(t,d)$ in a Cartesian plane in which the horizontal axis represents a value of $t$ and the vertical axis the value of $d$. This way, any point in this plane represents a random selection of $t$ and $d$. Not all points in the plane are of interest to us, because only those with $0 \leq t \leq \pi$ and $0 \leq d \leq 0.5$ represent needles.  </p>
+
+<p> This $d \; vs \; t$ plane is represented on the following image, with the region of valid values for needles highlighted. </p>
+
+
+<p><br></p>
+
+<center>
+<img class = "smallimg" src="images/dibujo2.png" alt="Espacio de muestra">
+<figcaption>Possible values of d and t</figcaption>
+</center>
+
+<p><br></p>
+
+<p> It is important to stress that every point inside this rectangle represents a valid pair of points of $d$ and $t$ and therefore it determines the condition in which the needle falls</p>
+
+
+<p> But not all these points represent a needle that cut a line. As we say earlier, for the needle to cut a line, it must fulfill that $1/2 \sin (t) > d$. We can identify this condition in the $d-t$ plane. We graph the curve $d = 1/2 \sin (t)$ and then, out of all points in the rectangle, those that represent needles cutting a line are those with $d < 1/2 \sin (t)$. That is, the points below the following curve:</p>
+
+
+<p><br></p>
+<center>
+<img class = "smallimg" src="images/dibujo1.png" alt="Espacio de muestra">
+<figcaption>Possible values of $d$ and $t$. The points below the curve are those with values such that the needle cuts a line</figcaption>
+</center>
+
+
+<p><br></p>
+<p> Once again, the points inside the rectangle represent all the possible ways that a needle can fall on the paper, but only those below the curve $d < 1/2 \sin(t)$ represent a needle that cuts a line.</p>
+
+<p> Evidently, if we want to calculate the proportion of needles that cut a line divided by the total amount of possible needles, we need to calcualte the proportion of the area below the curve (representing needles that cut a line) divided by the area of the full rectangle (representing all the needles)</p>
+
+<p> The area below the curve can be calculating by integration $\sin(t) / 2$ from $t=0$ to $t= \pi$, which has a result of 1. On the other hand, the area of the hole rectangle can be easily seen to be $\pi / 2$</p>
+
+<p>Then, the proportion of the area below the curve divided by the area of the hole rectangle is $1 / (\pi /2) = 2 / \pi$. And by what we said before, this is the probability that a randomly thrown needle cuts a line.  </p>
+
+
+<p> This finishes the proof that the probability that a randomly thrown needle crosses a line is $2 / \pi$ and it shows that the procedure we determines earlier to approximate $\pi$ was correct.</p>
+
+
+
+
+	<div id="footerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-4">
+					<p><b>Ciudad de México</b></p>
+				</div>
+		
+				<div class="col-lg-4">
+					<p>tbasilealvarez@ciencias.unam.mx</p>
+				</div>
+			</div>
+		</div>
+	</div><! --/footerwrap -->
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
