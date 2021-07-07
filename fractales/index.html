@@ -47,23 +47,22 @@
 
 <h4> Similarity Transformation</h4>
 
-<p> We will define a similarity transformation on a set $V$ as a function \( f: R^2 \rightarrow R^2 \) that 'preserves fomrs'. That is, for any subset of \( R^2 \) on which we apply the transformation, the result is similar to \( R^2 \) </p>
-<p> We will only care for transformations conformed of a composition of rotations around the origin, translations and homogeneous scaling (multiplying all the set by a scalar) <br> 
-This transformations clearly 'preserve forms'.</p>
+<p> We will define a similarity transformation on a set \( V \) as a function \( f: R^2 \rightarrow R^2 \) that 'preserves forms'. That is, for any subset of \( R^2 \) on which we apply the transformation, the result is similar to \( V \) (it has the same form, only rotated, scaled and/or translated) </p>
+<p> We will only care for transformations conformed of a composition of rotations around the origin, translations and homogeneous scaling. These transformations clearly 'preserve forms'.</p>
 <p> If a set B can be obtained by applying a similarity transformation to a set A, we say that A and B are similar sets (intuitively, A and B have the same form, only rotated, translated and scaled).</p>
 
 
 
 <h4> Self similar set</h4>
 
-<p> We will define a self similar set (what we will call a fractal) as a set \( E \subset \R^2 \) such that there exists a set of similary transformations \( f_1, f_2, \cdots , f_n : R^2 \rightarrow R^2 \) with:</p>
+<p> We will define a self similar set (what we will call a fractal) as a set \( E \subset R^2 \) such that there exists a set of similary transformations \( f_1, f_2, \cdots , f_n : R^2 \rightarrow R^2 \) with:</p>
 <ol>
   <li> \( f_i(E) \subset E \;\;\;\; \forall i \)</li>
   <li> \( E = f_1(E) \cup f_2(E) \cup f_3(E) \cdots \cup f_n(E) \)</li>
 </ol>
 
 <p> The first condition tells us that applying any of the functions to the whole set E, gives us as a result a part of E. Since the functions are similarity transformations, this encapsulates the intuitive definition of a fractal, that a part of it is similar to the whole set. </p>
-<p> The second condition just tells us that the ser E can be constructed from applying every function to E and joining the results. That is, the set E is formed by n parts (each one beign \( f_i(E) \) ) that are each similar to the whole set. </p>
+<p> The second condition just tells us that the set E can be constructed from applying every function to E and joining the results. That is, the set E is formed by n parts (each one beign \( f_i(E) \) ) that are each similar to the whole set. </p>
 
 <p> To understand this better, we can see the following example:</p>
 
@@ -76,8 +75,7 @@ This transformations clearly 'preserve forms'.</p>
 <p> It is easy to see that the set is divided in three subsets that are similar to the triangle as a whole (the red, blue and green subtriangles). This means that each of these three subtriangles can be obtained by applying a similarity transformation to the whole triangle.</p>
 <p> That is, there is a similarity transformation \( f_1 \) that when applied to the whole triangle gives as a result the red subtriangle. And there is another function \( f_2 \) that when applied to the whole triangle gives as a result the blue subtriangle, and a function \( f_3 \) that gives as a result the green one.  </p>
 <p> In this case, the functions \( f_1, f_2 , f_3 \) consist only in scaling the whole triangle by 1/2 and then translating it in different directions for each function.</p>
-<p> That way, we could say that the triangle is composed of three subparts that are similar to the whole set</p>
-<p> We can see that this set with this three functions satisfies the definition we gave for a fractal.</p>
+<p> That way, we could say that the triangle is composed of three subparts that are similar to the whole set. We can see that this set with this three functions satisfies the definition we gave for a fractal.</p>
 
 <hr> 
 <h2> Examples</h2>
@@ -115,7 +113,7 @@ This transformations clearly 'preserve forms'.</p>
 <h4> Dragon Curve</h4>
 
 <p> The Dragon curve is a self similar fractal that consists of only 2 selfsimilarities. That is, the set can be seen as composed of 2 subsets, each similar to the complete set. </p>
-<p> Two of these functions now involve rotations. Use the following animation to see the functions in action.</p>
+<p> Both functions involve rotations, scaling and translation. Use the following animation to see the functions in action.</p>
 
 <p><br></p> 
 <center>
