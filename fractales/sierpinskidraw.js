@@ -1,67 +1,60 @@
-const USER = 0;
-const FRAC = 1;
 
-let x = [];
-let time = 0;
 let state =2;
-let path = [];
 let drawing = [];
+let f =0;
+let draw2 = [];
 
-function mousePressed(){
-  state = USER;
-  drawing = [];
-  x = [];
-  time = 0;
-  path = [];
-}
 
-function mouseReleased(){
-  state = FRAC;
-}
 
 
 function setup(){
+
   createCanvas(700,700);
   background(0);
-  push();
-  textSize(80);
-  noStroke();
-  fill(250);
-  text('Draw Something',20,200)
-  pop();
+   stroke(200);
+
+   line(100,0,100,500);
+   line(100,500,900,500);
+   line(600,490,600,510);
+   line(90,3,110,3);
+   noStroke();
+   fill(250);
+   textSize(12);
+   text('0', 90,510);
+   text('1', 605,515);
+   text('1', 85,15);
+   state=0;
+   strokeWeight(2);
+  dr = createButton('Draw');
+  dr.position(100,650);
+  dr.mousePressed(change0);
+  nex = createButton('Next');
+  nex.position(300,650);
+  nex.mousePressed(change1);
 }
 
 
-function agregars(ser){
-  let l = ser.length;
-  for (let j = Math.floor(l/4); j<l; j++){
-    ser = ser.concat([f1s(ser[j])], [f2s(ser[j])], [f3s(ser[j])]);
-  }
-  return ser;
+function change0(){
+   background(0);
+
+   draw2=[];
+   drawing=[];
+   f=0;
+   dibuja();
+   state = 0;
+ }
+function change1(){
+  f=1;
+  dibuja();
+  state = 1;
 }
-
-function f1s(x){
-  return [x[0]/2, x[1]/2];
-  }  
-function f2s(x){
-  return [x[0]/2 +1/2, x[1]/2];
-}
-function f3s(x){
-  return [x[0]/2 +1/4, x[1]/2 + 0.433013];
-}
-
-
-
-
-
-let lo = 0;
 
 function draw(){
-  if (state == USER){
-    frameRate(30);
-    background(0);
+  if (state == 0){
+      if (mouseIsPressed){
     let x = [(mouseX-100)/500, (500-mouseY)/500];
     drawing.push(x);
+  }
     stroke(255);
     noFill();
     beginShape();
@@ -69,12 +62,9 @@ function draw(){
       point(v[0]*500+100,-v[1]*500+500);
     } 
     endShape();
-    lo = 0;
-  } else if (state == FRAC){
-    frameRate(1);
-    background(0);
+
+  } else if (state == 1){
     stroke(200);
-    strokeWeight(2);
     line(100,0,100,500);
     line(100,500,900,500);
     line(600,490,600,510);
@@ -86,17 +76,72 @@ function draw(){
     text('1', 605,515);
     text('1', 85,15);
     l = drawing.length;
-
-    for (let k = 0; k< drawing.length; k++){
-      stroke(250,20*lo,lo*20);
-      strokeWeight(2);
-      point(drawing[k][0]*500+100,-drawing[k][1]*500+500);
-    }
-    lo +=1;
     if (l < 40000){
-      drawing = agregars(drawing);
+      agregark();
     }
+    state=2;
 
 
   }
 }
+
+function dibuja(){
+  // for (let k = 0; k< drawing.length; k++){
+  //   stroke(250);
+  //   strokeWeight(1);
+  //   point(drawing[k][0]*500+100,-drawing[k][1]*500+500);
+  // }
+  stroke(200);
+  line(100,0,100,500);
+  line(100,500,900,500);
+  line(600,490,600,510);
+  line(90,3,110,3);
+  noStroke();
+  fill(250);
+  textSize(12);
+  text('0', 90,510);
+  text('1', 605,515);
+  text('1', 85,15);
+  // line(0,0,500,500);
+}
+
+
+
+
+function agregark(){
+  let l = drawing.length;
+  let st =0;
+  if(f>0){
+    let st = l/3;
+  }
+  for (let j = Math.floor(st); j<l; j++){
+    draw2 = draw2.concat([f1s(drawing[j])], [f2s(drawing[j])], [f3s(drawing[j])]);
+  }
+  drawing=draw2;
+  draw2=[];
+
+}
+
+
+
+
+function f1s(x){
+  stroke(200,20,20);
+
+  point(x[0]/2*500+100,-x[1]/2*500+500);
+  return [x[0]/2, x[1]/2];
+  }  
+function f2s(x){
+  stroke(20,200,20);
+  point((x[0]/2 +1/2)*500+100,-(x[1]/2)*500+500);
+
+  return [x[0]/2 +1/2, x[1]/2];
+}
+function f3s(x){
+  stroke(20,20,200);
+  point((x[0]/2 +1/4)*500+100,-(x[1]/2 + 0.433013)*500+500);
+
+  return [x[0]/2 +1/4, x[1]/2 + 0.433013];
+}
+
+
