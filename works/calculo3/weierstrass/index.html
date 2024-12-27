@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Weierstrass function</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Weierstrass function</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+<h2> Differentiable and/or Continuous</h2>
+<p> The concepts of differentiabile and continous functions are easily confused when studied for the first time. A common misconception is that all continuous functions are differentiable and vice versa.</p>
+
+<p> But this is completely false! The relationship between continuous and differentiable functions is more subtle than that. </p>
+<p> First of all, it is true and very easy to prove that all differentiable functions are automatically continuous (<a href="https://ximera.osu.edu/mooculus/calculus1/master/derivativeAsAFunction/digInDifferentiabilityImpliesContinuity#:~:text=There%20are%20connections%20between%20continuity,at%20%2C%20then%20is%20continuous%20at%20.&text=If%20is%20not%20continuous%20at,functions%20on%20are%20continuous%20on%20.">proof)</a>. But although many people believe that a function being continuous implies it most be differentiable, this is not true. An easy example of a function that is continuous but not differentiable everywhere is the absolute value function, which is graphed here: </p>
+
+<center>
+<img class = "smallimg" src="abs.PNG" alt="Square">
+<figcaption>Absolute value</figcaption>
+</center>
+It is easy to see that this function is continuous everywhere, but it is not differentiable at \(x = 0\). At this point, the function has a spike, so there is no good definition for the tangent line, which makes it impossible to define a derivative. 
+
+<h2> Weierstrass Function</h2>
+The Weierstrass function is an incredible example of a function that is continuous everywhere but nowhere differentiable! Basically, the function is defined in such a way that it has spikes everywhere, so it will be continuous everywhere but still not differentiable anywhere. <br> <br>
+
+
+<center>
+<iframe src="principal.html" width="605" height="705">
+</iframe>
+</center>
+
+To see the function, use the following program. The function has a parameter called \(b\), as you increase this value, the function develops more spikes. For high values of \( b\), the function has so many spikes that it is not differentiable anywhere. <br> <br>
+Of course the image is not a completely reliable graph of the function, because we can only graph with a finite set of points. However, you can still see that the graph develops so many peaks that it is never differentiable while still being continuous everywhere. <br><br>
+The definition of the Weierstrass function and the proof that it is truly nowhere differentiable is a little complicated. But that is beyond the point, the important thing is that we can create a continuous function that is nowhere differentiable, which is a very counterintuitive fact.
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

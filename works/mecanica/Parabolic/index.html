@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Parabolic Motion</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Parabolic Motion</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+
+<h2> Description of the problem</h2>
+<p> Suppose we are at the surface of Earth, a height \(y_0\) from the floor and we throw a particle at speed \(\vec{v}_0\). Then, we want to calculate the position of the particle as a function of time. </p>
+<p> For that, we first need to know the forces involved in this problem. As we are always close to the surface, the gravitational force is just equal to \(\vec{F} = -mg \widehat{y} \)</p> 
+
+<p> Equations of motion</p>
+<p> According to Newton's second law, we have that:</p>
+<center>
+  \( \vec{F} = m\vec{a} \;\; \Rightarrow \;\; \vec{a} = -g \widehat{y} \)
+</center>
+So we have a vertical acceleration of \(a_y = -g \) and a horizontal of \(a_x = 0 \). Then, we can integrate these equations twice in order to find \(x\) and \(y\) as functions of time:
+
+<center>
+  \(a_y  = -g \;\; \Rightarrow \;\; \ddot{y} = -g \) <br>
+  \(\dot{y} = -g t  + v_{0y} \) <br>
+  \( y = -\dfrac{g}{2} t^2 + v_{0y} t + y_0 \)
+</center>
+Where \(v_{0y} \) and \(y_0\) are introduced as constants of integration. \(v_{0y}\) indicates the initial velocity in the \(y\) direction. We can see that these constants of integration introduced are correct by evaluating \(\dot{y} \) and \( y \) at \( t =0\). <br>
+
+We can do something similar for \(x\):
+<center>
+  \(a_x  = 0 \;\; \Rightarrow \;\; \ddot{x} = 0 \) <br>
+  \(\dot{x} =  v_{0x} \) <br>
+  \( x = v_{0x} t + x_0 \)
+</center>
+Where once again \( v_{0x} \)and \(x_0\) were introduced as constants of integration. <br>
+
+<p> Then, the parametric equations for the motion of the particle are given by:</p>
+
+<center>
+  \( x(t) = v_{0x} t + x_0 \) <br>
+  \( y(t) = -\dfrac{g}{2} t^2 + v_{0y} t + y_0 \)
+</center>
+We see that it is a linear equation in the x direction and a quadratic one in the y direction. This will give rise to a path in the form of a parabola. <br>
+
+<p> To see it in action, try the following interactive program. Use the sliders below to select an initial height, initial angle of the shot and initial speed. Then, press start to see how the particle moves under these conditions. Notice how it will move in the form of a parabola, whose parametric equations are given by what we got earlier.</p>
+
+
+<p><br></p> 
+<center>
+<iframe src="principal.html" width="505" height="705">
+</iframe>
+</center>
+
+With these equations, we can calculate anything we want. <br>
+
+<p> For example, suppose the initial height is 0 and we throw it at an angle \( \theta\), we want to know the final x position of the particle when it comes back to the ground</p>
+<p> To calculate it, we first need to know the time it takes for the particle to come back to the ground. Let's say this final time is \(t_f\), then, at this time the particle has once again a height of 0, which means that \(y (t_f)= 0\).</p>
+<p> Substituting into the parametric equation for \(y\), we find that \(-\dfrac{g}{2} t_f^2 + v_{0y} t_f + y_0 = 0 \). But because the particle was thrown starting from the ground, we have that \(y_0 = 0\). Therefore, we can easily get the time \(t_f\):</p>
+<center>
+  \(-\dfrac{g}{2} t_f^2 + v_{0y} t_f  = 0 \)<br>
+  \( \Rightarrow \;\;\; t_f = \dfrac{2v_{0y}}{g} \)
+</center>
+This is the time that the particle takes to come back to the ground. Then, the x position at this time can be obtained from the \( x\) equation:
+<center>
+  \(x(t_f) = v_{0x} t_f  = \dfrac{2v_{0y} v_{0x}}{g} \)
+</center>
+Where we substituted \(x_0 = 0\), supposing the particle starts moving from the origin. <br>
+<p>So this is the range that the particle reaches. If the particle was thrown with an initial speed of \(v\) at an angle \(\theta\), then \(v_{0x} = v \cos \theta \) and \(v_{0y} = v \sin \theta \). Therefore:</p>
+<center>
+  \( x(t_f) = \dfrac{2v^2 \cos \theta \sin \theta}{g} = \dfrac{v^2 \sin(2 \theta)}{g}\)
+</center>
+With this equation it is easy to see that we will have a maximum range when \(2 \theta = 90\), which means that \(\theta = 45\). And in this case, the range is \(x_f = \dfrac{v^2}{g}\)
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

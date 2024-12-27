@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Work and Energy</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Work and Energy</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+<h2>Work </h2>
+
+<p> Given a force \( F(\vec{r}) \), if we move a particle from a point \( 1 \) to a point \(2\), using a certain path, we define the work done as:</p>
+<center>
+  \(  W_{1,2} = \int\limits_{1}^{2} \vec{F} \cdot d\vec{r} \)
+</center>
+
+<p> Where the integral is taken in the specific path that the particle followed. </p>
+
+<p> <b> Conservative Force:</b> A conservative force is one in which the work done doesn't depend on the path taken, but only on the intial and final points. From vector calculus, we know that a force is conservative if its curl is 0.  </p>
+
+<h2> Kinetic Energy </h2>
+We can change a little bit the term inside the integral using Newton's second law \(\vec{F} = m d\vec{v}/dt \) and the fact that \( d\vec{r} = d\vec{r}/dt dt \): 
+<br>
+
+<center> 
+  \( \vec{F} \cdot d \vec{r} = m \dfrac{d \vec{v}}{dt} \cdot \dfrac{d\vec{r}}{dt} dt = m \dfrac{d \vec{v}}{dt} \cdot \vec{v} dt = \dfrac{m}{2} \dfrac{d}{dt} (\vec{v} \cdot \vec{v}) dt = \dfrac{m}{2} \dfrac{d}{dt} (v^2) dt = d \left( \dfrac{1}{2} m v^2 \right)   \)
+</center>
+Therefore, the total work done between two points will be given by:
+<center>
+  \(W_{1,2} = \int_{1}^{2} \vec{F} \cdot d \vec{r} = \int_1^2   d \left( \dfrac{1}{2} m v^2 \right)   = \dfrac{1}{2} m v_2^2 - \dfrac{1}{2} mv_1^2 \)
+</center>
+We define the term on the right to be the <b> kinetic energy </b>, \( K := \dfrac{1}{2} mv^2 \). So, in conclusion, we found that:
+<center>
+  \(W_{1,2}   = K_2 - K_1 \)
+</center>
+This is called the <b> Work - Energy</b> theorem. It tells us that the work done from one point to the other is equal to the change in kinetic energy. This is true regardless of if the force is conservative or not. <br>
+
+
+
+
+<h2> Potential Energy </h2>
+
+
+<p>  In the special case of conservative forces, we can define a new function called <b> potential energy: </b> </p>
+<center>
+  \( U(x,y,z) = - \int_P^{(x,y,z)} \vec{F} \cdot d \vec{s} \)
+</center>
+Where \( P\) is an arbitrary point in space, which is usually taken to be infinity. This function \( U(x,y,z) \) is well defined because the integral doesn't depend on the path taken (because it is a conservative force). So, as long as we go from \( P \) to \( (x,y,z) \), the integral will take the same value regardless of the path. <br>
+
+<p> Then, it can be easily seen that the work between two points is:</p>
+<center>
+  \( W_{1,2} = \int_1^2 \vec{F} \cdot d \vec{r} = \int_1^{P} \vec{F} \cdot d \vec{r} + \int_{P}^2 \vec{F} \cdot d \vec{r} = -\int^1_{P} \vec{F} \cdot d \vec{r} + \int_{P}^2 \vec{F} \cdot d \vec{r} = U(1) - U(2) \)
+</center>
+
+<h2> Energy </h2>
+
+This last formula, together with the work energy theorem leads to the following equation:
+<center>
+  \( K(2) - K(1) = U(1) - U(2) \) <br>
+  \( \rightarrow \;\; U(1) + K(1)  = U(2) + K(2) \)
+</center>
+This means that the quantity \( U + K\) is conserved throughout the motion of the particle!. Therefore, we define the total energy of the particle to be \( U + K \) and we know that it will be conserved (as long as the forces involved are conservative). <br>
+
+<p> In summary, we began with a force \( F \) and then defined the work across a certain path. Then, we showed that this work is equal to the difference of a quantity which we called kinetic energy. And we saw that for conservative forces, we could define something called potential energy and that the work done was equal to minus the difference in potential energy through the path. Finally, this lead us to define the total energy as the sum of these kinetic and potential. </p> 
+
+<p>Now we will find the potential energy for different common forces:</p>
+
+<ul> 
+  <li> <b> Gravitational field close to Earth: </b> Close to the Earth, the gravitational force is \( \vec{F} = -mg \vec{z} \). And we can define the potential energy as \( U(x,y,z)= - \int_P^{(x,y,z)} \vec{F} \cdot d \vec{r} \). Where, as a convention, we take the reference point \(P\) to be any point in the surface of the Earth, were we set the potential energy equal to 0. Then, the potential at a point \(x,y,z\) will be  \( U(x,y,z)= - \int_0^{z} \vec{F} \cdot d \vec{r} = -\int_0^z -mg dz = mgz \) </li>
+  <li> <b> Spring: </b> In a spring, the force is equal to \( \vec{F} = -kx \widehat{x} \) where  \( x\) is the deformation of the spring with respect to its relaxed position. We define the point \(P\) to be the equilibrium position and set the potential energy to 0 there. Therefore, at any other point \(x\), the potential is \( U(x) = - \int_P^{x} \vec{F} \cdot d \vec{r} = -\int_0^x (-kx) dx = \dfrac{1}{2} kx^2 \)  </li>
+  <li> <b> Gravitational Field: </b> </li> The force is given by \(\vec{F} = -GMm\vec{r}/r^3 \). We define \(P \) to be the point at infinity, where we set the energy equal to 0. Therefore, the potential energy  at a point at distance \(r\) is equal to \( U(r) =  - \int_{\infty}^r (-GMm \vec{r}/r^3 \cdot d\vec{r}) = \dfrac{GMm}{r} \)
+</ul>
+In these cases and many others, knowing the expression for the potential energy and using the fact that energy is conserved can be a very easy tool to use in order to solve a great variety of problems. <br>
+
+\( E\)
+
+
+<p> </p>
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

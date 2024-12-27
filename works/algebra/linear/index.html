@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Matrix</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Matrix</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+<h2> Matrix </h2>
+What is a matrix? Well, the simplest definition of a matrix is that it is a two dimensional rectangular arrangement of numbers. That's it, for example, these things here are matrices:
+<center>
+  \( \begin{pmatrix} 
+  4 & 6 & 9 \\
+  5 & 1 & 12
+  \end{pmatrix} 
+  \;\;\; ,
+  \;\;\; \begin{pmatrix}
+  5 & 4 \\
+  6 & 1
+  \end{pmatrix} 
+  \;\;\; , \;\;\; \begin{pmatrix}
+  a & c \\
+  b & d
+  \end{pmatrix}
+  \)
+</center>
+Where \(a , b , c ,d \) are numbers. <br>
+
+<p> Well, that may be the most general definition of what a matrix (or at least a matrix of real numbers) is, but that doesn't tell us anything about what they represent. They can be used to represent a number of different things, but they were first conceived as a way of representing <b> linear transformations</b> </p>
+
+<h2> Linear transformations in \( R^2 \)</h2>
+<p> We will focus our attention to a very specific set of linear transformations, those that take and element from \(R^2\) and return an element from this same space. First, we need a definition for \( R^2\). Quite simply, \(R^2\) is the set of every possible pair of real numbers, that is:</p>
+<center>
+  \( R^2 = \{ (a,b) \; | \; a, b \in R\} \)
+</center>
+This set can be represented simply as consisting of all points in the cartesian plane. <br>
+
+<p> Now, let's define what it means to have a real transformation in this space. A linear transformation in this case is a function \( T: R^2 \rightarrow R^2 \) such that it satisfies the following conditions: </p>
+<ul>
+  <li> \( T((a,b) + (c,d)) = T((a,b)) + T((c,d)) \)</li>
+  <li> \( T(k(a,b)) =  kT((a,b)) \)</li>
+</ul>
+Where \(a,b,c,d\) and \( k \) are real numbers, which means that \( (a,b) \) and \( (c,d)\) are elements of \(R^2\). <br>
+The first condition implies that when we apply the function \(T\) to a sum of vectors, the result is the same as applying it to each one and then summing the results. The second condition implies that when we apply the funcion to a vector multiplied by a number, the result is the same as just applying the function to the vector and then multiplying the result by the number. 
+
+<p> Although these conditions may seem a little bit restrictive, these types of functions are very important and appear all the time in many contexts. And some linear functions may include rotations of the plane, scaling the plane by a constant, reflections and many other geometrically important transformations.</p>
+
+<p> The important thing about these functions is that these two properties allow you to calculate the function on any vector by only knowing the result on two vectors.</p>
+<p> Let's see what I mean by these, suppose we want to calculate the \(T (h,k) \) for any vector \((h,k)\) but we don't know the general form of the function or how to calculate it on this vector.</p>
+<p> However, we notice that we may write the vector \((h,k)\) as \((h,k) = h(1,0) + k(0,1)\) and then, we can find a new expression for \( T((h,k))\) using the two properties:</p>
+
+<center>
+  \( T((h,k)) = T( h(1,0) + k(0,1)) = T(h(1,0)) + T(k(0,1)) = hT((1,0)) + kT((0,1)) \)
+</center>
+<p> So, we see that to calculate \(T ((h,k))\) we only need to know \(T((1,0)) \) and \( T((0,1))\), no matter what the vector \( (h,k)\) is. </p>
+
+<p> This is the most important property of linear functions and the reason why they are so simple. We only need to calculate them in a very small set of vectors to know the result for any other vector we may think of.</p> 
+
+<h2> Using Matrices</h2>
+
+<p> As we saw earlier, for any vector \( (h,k) \), we may calculate its image under the linear fucntion \(T\) simply as:</p>
+<center>
+  \( T((h,k)) = hT((1,0)) + kT((0,1)) \)
+</center>
+<p> This means that just knowing the result of \(T\) in the two vectors \((1,0) , (0,1) \) defined the whole function on any other vector. </p>
+<p> Therefore, to encode the whole information of the function, we only need \(T((1,0))\) and \(T((0,1)) \). Because the function gives as a result vectors, let's say that \(T((1,0)) = (a,b) \;\; , \;\; T((0,1)) = (c,d) \) where \( (a,b) , (c,d)\) are vectors in \(R^2\)</p>
+<p> Then using the previous result, we can conclude that the result of \(T\) applied in a vector \((h,k)\) is given by:</p>
+<center>
+  \( T((h,k)) = h(a,b) + k(c,d) \)
+</center>
+
+
+<p> Then, the whole information of the function \(T\) is encoded in these 4 numbers \(a,b,c,d\). If we know these 4 numbers, we know everything there is to know about the function \(T\).</p>
+<p> If these four numbers encode the whole information about the function \(T\), we might as well find a way of organizing them, why not put them in a matrix like this:</p>
+<center>
+  \( \begin{pmatrix} 
+  a & c \\
+  b & d
+  \end{pmatrix} \)
+</center>
+ <p> This way, if we have any linear function \(T : R^2 \rightarrow R^2\), we can completely represent what it does by only calculating \( T((1,0))\) and \( T((0,1))\). Then, we can put these vector results as columns in a matrix. This matrix will then represent everything we need to know about the function. </p>
+
+<p> So, in many cases, when given a 2x2 matrix, it may be used to represent a linear transformation \( T: R^2 \rightarrow R^2\). Where the first column is the result of applying the function to \((1,0)\) and the second is the result of applying it to \( (0,1)\).</p>
+
+<p> For example, you can use the following program to see what a linear transformation depending on the matrix representation.</p>
+<p> Start by selecting any values you want for the numbers \(a,b,c,d\) in the matrix. Remember that \((a,b)\) will be the result of applying the function to the vector \((1,0)\) and it is painted red, while the vector \((c,d)\) will be the result of applying the function to \((0,1)\) and it is painted gree.</p>
+<p> Once you selected these 4 numbers (or you can see it as selecting 2 vectors), you have completely defined a linear function. To see in in action, just move forward the right slider till the end.</p>
+<p> Once you finish moving this slider, you can see how the function acts on the whole space. You can see dinamically how the function moves all the lines parallel to the axis in the cartesian plane.</p>
+
+
+
+<center>
+<iframe src="mat2.html" width="805" height="805">
+</iframe>
+</center>
+<p> Remember that the result of applying the function is represented only by the final image after the rightmost slider is completely moved to the right. The slider is there to make it easy to dinamically see how the function works and how it transforms vectors. </p>
+
+Notice a couple of things: 
+<ul>
+  <li> Applying the function takes the \((1,0)\) vector to \((a,b)\) and \((0,1)\) to \((c,d)\). This is just the way we defined \((a,b)\) and \((c,d)\)</li>
+  <li> Also notice how these two vectors define the whole transformation. To see the image on any other vector, like \((1,1)\), just follow this point while you apply the transformation till the end. </li>
+  <li> You can see that linear transformations have a nice geometry. The fact that they are defined by only two vectors implies that in some sense, they preserve straight lines. Notice how the lines parallel to the axis remain straight and kind of "fall into place".</li>
+</ul>
+By varying the numbers \(a,b,c,d\) you can see how there are many different linear functions, and they include rotations, scaling, reflections, etc. All of that just encoded in 4 numbers. <br> 
+
+
+<h2> Generalizations</h2>
+<ul>
+  <li> These ideas can be generalized to more abstract vector spaces. For any vector space and a function defined on it, you can know the  whole transformation by only calculating it in a small set of vectors and use these to encode the function in a matix. The corresponding matrix will have a different size depending on the  dimensions of the vector spaces in which the transformation is defined. </li>
+  <li> The set of vectors in which we need to calculate the transformation in order to completely define it needs to be what we call a basis of that space. In the \(R^2\) case, we used \((1,0), (0,1)\) as the basis.</li>
+</ul>
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

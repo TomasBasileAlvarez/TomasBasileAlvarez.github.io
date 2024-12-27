@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sequences and Convergence</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Sequences and Convergence</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+<h2> Sequence</h2>
+<p> In simple terms, a sequence is a list of mathematical objects, such as \( \{ a_1 , a_2, a_3, \cdots \}\) where \( a_n \) could theoretically be any type of objects (but we will focus only on real numbers). That is, a sequence is just an infinite list of real numbers (each element indexed by a natural number ). </p>
+
+<h2> Limit</h2>
+<p> The most important concept of sequences and one of the most important of all calculus is that of the limit of a sequence. Putting it simply , the limit of a sequence is to what the limit 'tends to' after a large amount of terms. We will later see a rigorous definition of this, but for now, let's focus on what we can intuitively see.</p>
+<p> For example, we may notice that some sequences have a clear limit, like for example:</p>
+
+<center>
+  \( \{1, 1/2, 1/3, 1/4, 1/5, \cdots, \} \)
+</center>
+<p> This sequence is defined as \( a_n = 1/n \) (not all sequences need to have a functional definition as this one). And we can see clearly that the sequence tends to 0, so the limit seems to be 0. </p>
+
+<p> We now consider another sequence:</p>
+<center>
+  \( \{ 1,-1,1,-1,1, \cdots \} \)
+</center>
+<p> This sequence is oscillating and it is defined by \( a_n = (-1)^n \). Because it is this way, it doesn't seem to tend to any particular value, it just goes back and forth. </p>
+
+<p> Seeing these examples, we can guess there are two types of sequences, those with a defined limit, called <b> convergent</b> and those with no limit, called <b>divergent.</b> </p>
+
+<h3> Definition of Limit</h3>
+Now we are ready to explore the true definition of limit. We will try to construct it slowly. Suppose we have a sequence \( \{a_1, a_2, a_3 , \cdots \}\) and we want to define what we mean by saying that 'the sequence converges to the number L' (where L is a real number).  <br> <br>
+
+A first definition could be:
+
+<ul>
+  <li> The sequences converges to L if it gets closer and closer to L</li>
+</ul>
+This is not a great definition, for starters, in the first sequence \( \{1 , 1/2 , 1/3 , 1/4 , \cdots \} \), the numbers do get closer and closer to 0, but if you think about it, they are also getting closer and closer to -1 or to -2 or any other negative number for that matter. Why do we say the sequence tends to 0 but not to -1 if it is getting close to both of these numbers? <br><br>
+<p> The thing is that the sequence is getting  <b> arbitrarily</b> close to 0. That is, the sequence eventually gets as close to 0 as we want, if we want the sequence to get to a distance of less than 0.000001 to 0, we can do that, eventually the terms of the sequence  get that close to 0. </p>
+<p> So we set a new definition:</p>
+<ul>
+  <li> The sequence converges to L if it eventually gets arbitrarily close to L</li>
+</ul>
+<p> With this new definition, the limit of a sequence is now better defined than before, no one can say that the sequence \( \{1 , 1/2 , 1/3 , 1/4 , \cdots \} \) converges to -1, because even though it gets close to this number, it will never get arbitrarily close to it. For example, it will never get to a distance of less than 0.5 from -1, since the sequence never reaches negative numbers. </p>
+
+<p> We want to write this mathematically and clearly. For that, we need a mathematical expression for what it means for a sequence to be arbitrarily close to L.</p>
+
+<p> First of all, how do we define the distance between two numbers? Well, that's easy, the distance between numbers \(c\) and \( d\) for example would be \(|c-d|\) because this is the positive separation between these numbers.</p>
+
+<p> So, when we say that a sequence gets arbitrarily close to L, we mean that the distance between elements of the sequence and the number L can be made arbitrarily small. That is, \( |a_n - L | \) can be made as small as we want as we advance through the sequence.  </p>
+<p> To write this better, we can say that the sequence gets arbitrarily close to L if eventually we can make sure that \( |a_n - L| < \epsilon \) for any positive number \( \epsilon\). This means that even if we choose a very very small \( \epsilon \), the sequence will still eventually get very close to \( L \)  so that the distance with \(L \) will be less than \( \epsilon \). </p>
+
+<p> Now, we are ready to state the true definition of the limit of a sequence and explain it a little bit further later. We say that a sequence \( \{ a_1, a_2, a_3 , \cdots \} \) converges to \(L \) if:</p>  <br>
+<ul>
+  <li> For every number \( \epsilon >0\)  there exists a number \(N >0\) such that if \(n>N\) then \(|a_n - L|< \epsilon\)  </li>
+</ul>
+<br>
+
+ <p> Let's try to understand this definition with what we said earlier. The definition says that for all \(\epsilon\), no matter how small, we can eventually get to a distance of less than  \( \epsilon\) from the number \(L\). </p>
+ <p> The part of the definition involving the number \( N\) is what encodes what we mean by a 'eventually'. The definition just says that for any element of the sequence starting from the \(Nth\) term on, the distance of this element to \(L\) is smaller than \(\epsilon\). That is, the definition says that we can always find a term \(a_{N}\) such that from that term on, every further term of the sequence is a distance less than \(\epsilon\) from \(L\)  </p>
+<p> And that's it, this is what encodes what we mean by saying that the terms in the sequence eventually get arbitrarily close to \(L\).</p> 
+<br><br>
+
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

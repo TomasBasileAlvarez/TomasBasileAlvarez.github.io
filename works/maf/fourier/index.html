@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Fourier Series</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../index.html">Home</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Fourier Series</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+<hr>
+<h2> What is a Fourier Series?</h2>
+Putting it simple, a Fourier Series is a way of writing a function as a sum of sines and cosines. <br>
+For example, suppose we have a function \( f \) defined over an interval \( [-L,L] \). The fourier series of this function is a way of writting \(f(x)\) on this interval as a sum of cosines and sines of different frequencies. That is, we can write \(f(x)\) as:
+<center>
+  \(f(x) = \dfrac{a_0}{2} + \sum\limits_{n=1}^{\infty} \left[a_n \cos \left( \dfrac{n\pi x}{l}\right) + b_n \sin \left( \dfrac{n\pi x}{l} \right) \right] \)
+</center>
+Where \(a_n\) and \(b_n\) are real numbers, whose values depend on the function \(f(x)\). <br>
+
+In some sense, this means that the set of functions \({ \cos \left( \dfrac{\pi x}{l}\right),\sin \left( \dfrac{\pi x}{l}\right),\cos \left( \dfrac{2\pi x}{l}\right),\sin \left( \dfrac{2\pi x}{l}\right),\cos \left( \dfrac{3\pi x}{l}\right),\sin \left( \dfrac{3\pi x}{l}\right), \cdots  \}\) is like a basis for all functions defined on the interval \([-L,L]\). Because any function 
+
+
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

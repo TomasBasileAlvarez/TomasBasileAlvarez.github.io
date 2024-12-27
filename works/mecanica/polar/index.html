@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Polar Coordinates</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Polar Coordinates</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+
+<h2> Acceleration in Polar Coordinates</h2>
+
+<p> We will study motion in a plane expressed in polar coordinates, which is useful for problems with circular symmetry</p>
+
+<p> For that, we first need to find the expression for acceleration in these coordinates, so that we may use Newton's second equation in these coordinates</p>
+
+<p> To find the expression for acceleration in these coordinates, we begin with the expression of acceleration in rectangular coordinates:</p>
+
+<center>
+  \( \vec{a} = \ddot{x} \widehat{x} + \ddot{y} \widehat{y} \)
+</center>
+Now, we need to write this expression in polar coordiantes, for that, we use the definition of these coordinates, which defines them as:
+<center>
+  \( x = r \cos \theta \;\;\;\;\;\;\;\;\; \) <br>
+  \( y = r \sin \theta \;\;\;\;\;\;\; \) (1)
+</center>
+Also, the unit vector \( \widehat{r} \) should point directly radially, so it is easy to see that \(\widehat{r}= \cos(\theta) \widehat{x} + \sin (\theta) \widehat{y} \). On the other hand, the vector \(\widehat{\theta} \) should be perpendicular to this vector, so \( \widehat{\theta} = -\sin(\theta) \widehat{x} + \cos (\theta) \widehat{y} \). Using these two expressions, we can find the unit vectors \( \widehat{x} , \widehat{y} \) in terms of \( \widehat{r} , \widehat{\theta}  \). <br> 
+We find that  \(\widehat{y} = \sin \theta \widehat{r} + \cos \theta \widehat{\theta} \) and \( \widehat{x} =  \cos \theta \widehat{r} + \sin \theta \widehat{\theta} \) <br>
+
+Once we find these expressions, we can also use expression (1) to find the value of \( \vec{a} \) in polar coordinates (just substitute everything into the equation for \(\vec{a}\), take the two time derivatives and simplify. <br>
+
+As a final result, we get that the acceleration in polar coordinates is: 
+<br>
+<center>
+  \( \vec{a} = (\ddot{r} - r \dot{\theta}^2 ) \widehat{r}  + (r \ddot{\theta} + 2 \dot{r} \dot{\theta} ) \widehat{\theta}   \)   
+</center> 
+<br>
+We see that the acceleration is divided into a radial part and an angular part, with a total of 4 terms. <br>
+So, if we have something moving in a plane and we want to express its acceleration in polar coordinates, if we know \(r, \theta\) and their derivatives as functions of time, we can calculate the expression for acceleration using the formula above. <br>
+
+<h2> Circular Motion</h2>
+As a first example, consider something moving in a circle of constant radius \(R\). Then, we will have that \(r(t)  = R\) for all \(t\), which implies that \(\dot{r} = \ddot{r} = 0 \).<br>
+Then, the expression for acceleration for a particle constrained to move in a circle is given by:
+<center>
+  \( \vec{a}_{circ} = -R \dot{\theta}  \;\widehat{r} + R \ddot{\theta} \;\widehat{ \theta} \)
+</center>
+The acceleration in the angular direction only accounts to increasing or decreasing the frequency of the motion. For a moment, let's suppose that the frequency is constant, so \(\ddot{\theta} = 0\). Then we can concentrate only on the radial term <br>
+
+<p> The radial term of the acceleration \(\vec{a}_{circ} = -R \dot{\theta} \widehat{r} \) tells us something very interesting. A body that moves in a circle of fixed radius \(R\) has a radial acceleration given by \(-R\dot{\theta} \). Notice that this acceleration doesn't go into changing the speed of the object, this acceleration is what's needed to change the direction of the velocity so that the object keeps on turning and traces a circle.  This acceleration is called <b> Centripetal acceleration.</b>  </p>
+
+<p> Then, according to Newton's second law,  a body in this condition must be under a force given by \(\vec{F} = m \vec{a} = -m R \dot{\theta} \widehat{r}\)</p>
+<p> This is a very important concept. In order to have an object moving in a circular path, we need to provide a centripetal force, which is given by \( \vec{F} = -m R \dot{\theta} \widehat{r} \)</p> 
+<p> Therefore, anytime you have a problem involving an object constrained to move in a circle, like a ball on a string being swung or a roller coaster making a loop, you can be sure that there's a radial force responsible for the centripetal acceleration (like the tension of the string for the first example).</p>
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

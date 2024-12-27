@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Matrix Multiplication</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Matrix Multiplication</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+If we have two matrices defined by:
+<center>
+  \( \begin{pmatrix}
+    a & c \\
+    b & d
+    \end{pmatrix}
+   \;\;\;\; ,\;\;\;\;  \begin{pmatrix}
+    e & g \\
+    f & h
+    \end{pmatrix}
+  \)
+</center>
+Then, the product of these two matrices is defined as:
+<center>
+  \( \begin{pmatrix}
+    a & c \\
+    b & d
+    \end{pmatrix}
+  \begin{pmatrix}
+    e & g \\
+    f & h
+    \end{pmatrix} = \begin{pmatrix}
+    ae + cf & ag + ch \\
+    be+df & bg + dh
+    \end{pmatrix}
+  \)
+</center>
+This seems like a weird way to define matrix product, but why do we do it like this? <br>
+
+<p> To see why, we need to remember the interpretation of a matrix which I explained on the "matrix" section. According to this interpretation, the matrix \( \begin{pmatrix}  a & c \\ b & d\end{pmatrix} \) encodes all the information about a linear transformation \( T: R^2 \rightarrow R^2\). As we saw, this matrix represent a linear transformation that sends the vector \((1,0)\) to \((a,b)\) and the vector \((0,1)\) to \((c,d)\), the function applied to any other number can be obtained using linearity. </p>
+
+<p> Now, suppose we have two linear functions \(T: R^2 \rightarrow R^2 \) and \( S : R^2 \rightarrow R^2 \) and say they are represented by the matrices   \( \begin{pmatrix}  a & c \\ b & d\end{pmatrix} \) and  \( \begin{pmatrix}  e & g \\ f & h\end{pmatrix} \) respectively. </p>
+<p> Now consider the composition of these two functions, that is, the function \(T \circ S : R^2 \rightarrow R^2 \). That means applying first the function \(S\) and then applying the function \(T\) to the resulting vector. </p>
+<p> What would be the matrix that represents this composition?</p>
+
+<p> To construct it, we need to apply \( T \circ S\) to \((1,0)\) and to \( (0,1)\) and write those results as colums of our matrix: </p>
+<center>
+  \(T \circ S ((1,0)) = T(S((1,0))) = T((e,f)) = e T((1,0)) + f T((0,1)) =\) <br>
+  \( = e (a,b) + f(c,d) = (ae + cf, be + df) \) <br> <br>
+   \(T \circ S ((0,1)) = T(S((0,1))) = T((g,h)) = g T((1,0)) + h T((0,1)) =\) <br>
+  \( = g (a,b) + h (c,d) = (ag + ch, bg + dh) \)
+</center>
+<p> Then, as we saw earlier, the matrix representation of a function  \( T \circ S\) is obtained by applying  it to the basis vectors \((1,0)\) and \((0,1)\) , and write these results as columns. Therefore, the matrix representation of \( T \circ S\) is:</p>
+<center>
+  \(\begin{pmatrix}
+    ae + cf & ag + ch \\
+    be+df & bg + dh
+    \end{pmatrix}
+  \)
+</center>
+<br>
+<p> And that is why we define matrix product as we do. We do it so that applying the product of two matrices gives out the matrix that represents the composition of the fucntions represented by the original matrices. That way, whenever we want to see how a composition of functions looks like, we only need to multiply their matrices with this definition</p> 
+
+<br>
+<h4> Notes</h4>
+<ul>
+  <li> This explanation can be generalized to matrices of other sizes. The only condition is that the amount of columns in the  matrix \( S\) is equal to the number of rows in the matrix \( T\). Which simply means that the function \(S\) takes the vectors to a space of the same dimension as the domain of \( T\), so it makes sense to compose them. </li>
+</ul>
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Escape Velocity</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Escape Velocity</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+
+Suppose you are on the surface of Earth (well I suppose you truly are there) and you throw something vertically upwards with an initial speed \(v\). You will notice that due to the Earth's gravity, the object will eventually come back to the surface. <br> <br>
+
+However, there most be some initial high speed \(v_{s}\) such that when you throw something  at least this fast, it will never come back, it will go out infinitely far until it doesn't feel Earth's gravitational pull any more. This speed is called <b> Escape velocity</b> <br> <br>
+
+Whenever we want to send something like a satellite very far away from the Earth, we need to consider this speed and give the satellite an initial speed higher than it. <br><br>
+
+<h2> Calculating the Escape Velocity</h2>
+
+Let's calculate this minimum velocity needed. To do it, we will use conservation of energy and ignore any effects caused by friction or any type of loss fo energy. Let's say we throw an object of mass \( m \) with exactly the escape velocity so that it barely escapes Earth's gravitational field. <Br> Consider that when we just throw the object, it has a speed of \(v_{s}\) and it is a distance \(R\) from the center of the Earth (with \(R\) being Earth's radius). Then, using the expression for gravitational potential energy, its initial energy is: <br>
+<center>
+  \( E_1 = \dfrac{1}{2} m v_s^2 - \dfrac{GMm}{R} \)
+</center>
+Where \(M\) is the mass of the Earth. <br>
+
+<p> Given that the object has just the right initial speed in order to scape Earth's field, it will continue moving away until it is infinitely far. Since it has just barely the speed necessary, it won't have any remaining kinetic energy once it is infinitely far. Therefore, the final kinetic energy is 0. But as it is very very far away, its gravitational potential energy is also 0. Which means that the total energy at the end is equal to:</p>
+<center>
+  \(E_2 = 0\)
+</center>
+Since energy is conserved, we can equate these two expressions:
+<center>
+  \( \dfrac{1}{2} m v_s^2 - \dfrac{GMm}{R} = 0\)
+  <br> 
+  \( \Rightarrow \;\; v_s = \sqrt{\dfrac{2GM}{R}} \)
+</center>
+And that is the escape velocity for a planet of mass M and radius S. We see some intuitive results from this. First of all, more massive planets have a higher scape velocity. And planets with a bigger radius but same mass have a lower escape velocity, since we are already farther from the center. Notice that the escape velocity doesn't depend on \(m\).<br><Br>
+
+<p> In the following animation you can try varying the initial speed using the slider and see what happens when you throw an object at that speed by pressing start. The value \(y\) is the height reached by the object, measured from the center of the planet, which has a radius of \(0.2\).</p>
+<p> As discussed, there will be some minimum speed after which the object will always escape the gravitational field.</p>
+
+<p><br></p>
+<center>
+<iframe src="principal.html" width="805" height="805">
+</iframe>
+</center>
+<p><br></p>
+<p> In this case, for writting the code of the animation, I made \(G = 1\), \(M=1\) , \(R = 0.2\). Therefore, the escape velocity should be \(v_s = \sqrt{2/0.15} =  3.16 \). Try different speeds and notice that when the speed is higher than 3.16, the object seems to go out to infinity, but it returns to the Earth for lower speeds (though it takes a long time for speeds close to 3.16).</p>
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Dual Space</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Dual Space</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+<h2> Definition </h2>
+
+We start by considering any vector space \(V\) over a field \(F\) (which could be \(R\) or \(C\)). Then the dual space, denoted by \(V^*\) is defined as the set of all linear maps \(\phi : V \rightarrow F\), that is:
+<center>
+  \( V^* = \{\phi \; | \; \phi: V \rightarrow F \; \text{is linear} \}\)
+</center>
+This dual space is itself a vector space over the same field \( F\) when we define it an adittion and scalar multiplication:
+<ul>
+  <li> \( (\phi + \psi)(x) = \phi(x) + \psi(x) \)</li>
+  <li> \((a \phi) (x) = a (\phi(x))\)</li>
+</ul>
+For \(\phi , \psi \in V^* \; ,\; x \in V \; ,\; a \in F \).
+
+<h4> Basis</h4>
+
+If we are in a finite dimensional vector space, such that the basis of \(V\) is given by \(\{e_1 , e_2 , \cdots , e_n\} \), we can construct a basis for \(V^*\) quite simply. <br>
+<p> To do it, we define a set \( \{ e^1 , \cdots , e^n \} \)of elements of \(V^*\) defined by:</p>
+<center>
+ \( e^i(e_j) = \delta_{j}^i\)
+</center>
+That is, the element \(e^i\) of \(V^*\) is a functional defined in such a way that when we apply it to the ith element of the basis of \(V\) the result is 1, and when we apply it to any other element of the basis of \(V\), the result is 0. <br>
+<p> It is easy to convince oneself  and prove that this is really a basis for \(V^*\). </p>
+<p> So \(V\) and \(V^*\) have the same dimension and given a basis of \(V\), we can find a basis of \(V^*\). </p>
+
+<h2> Bi Dual Space</h2>
+<p> Now we will consider the space \( (V^*)^*\) which is the dual space of \(V^*\). According to our definition of dual, this space is defined as: </p>
+<center>
+  \( (V^*)^* = \{ \alpha \; | \; \alpha: V^* \rightarrow F \;\; \text{is linear} \} \)
+</center>
+That is, \( (V^*)^* \) is the set of all linear functions that take an element of \(V^*\) and output an element of the field \(F\). <br>
+<p> It can be a little bit difficult to wrap one's head around this space, but there is an amazing correspondance between \( (V^*)^* \) and \(V\) that makes it way easier. </p>
+
+<p> Consider any vector \(x\) living in \(V\), then, we can find a vector \(\bar{x}\) in \((V^*)^* \) defined as:</p>
+<center>
+  \( \bar{x}(\phi) := \phi(x) \)
+</center>
+<p> For any \( \phi \in V^* \). We define the action of \(\bar{x}\) on \(\phi \in V^*\) as being given by \(\phi(x)\), which is an element of \(F\). It is easy to see that this \( \bar{x}\) is truly an element of \((V^*)^*\) because it is also linear: \( \widehat{x} (\phi + \psi) := (\phi + \psi)(x) = \phi(x) + \psi(x) = \bar{x}(\phi) + \bar{x}(\psi) \). </p>
+<p> Therefore, for any element of \(V\) we can find a corresponding element of \((V^*)^*\). Furthermore, because dual spaces have the same dimension as the original spaces, \((V^*)^*\) has the same dimension as \(V\). So we can conclude that this correspondance is biyective. This is an amazing fact, that there exists a very natural correspondance between \(V\) and \((V^*)^*\) that doesn't depend on basis representation or anything else.</p>
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

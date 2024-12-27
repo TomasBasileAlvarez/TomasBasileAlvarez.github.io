@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Montecarlo Method</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+  <div id="headerwrap2">
+      <div class="container">
+      <div class="row">
+        <p class="hip"><a href="../../../works.html">Back</a> 
+        <div class="col-lg-6 col-lg-offset-3">
+          <h1>Montecarlo Method</h1>
+          <h5>Tomás Basile</h5>
+        </div>
+      </div><! --/row -->
+      </div> <!-- /container -->
+  </div><! --/headerwrap -->
+
+
+
+
+
+
+<!-- <h1>Aguja de Buffon</h1> -->
+<hr>
+
+<h2>Introduction</h2>
+<p> In general, a Montecarlo Method refers to a type of computational algorithm that relies on repeated random sampling to obtain a numerical result. </p>
+<p> That is, they are algorithms that use randomness to solve problems. They are often used in physical and mathematical problems that are difficult to solve using other approaches </p>
+
+<br>
+
+<p> The application that we will focus on here is to use the Montecarlo method to calculate areas of complicated figures.</p>
+<p> For example, suppose we have the following figure ploted on the XY plane and we want to calculate its area.</p>
+
+
+<center>
+<img class = "smallimg" src="fig1.PNG" alt="figure in XY plane">
+<figcaption>Strange figure in XY plan</figcaption>
+</center>
+
+
+<p> How would we procede to calculate the area inside this figure? In this case, we don't even know the underlying formula defining the shape, so we can not use integration methods and there seems to not be any simple way to calculate the area</p>
+<p> This is where the Montecarlo method comes in. The idea behind the method is to use randomness to solve this problem.</p>
+<p> The reasoning is the following: </p>
+<p> First we encapsulate the figure in a square or rectangle of known area (in this case a unit square, so its area is 1). Then, we notice that if we were to select a random point inside the square, the point might end up inside the figure or outside of it.</p>
+<p> For example, here we have thrown a point q randomly inside the square and we see that in this case, it landed inside the figure</p>
+
+<center>
+<img class = "smallimg" src="fig2.PNG" alt="figure in XY plane">
+<figcaption>Point q randomly thrown inside the square</figcaption>
+</center>
+
+<p> We ask ourselves what is the probability of choosing a random point inside the square and have it land inside the figure.</p>
+<p> After some thinking, we can conclude that the probability will be proportional to the area inside the figure (the number we are trying to calculate). Actually, it is easy to get convinced that if the area of the square is A and the area inside the figure is a, then the probability of a random point landing inside the figure is: </p>
+<center>
+  P = Probability of random point landing inside figure:   a/A
+</center>
+
+<p> Therefore, if we knew the probability P  of a random point landing inside the figure, we could calculate the area a easily as   a = PA. </p>
+
+<p> And randomness comes in to calculate the probability P of a point landing inside the figure. If we throw a large number of points N inside the rectangle, we know that around PN of then will lie inside the figure. We can easily count this number of points that fall inside the figure and call it n. Therefore, the unkown probability P would be approximately P = n/N. <br>
+The more points we throw, the better our approximation becomes. </p>
+
+<p> This is how we can use randomness to aproximate an unkown probability and then use this to calculate the area of the figure.</p>
+
+
+
+
+<hr>
+<h2> Example </h2>
+
+<p> We proceed with a very simple example. </p>
+<p> Suppose we want to calculate the area of a circle of radius 1 (which of course should be equal to Pi) and we want to do it using Montecarlo (though it is not necessary for this simple problem). </p>
+<p> First of all, we notice that we could calculate only the area of a quarter of the circle to make it easier and then multiply it by four. </p>
+<p> Therefore, we draw a quarter circle of radius 1 and encapsulate it inside a square, in this case, a square of sides 1 (and therefore area equal to 1). </p>
+
+<center>
+<img class = "smallimg" src="fig3.PNG" alt="Quarter circle">
+<figcaption>Quarter circle inside a square of area 1</figcaption>
+</center>
+
+<p> Suppose the unknwon area of the quarter circle is \( a \) and the area of the square containing it is A = 1. Then, the probability of choosing a random point in the square and have it land inside the quarter circle is equal to P = a/A = a.</p>
+<p> So we only need to find this probability in order to determine the area of the quarter circle. To find the probability, we throw a large number of points randomly in the square and see the proportion of them that fall inside the quarter circle.</p>
+
+<p> You can use the following interactive plot to simulate choosing random points inside the square.</p>
+<p> Use the bottoms to add selected amount of points inside the figure. Then, the program automatically counts the amount of points N used so far and the amount n of them that fall inside the quarter circle. The probability of a point falling inside the quarter circle would be P = n/N.</p>
+<p> In this case, because the area of the encapsulating square is 1, the area inside the quarter circle would be just equal to P. The program multiplies this calculated probability P by four to approximate the area of the whole circle (which should be equal to Pi) and then it calculates the error percentage of this approximation with respect to the true value of Pi. </p>
+
+
+<p><br></p> 
+<center>
+<iframe src="principalindex.html" width="535" height="705">
+</iframe>
+</center>
+
+<p> You can see that the approximated area for the whole circle approximates Pi and gets closer the more points you throw.</p>
+
+<p> This way, we can approximate any area using Randomness!! And in particular, in this case we even used it to calculate Pi</p>
+
+
+<hr>
+
+<h2> General Example</h2>
+
+<p> The circle example was very nice and all but that was a problem that is easy to solve using calculus and the equation of a circle. </p>
+
+<p> The true power of Montecarlo method lies in being able to calculate areas of figures with much more complicated geometries. After all, if you  analyze the method, you might notice that we never needed the equation of the circle or anything related to that. The only thing we needed was a way of determining if a random point landed inside the quarter circle or not (to see if we add it to the counter n or not). In this case, determining this is easy using the equation of the circle, but actually, even this is not necessary</p>
+
+<p> In general, we need some way to determine if a random point is inside a figure.</p>
+<p> For this, there is an easy algorithm to determine if a point is inside a figure or not, without needing to know the specific equation that describes the figure. The algorithm is called Ray Casting Algorithm. </p>
+
+
+
+
+<p> Suppose we once again have the strange figure shown earlier and we want to determine if point q lies inside the figure or not</p>
+
+<center>
+<img class = "smallimg" src="fig2.PNG" alt="figure in XY plane">
+<figcaption>Figure with a point q</figcaption>
+</center>
+
+<p> To determine if the point q lies inside or outside the figure, the Ray Casting Algorithm consists on drawing any straight line out to infinity and counting the number of times this line intersects the boundary. </p>
+<p> According to the algorithm (and this is something you can convince yourself to be true visually), if the line touches the boundary an odd number of times, it means that point q is inside the figure. </p>
+<p> Here we draw a couple of lines going from q to infinity and count the number of intersections, we see that any line intersects the boundary an odd number of times, from which we conclude that point q is inside the figure. The image also shows that we don't need to select a particular line, but any of them coming off from q will have an odd number of intersections</p>
+
+<center>
+<img class = "smallimg" src="fig4.PNG" alt="figure in XY plane">
+<figcaption>Lines to check if q is inside the figure</figcaption>
+</center>
+
+
+<p> On the other hand, if the point we picked were outside the figure,  a line from this point to infinity would intersect the boundary an even number of times. </p>
+<p> This way, we can easily detect if a random point is inside or outside the figure.</p>
+
+<p> This way, we can write the complete algorithm to calculate the area of a figure using Montecarlo:</p>
+<ol>
+  <li> Encapsulate the figure in a rectangle of known area A</li>
+  <li> Select N random points inside the rectangle</li>
+  <li> Count the number n of points that fall inside the figure (to see if a point falls inside the figure, you may need the Ray Casting algorithm).</li>
+  <li> Therefore, approximate the probability of a point falling inside the figure, using P=n/N. </li>
+  <li> This probability is equal to P = a/A with a the area of the figure, therefore, we can find a using a = PA = nA/N</li>
+</ol>
+This way, we managed to calculate the area of any figure using only randomness!
+
+
+
+
+  <div id="footerwrap">
+    <div class="container">
+      <div class="row centered">
+        <div class="col-lg-4">
+          <p><b>Ciudad de México</b></p>
+        </div>
+    
+        <div class="col-lg-4">
+          <p>tbasilealvarez@ciencias.unam.mx</p>
+        </div>
+      </div>
+    </div>
+  </div><! --/footerwrap -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
