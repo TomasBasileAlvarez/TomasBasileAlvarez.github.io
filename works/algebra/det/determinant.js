@@ -72,13 +72,13 @@ function draw() {
 
   fill(250);
   strokeWeight(0.5);
-  text('Green Vector (a,b):',100,670);
+  text('Vector Verde (a,b):',100,670);
   text('a:',190,710);
   text('b:',190,760);
   text(a,206,710);
   text(b,206,760);
 
-  text('Red Vector (c,d):',500,670);
+  text('Vector Rojo (c,d):',500,670);
   text('c:',590,710);
   text('d:',590,760);
   text(c,606,710);
@@ -86,7 +86,7 @@ function draw() {
 
 
   var det = round(-a*d+b*c,3)
-  text('Determinant:',(a+c)/2*width/4+width/2,-(b+d)/2*height/4+height/2);
+  text('Determinante:',(a+c)/2*width/4+width/2,-(b+d)/2*height/4+height/2);
   text(det,(a+c)/2*width/4+width/2+80,-(b+d)/2*height/4+height/2)
 
 

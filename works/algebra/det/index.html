@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Determinants</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title>Determinantes</title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,84 +27,132 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Determinants</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Determinantes</h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
 
 
 
+En lo que sigue explicamos un poco sobre qué son los determinantes y damos algo de intuición geométrica. Esta explicación es bastante informal y no rigurosa, pero es buena para entender qué es el determinante de forma geométrica e intuitiva. <br>
 
-<!-- <h1>Aguja de Buffon</h1> -->
 <hr>
-<h2> Determinants in 2D</h2>
+<h2> Determinantes en 2D</h2>
 
-We all now the formula for a determinant of a 2x2 matrix, it goes something like this:
+
+Todos conocemos la fórmula para el determinante de una matriz 2x2, que se expresa de la siguiente manera:
 <center>
   \( \det \begin{pmatrix}
   a & b \\
   c & d
-  \end{pmatrix} = ad - bc \)
+  \end{pmatrix} = ad - bc \).
 </center>
 <br>
 <p>
-But what is this number and why do we calculate it like this? </p> 
+Pero, ¿qué representa este número y por qué lo calculamos de esta forma?</p>
 <p>
-We usually think of determinants as some kind of function that takes in a 2x2 matrix and outputs a real number. But to undersand the meaning better, we will think of it as a function that takes two vectors of dimension 2 (in this case, the vectores \( (a,b) \) and \( (c,d) \), that is, the columns of the matrix ) and outputs a real number.  </p> 
-<p> But given the two vectors, what does the determinant mean? </p> 
-<p> That's simple, the determinant calculates the area enclosed by the parallelogram formed by the two vectors.  Before we go any farther, use the following interactive program.  </p>
-<p> In the program you can control the coordinates of the first vector \((a,b) \) and of the second one \((c,d\). Then, you can see the parallelogram I mentioned, which is colored blue. The number we call determinant which comes from these two vectors is the area of the parallelogram. </p>
+Por lo general, pensamos en los determinantes (en 2D) como una función que toma una matriz 2x2 y devuelve un número real. Sin embargo, para comprender mejor su significado, podemos verlo como una función que toma dos vectores de dimensión 2 (en este caso, los vectores \( (a,b) \) y \( (c,d) \), es decir, las columnas de la matriz) y devuelve un número real.
+</p>
+<p>
+Pero, dado que tenemos dos vectores, ¿qué representa el determinante?</p>
+<p>
+Es sencillo: el determinante calcula el área del paralelogramo formado por los dos vectores. Antes de continuar, utiliza el siguiente programa interactivo.
+</p>
+<p>
+En el programa, puedes modificar las coordenadas del primer vector \((a,b) \) y del segundo vector \((c,d)\). Luego, podrás ver el paralelogramo mencionado, que está coloreado de azul. El número que llamamos determinante proviene de estos dos vectores y representa el área del paralelogramo.
+</p>
 
 <center>
 <iframe src="determinant.html" width="805" height="805">
 </iframe>
 </center>
 
-<p> So, that's what the determinant does. It takes two 2d vectors (that is, 4 numbers) and calculates the area enclosed between them (you may see the result is sometimes negative, we will talk more about this later).  </p>
+<p>
+Así que eso es lo que hace el determinante. Toma dos vectores en 2D (ordenados como columnas de una matriz de 2x2) y calcula el área encerrada entre ellos (puedes notar que a veces el resultado es negativo; hablaremos más sobre esto más adelante).
+</p>
 
-<p> But why is the determinant calculated as \(ad-bc\)? For that, we refer to the following image:</p>
+<p>
+Pero, ¿por qué el determinante se calcula como \(ad-bc\)? Para ello, nos referimos a la siguiente imagen:</p>
 
 <center>
-<img class = "smallimg" src="det.PNG" alt="Determinant">
-<figcaption>Determinant 2D </figcaption>
+<img class="smallimg" src="det.PNG" alt="Determinante">
+<figcaption>Determinante en 2D</figcaption>
 </center>
 
+<p>
+La figura blanca es el paralelogramo formado por los dos vectores. El punto azul tiene coordenadas \( (a,b)\) y el rojo \((c,d)\), mientras que el punto negro es la suma de ambos vectores, por lo que tiene coordenadas \((a+c,b+d)\).
+</p>
+<p>
+El área del rectángulo total es entonces \( (a+c)(b+d) \). Los triángulos y cuadrados grises y negros tienen sus áreas marcadas, y es fácil ver que son correctas. Luego, para obtener el área del paralelogramo, tomamos \( (a+c)(b+d) \) y restamos las áreas de las figuras grises y negras. El resultado es:
+</p>
 
-<p> The white figure is the parallelogram fored by the two vectors. The point blue dot has coordinates \( (a,b)\) and the red one \((c,d)\), while the black one is the sum of both vectros, so it has coordinates \((a+c,b+d)\). </p> 
-<p> The area of the total rectangle is therefore \( (a+c)(b+d) \). The gray and black triangles and squares have their areas marked and it is easy to see that they are correct. Then, to get the area of the parallelogram, we take \( (a+c)(b+d) \) and substract the areas of the gray and balck figures. The result is   \( (a+c)(b+d) - 2ad - cd-ab = ad-bc\)</p> 
+<p>
+  <center>
+\( (a+c)(b+d) - 2ad - cd - ab = ad-bc \)
+</center>
+</p>
 
-<p> So great, the expression \(ad-bc\) gives the area of the parallelogram, which explains the formula for the determinant. </p>
 
-<h2> Notes</h2>
+<p>
+Así que, en definitiva, la expresión \(ad-bc\) da el área del paralelogramo, lo que explica la fórmula del determinante.
+</p>
+
+<h2> Notas</h2>
 
 <ol>
-  <li> <b>Sign:</b> As you can see from the program, the determinant is sometimes negative. This is because the determinant is not exactly the area of the parallelogram, we put a minus sign depending on the orientation of the vectors. If \( (a,b)\) is in the clockwise direction with respect to the \( (c,d) \), we put a minus sign to the result, otherwise, we leave the positive result. <br>
-  This way, the determinant not only gives the area of the parallelogram but also the orientation.  </li>
-  <li> <b> Higher dimensions:</b> In three dimensions, we take three 3d vectors as input to the determinant. The determinant is then the volume enclosed by these three vectors. For example, if we have three vectors \( r_1,  r_2 , r_3 \), we form the parallelepiped as shown and its volume will be the determinant of the matrix formed by putting those vectors as columns (with a positive or negative sign depending on orientation). </li>
+  <li> <b>Signo:</b> Como puedes ver en el programa, el determinante a veces es negativo. Esto se debe a que el determinante no representa exactamente el área del paralelogramo, sino que tiene un signo negativo dependiendo de la orientación de los vectores. Si \( (a,b)\) está en dirección horaria con respecto a \( (c,d) \), el resultado se vuelve negativo; de lo contrario, se mantiene positivo. <br>
+  De esta manera, el determinante no solo da el área del paralelogramo, sino también su orientación.  </li>
+  <li> <b>Dimensiones superiores:</b> En tres dimensiones, tomamos tres vectores 3D como entrada del determinante. En este caso, el determinante representa el volumen encerrado por estos tres vectores. Por ejemplo, si tenemos tres vectores \( r_1,  r_2 , r_3 \), formamos un paralelepípedo como se muestra, y su volumen será el determinante de la matriz formada por estos vectores como columnas (con signo positivo o negativo dependiendo de la orientación). </li>
 
   <center>
-  <img class = "smallimg" src="det2.PNG" alt="Determinant">
-  <figcaption>Determinant 3D </figcaption>
+  <img class="smallimg" src="det2.PNG" alt="Determinante">
+  <figcaption>Determinante en 3D</figcaption>
   </center>
-  It can be proven geometrically as before that the volume of this parallelepiped is given by the usual formula for 3d determinants, though now we have more terms and the expression is more complicated. <br> <br>
+  <p>Se puede demostrar geométricamente, como hicimos antes, que el volumen de este paralelepípedo está dado por la fórmula habitual de los determinantes en 3D, aunque ahora hay más términos y la expresión es más complicada.</p>
 
-  <li> The determinant can be very useful to see if a set of vectors spans the whole space. For example, in two dimensions, if the vectors are colinear, they don't span the whole plane, and the are enclosed by them will be zero. In 3D, if the vectors are coplanar, they don't span the whole space, and the enclosed volue is zero. So we can see that the determinant will be zero when the vectors are not spanning the whole space. <br><br> </li>
+  <li> El determinante puede ser muy útil para verificar si un conjunto de vectores genera todo el espacio. Por ejemplo, en dos dimensiones, si los vectores son colineales, no generan todo el plano, y el área encerrada por ellos será cero. En 3D, si los vectores son coplanares, no generan todo el espacio, y el volumen encerrado también será cero. Por lo tanto, el determinante será cero cuando los vectores no generan todo el espacio.</li>
 
-  <li> We can generalize to higher dimensions just as we did for 3D, though now we would talk about hypervolumes.</li>
+  <li> Podemos generalizar esto a dimensiones superiores, de manera similar a como lo hicimos para 3D, aunque en este caso hablaríamos de hipervolúmenes y aunque se puede calcular, ya no se puede visualizar tan fácil.</li>
 </ol>
 
-<p> All this is a quite an informal treatment of determinants, but useful for an intuitive feel of them. However, determinants can be defined in a more algebraic way without any geometrical interpretation.   In this definition, the determinant is a function that takes the entries of a square volume and outputs a real number. In general, it is defined to be the only multilinear and alternating function with these characteristics. This definition lets us define the determinant in a better and more general way, but take away the intuitive feel for it. </p>
-
+<p>
+Todo esto es un tratamiento bastante informal de los determinantes, pero útil para desarrollar una intuición sobre ellos. Sin embargo, los determinantes también pueden definirse de manera más algebraica, sin ninguna interpretación geométrica. En esta definición, el determinante es una función que toma los elementos de una matriz cuadrada y devuelve un número real. En general, se define como la única función multilineal y alternante con estas características. Esta definición nos permite describir el determinante de una manera más rigurosa y general, aunque no da una interpretación muy intuitiva.
+</p>
 
 
 
@@ -110,7 +168,7 @@ We usually think of determinants as some kind of function that takes in a 2x2 ma
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>

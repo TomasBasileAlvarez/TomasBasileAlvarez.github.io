@@ -13,7 +13,7 @@
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
 
-    <title>Álgebra Lineal 1 </title>
+    <title>Procesos Estocásticos y Difusivos</title>
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
@@ -37,12 +37,16 @@
 
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../works.html">My works and Animations</a></li>
-            <li  class="active"><a href="../courses.html">Course Notes/Explanations</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+			<ul class="nav navbar-nav navbar-right">
+			  <li ><a href="../index.html">Inicio</a></li>
+			  <li><a href="../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+			<li><a href="../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+			<li class="active"><a href="../cursos.html">Cursos Escolares y Notas</a></li>
+			<li><a href="../otros.html">Otros Cursos y Premios</a></li>
+			<li><a href="../docencia.html">Docencia</a></li>
+			<li><a href="../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+			</ul>
+		  </div><!--/.nav-collapse -->
       </div>
     </div>
 
@@ -51,7 +55,7 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3">
-					<h1>Álgebra lineal 1</h1>
+					<h1>Procesos Estocásticos y Difusivos</h1>
 				</div>
 			</div><! --/row -->
 	    </div> <!-- /container -->
@@ -60,130 +64,114 @@
 	
 	<br>
 	<br>
-
+	Las descripciones estocásticas proporcionan una poderosa herramienta para estudiar fenómenos ruidosos, que son comunes en física, química, biología y economía. En este curso se dan las bases analíticas y numéricas para analizar este tipo de procesos.
 	<h2> Temario</h2>
 
 	<ol>
-		<li><h4> Espacios Vectoriales</h4> 
+		<li><h4> Introducción al movimiento browniano</h4> 
 			<ul>
-				<li> Campos</li>
-				<li> Espacios vectoriales</li>
-				<li> Subespacios</li>
-				<li> Dependencia lineal</li>
-				<li> Bases y dimensiones</li>
-				<li> Sumas directas</li>
+				<li> Movimiento browniano y difusión</li>
+				<li> Ecuación de difusión</li>
+				<li> Caminata aleatoria</li>
+				<li> Teorema del límite central</li>
 			</ul>
 		</li>
-		<li><h4> Matrices</h4> 
+		<li><h4> Ecuación de Langevin</h4> 
 			<ul>
-				<li> El espacio de matrices</li>
-				<li> Producto de matrices. Matrices elementales. Matriz inversa</li>
-				<li> Sistemas de ecuaciones lineales</li>
+				<li> Introducción a la ecuación de Langevin</li>
+				<li> Correlación de velocidad y de posición, teorema de Wiener Khinchin</li>
+				<li> Ecuación de Langevin y difusión</li>
+				<li> Formas generalizadas de la ecuación de Langevin</li>
+				<li> Simulación numérica de ecuaciones de Langevin </li>
 			</ul>
 		</li>
-		<li><h4> Transformaciones Lineales</h4> 
+		<li><h4> Ecuación de Fokker Planck</h4> 
 			<ul>
-				<li> El espacio de transformaciones lineales</li>
-				<li> Núcleo e imagen</li>
-				<li> Composición</li>
-				<li> Transformación inversa</li>
-				<li> Isomorfismos</li>
+				<li> Derivación de la ecuación de Fokker Planck </li>
+				<li> Ecuación de Fokker Planck para varios sistemas</li>
+				<li> El teorema de fluctuación disipación</li>
 			</ul>
 		</li>
-		<li><h4> Transformaciones Lineales y Matrices</h4> 
+		<li><h4> Problemas de primer paso </h4> 
 			<ul>
-				<li> Transformación lineal asociada a una matriz</li>
-				<li> Matriz asociada a una transformación lineal</li>
-				<li> Isomorfismos entre el espacio de matrices y el espacio de transformaciones lineales</li>
-				<li> Cambio de base</li>
+				<li> Tiempo de primer paso para una partícula browniana libre</li>
+				<li> Escape de Kramer </li>
+				<li> Resumen </li>
 			</ul>
 		</li>
-		<li><h4> Producto Escalar</h4> 
+		<li><h4> Integrales estocásticas</h4> 
 			<ul>
-				<li> Producto escalar</li>
-				<li> Ortogonalidad</li>
-				<li> Normas y ángulos</li>
-				<li> Coeficientes de Fourier</li>
-				<li> Bases ortogonales</li>
-				<li> Complemento ortogonal</li>
-				<li> Espacio dual</li>
+				<li> Ecuación de Langevin y proceso de Wiener</li>
+				<li> Integral de Ito  y de Stratonovich</li>
+				<li> Relaciones útiles del cálculo estocástico </li>
+				<li> Integración numérica y simulación</li>
+				<li> Ito o Stratonovich?</li>
 			</ul>
 		</li>
-		<li><h4> Determinantes</h4> 
+		<li><h4> Movimiento browniano geométrico y el mercado financiero</h4> 
 			<ul>
-				<li> Definición y propiedades</li>
-				<li> Determinante del producto</li>
-				<li> Invertibilidad y determinantes</li>
+				<li> Movimiento browniano geométrico</li>
+				<li> Modelación del mercado financiero</li>
+				<li> Invertir o no?</li>
+				<li> Bet hedging</li>
 			</ul>
 		</li>
-		<li><h4> Transformaciones Simétricas</h4> 
+		<li><h4> Processos de Poisson y de un paso</h4> 
 			<ul>
-				<li> Valores y vectores propios</li>
-				<li> Polinomio característico</li>
-				<li> Teorema espectral</li>
-				<li> Ejemplos</li>
+				<li>Proceso de Poisson </li>
+				<li> Proceso de un paso</li>
+				<li> Ecuación maestra en general</li>
+				<li> Simulación numérica de un proceso de Poisson</li>
+				<li> Resumen</li>
+			</ul>
+		</li>
+		<li><h4> Procesos de Markov, ecuación maestra y expansión de Kramers Moyal</h4> 
+			<ul>
+				<li> Proceso de Markov</li>
+				<li> De la ecuación de Chapman Kolmogorov a la ecuación maestra</li>
+				<li> Expansión de Kramer Moyal</li>
+				<li> Resumen</li>
+			</ul>
+		</li>
+		<li><h4> Expansión en el tamaño del sistema</h4> 
+			<ul>
+				<li>Proceso de coalescencia </li>
+				<li> Expansión en el tamaño del sistema</li>
+				<li> Aproximación lineal del ruido</li>
+				<li> Resumen</li>
+			</ul>
+		</li>
+		<li><h4> Interacción en el espacio: Modelos de flujo de tráfico</h4> 
+			<ul>
+				<li> Tráfico y formación de ondas de densidad </li>
+				<li> Totally asymmetric simple exclusion process (TASEP)</li>
+				<li> TASEP en tiempo continuo</li>
+				<li> TASEP con condiciones de frontera abiertas</li>
+				<li> Discretización del tiempo </li>
+			</ul>
+		</li>
+		<li><h4> Dinámica de presa depredador</h4> 
+			<ul>
+				<li> Depredador presa basado en agentes</li>
+				<li> Ecuaciones y modelo de Lotka Volterra</li>
+				<li> De vuelta a sistemas estocásticos y quasi oscilaciones</li>
+				<li> Resumen</li>
 			</ul>
 		</li>
 	</ol>
 
-	<h3> Bibliografía: </h3>
-	<ul> 
-		<li>Friedberg, S. H., Insel, A. J., Spence, L. E., <b> Álgebra Lineal. </b> México: Publicaciones Cultural, 1982.</li>
-		<li>Lang, S., <b> Álgebra Lineal. </b> México: Sistemas Técnicos de Edición, 1986. </li>
-	</ul>
 
-	<h2> Tareas y Exámenes</h2>
-
-	No conservo tareas o exámenes de esta materia. 
+	<h2> Tarea</h2>
+Adjunto un projecto de programación que consistía en hacer simulaciones computacionales de varios de los temas vistos en la clase. <br>
+	<a href="..\assets\courses\procesos_estocasticos\Tomas-Basile-Programming-Assignment.pdf" target="_blank">Proyecto</a> <br>
 	<br>
 	<br>
 
-	<h2> Notas</h2>
-	Escribí unas notas de los temas de la clase (y de álgebra lineal 2). Las notas son principalmente una lista de definiciones y teoremas (sin demostraciones, ya que se supone que es un resumen muy corto y crudo) <br>
-	<a href="..\assets\courses\algebralineal1\algebralineal.pdf"> Notas de Álgebra Lineal</a>
 	<br>
 	<br>
-	<h4>Calificación final: 10</h4>
+	<h4>Calificación final: 12/12 (escala danesa)</h4>
 	<br>
 	<br>
-
-	<h2> Explicación de algunos temas</h2>
-	<div class="container">
-    <div class="row centered mt mb">
-
-      
-      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-        <a href="../works/algebra/linear/index.html"><img src="../assets/img/linear.gif" class="img-responsive" width="400"
-     height="400"></a>
-        <h5> Matriz</h5>
-        Qué es una matriz y transformaciones lineales.
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-        <a href="../works/algebra/linear/indexprod.html"><img src="../assets/img/prod.PNG" class="img-responsive" width="400"
-     height="400"></a>
-        <h5> Producto Matricial </h5>
-        Por qué el producto de matrices se hace de la forma que se hace. 
-      </div>
-
-	  <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-        <a href="../works/algebra/det/index.html"><img src="../assets/img/det.PNG" class="img-responsive" width="400"
-     height="400"></a>
-        <h5> Determinante </h5>
-		Qué es el determinante.
-      </div>
-
-      <div class="col-lg-4 col-md-4 col-sm-4 gallery">
-        <a href="../works/algebra/dual/index.html"><img src="../assets/img/dual.PNG" class="img-responsive" width="400"
-     height="400"></a>
-        <h5> Espacio dual </h5>
-		Qué es el espacio dual.
-      </div>
-
-	  
-	
-  	</div><! --/row -->
-  	</div><! --/container -->
 
 
 	<div id="footerwrap">
