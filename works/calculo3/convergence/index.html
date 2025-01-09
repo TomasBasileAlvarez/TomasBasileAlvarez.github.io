@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Sequences and Convergence</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title>Secuencias y Convergencia</title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,78 +27,144 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Sequences and Convergence</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Secuencias y Convergencia</h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
-
-
-
-<!-- <h1>Aguja de Buffon</h1> -->
 <hr>
-<h2> Sequence</h2>
-<p> In simple terms, a sequence is a list of mathematical objects, such as \( \{ a_1 , a_2, a_3, \cdots \}\) where \( a_n \) could theoretically be any type of objects (but we will focus only on real numbers). That is, a sequence is just an infinite list of real numbers (each element indexed by a natural number ). </p>
+<h2> Secuencia</h2>
+<p> En términos simples, una secuencia es una lista de objetos matemáticos,
+   como \( \{ a_1 , a_2, a_3, \cdots \}\) donde \( a_n \) podría ser teóricamente cualquier 
+   tipo de objeto (pero nos enfocaremos solo en números reales). Es decir, 
+   una secuencia es solo una lista infinita de números reales (cada elemento indexado por un número natural). </p>
 
-<h2> Limit</h2>
-<p> The most important concept of sequences and one of the most important of all calculus is that of the limit of a sequence. Putting it simply , the limit of a sequence is to what the limit 'tends to' after a large amount of terms. We will later see a rigorous definition of this, but for now, let's focus on what we can intuitively see.</p>
-<p> For example, we may notice that some sequences have a clear limit, like for example:</p>
+<h2> Límite</h2>
+<p> El concepto más importante de las secuencias y uno de los más importantes de todo
+   el cálculo es el de límite de una secuencia. Dicho de forma simple, el límite de una secuencia es 
+   a lo que la secuencia 'tiende' después de un gran número de términos. 
+   Más adelante veremos una definición rigurosa de esto, pero por ahora, enfoquémonos en lo 
+   que podemos ver intuitivamente.</p>
+<p> Por ejemplo, podemos notar que algunas secuencias tienen un límite claro, como por ejemplo:</p>
 
 <center>
-  \( \{1, 1/2, 1/3, 1/4, 1/5, \cdots, \} \)
+  \( \{1, 1/2, 1/3, 1/4, 1/5, \cdots \} \)
 </center>
-<p> This sequence is defined as \( a_n = 1/n \) (not all sequences need to have a functional definition as this one). And we can see clearly that the sequence tends to 0, so the limit seems to be 0. </p>
+<p> Esta secuencia está definida como \( a_n = 1/n \) (no todas las secuencias deben tener una 
+  definición que se pueda escribir como una ecuación como esta). 
+  Podemos ver claramente que la secuencia tiende a 0, por lo que el límite parece ser 0. </p>
 
-<p> We now consider another sequence:</p>
+<p> Ahora consideramos otra secuencia:</p>
 <center>
   \( \{ 1,-1,1,-1,1, \cdots \} \)
 </center>
-<p> This sequence is oscillating and it is defined by \( a_n = (-1)^n \). Because it is this way, it doesn't seem to tend to any particular value, it just goes back and forth. </p>
+<p> Esta secuencia es oscilante y está definida por \( a_n = (-1)^n \). Debido a esto,
+   no parece tender a ningún valor en particular, simplemente va de un lado a otro. </p>
 
-<p> Seeing these examples, we can guess there are two types of sequences, those with a defined limit, called <b> convergent</b> and those with no limit, called <b>divergent.</b> </p>
+<p> Al ver estos ejemplos, podemos adivinar que hay dos tipos de secuencias:
+   aquellas con un límite definido, llamadas <b>convergentes</b>, y aquellas sin límite,
+    llamadas <b>divergentes.</b> </p>
 
-<h3> Definition of Limit</h3>
-Now we are ready to explore the true definition of limit. We will try to construct it slowly. Suppose we have a sequence \( \{a_1, a_2, a_3 , \cdots \}\) and we want to define what we mean by saying that 'the sequence converges to the number L' (where L is a real number).  <br> <br>
+<h3> Definición de Límite</h3>
+Ahora estamos listos para explorar la verdadera definición de límite.
+ Intentaremos construirla poco a poco. Supongamos que tenemos una 
+ secuencia \( \{a_1, a_2, a_3 , \cdots \}\) y queremos definir qué queremos decir c
+ uando decimos que 'la secuencia converge al número L' (donde L es un número real).  <br> <br>
 
-A first definition could be:
+Una primera definición podría ser:
 
 <ul>
-  <li> The sequences converges to L if it gets closer and closer to L</li>
+  <li> La secuencia converge a L si se acerca cada vez más a L</li>
 </ul>
-This is not a great definition, for starters, in the first sequence \( \{1 , 1/2 , 1/3 , 1/4 , \cdots \} \), the numbers do get closer and closer to 0, but if you think about it, they are also getting closer and closer to -1 or to -2 or any other negative number for that matter. Why do we say the sequence tends to 0 but not to -1 if it is getting close to both of these numbers? <br><br>
-<p> The thing is that the sequence is getting  <b> arbitrarily</b> close to 0. That is, the sequence eventually gets as close to 0 as we want, if we want the sequence to get to a distance of less than 0.000001 to 0, we can do that, eventually the terms of the sequence  get that close to 0. </p>
-<p> So we set a new definition:</p>
+Esta no es una buena definición, ya que, en la primera secuencia \( \{1 , 1/2 , 1/3 , 1/4 , \cdots \} \), 
+los números se acercan cada vez más a 0, pero si lo piensas, también se acercan cada vez más a -1 o a -2 
+o a cualquier otro número negativo. ¿Por qué decimos que la secuencia tiende a 0 pero no a -1 si 
+se acerca a ambos números? <br><br>
+<p> Lo que pasa es que la secuencia se acerca <b>arbitrariamente</b> a 0. Es decir,
+   la secuencia eventualmente se acerca tanto a 0 como queramos, si queremos que la secuencia esté a una 
+   distancia menor que 0.000001 de 0, podemos hacerlo, eventualmente los términos de la secuencia 
+   se acercan tanto a 0 como querramos. </p>
+<p> Entonces, definimos una nueva definición:</p>
 <ul>
-  <li> The sequence converges to L if it eventually gets arbitrarily close to L</li>
+  <li> La secuencia converge a L si eventualmente se acerca arbitrariamente a L</li>
 </ul>
-<p> With this new definition, the limit of a sequence is now better defined than before, no one can say that the sequence \( \{1 , 1/2 , 1/3 , 1/4 , \cdots \} \) converges to -1, because even though it gets close to this number, it will never get arbitrarily close to it. For example, it will never get to a distance of less than 0.5 from -1, since the sequence never reaches negative numbers. </p>
+<p> Con esta nueva definición, el límite de una secuencia está ahora mejor definido que antes, 
+  nadie puede decir que la secuencia \( \{1 , 1/2 , 1/3 , 1/4 , \cdots \} \) converge a -1, porque
+   aunque se acerca a este número, nunca se acercará arbitrariamente a él. Por ejemplo, 
+   nunca llegará a una distancia menor que 0.5 de -1, ya que la secuencia nunca alcanza números negativos. </p>
 
-<p> We want to write this mathematically and clearly. For that, we need a mathematical expression for what it means for a sequence to be arbitrarily close to L.</p>
+<p> Queremos escribir esto matemáticamente y con claridad. Para eso, necesitamos 
+  una expresión matemática para lo que significa que una secuencia esté arbitrariamente cerca de L.</p>
 
-<p> First of all, how do we define the distance between two numbers? Well, that's easy, the distance between numbers \(c\) and \( d\) for example would be \(|c-d|\) because this is the positive separation between these numbers.</p>
+<p> Primero, ¿cómo definimos la distancia entre dos números? Bueno, eso es fácil, la distancia
+   entre los números \(c\) y \( d\) por ejemplo sería \(|c-d|\) porque esta es la separación positiva 
+   entre estos números.</p>
 
-<p> So, when we say that a sequence gets arbitrarily close to L, we mean that the distance between elements of the sequence and the number L can be made arbitrarily small. That is, \( |a_n - L | \) can be made as small as we want as we advance through the sequence.  </p>
-<p> To write this better, we can say that the sequence gets arbitrarily close to L if eventually we can make sure that \( |a_n - L| < \epsilon \) for any positive number \( \epsilon\). This means that even if we choose a very very small \( \epsilon \), the sequence will still eventually get very close to \( L \)  so that the distance with \(L \) will be less than \( \epsilon \). </p>
+<p> Así que, cuando decimos que una secuencia se acerca arbitrariamente a L, queremos decir que 
+  la distancia entre los elementos de la secuencia y el número L puede hacerse arbitrariamente pequeña. 
+  Es decir, \( |a_n - L | \) puede hacerse tan pequeña como queramos a medida que avanzamos en la secuencia.  </p>
+<p> Para escribir esto mejor, podemos decir que la secuencia se acerca arbitrariamente a L si eventualmente 
+  podemos asegurar que \( |a_n - L| < \epsilon \) para cualquier número positivo \( \epsilon\). 
+  Esto significa que incluso si elegimos un \( \epsilon \) muy, muy pequeño, la secuencia aún 
+  eventualmente se acercará mucho a \( L \) de modo que la distancia con \(L \) será menor 
+  que \( \epsilon \). </p>
 
-<p> Now, we are ready to state the true definition of the limit of a sequence and explain it a little bit further later. We say that a sequence \( \{ a_1, a_2, a_3 , \cdots \} \) converges to \(L \) if:</p>  <br>
+<p> Ahora estamos listos para enunciar la verdadera definición del límite de una secuencia
+   y explicarla un poco más adelante. Decimos que una secuencia \( \{ a_1, a_2, a_3 , \cdots \} \) 
+   converge a \(L \) si:</p>  <br>
 <ul>
-  <li> For every number \( \epsilon >0\)  there exists a number \(N >0\) such that if \(n>N\) then \(|a_n - L|< \epsilon\)  </li>
+  <li> Para cada número \( \epsilon >0\)  existe un número \(N >0\) tal que si \(n>N\) entonces \(|a_n - L|< \epsilon\)  </li>
 </ul>
 <br>
 
- <p> Let's try to understand this definition with what we said earlier. The definition says that for all \(\epsilon\), no matter how small, we can eventually get to a distance of less than  \( \epsilon\) from the number \(L\). </p>
- <p> The part of the definition involving the number \( N\) is what encodes what we mean by a 'eventually'. The definition just says that for any element of the sequence starting from the \(Nth\) term on, the distance of this element to \(L\) is smaller than \(\epsilon\). That is, the definition says that we can always find a term \(a_{N}\) such that from that term on, every further term of the sequence is a distance less than \(\epsilon\) from \(L\)  </p>
-<p> And that's it, this is what encodes what we mean by saying that the terms in the sequence eventually get arbitrarily close to \(L\).</p> 
+ <p> Tratemos de entender esta definición con lo que dijimos antes.
+   La definición dice que para todo \( \epsilon\), no importa lo pequeño que sea, 
+   eventualmente podremos llegar a una distancia menor que  \( \epsilon\) del número \(L\). </p>
+ <p> La parte de la definición que involucra al número \( N\) es lo que codifica lo que queremos decir con 
+  'eventualmente'. La definición solo dice que para cualquier elemento de la secuencia a partir 
+  del término \(N\), la distancia de este elemento a \(L\) es menor que \( \epsilon\).
+   Es decir, la definición dice que siempre podemos encontrar un término \(a_{N}\) tal que, 
+   a partir de ese término, cada término posterior de la secuencia está a una distancia menor 
+   que \( \epsilon\) de \(L\)  </p>
+<p> Y eso es todo, esto es lo que codifica lo que queremos decir al decir que 
+  los términos en la secuencia eventualmente se acercan arbitrariamente a \(L\).</p> 
 <br><br>
+
+
 
 
 
@@ -100,7 +176,7 @@ This is not a great definition, for starters, in the first sequence \( \{1 , 1/2
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>

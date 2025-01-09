@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Matrix Multiplication</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title>Multiplicación de Matrices</title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,24 +27,46 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Matrix Multiplication</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
 
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
 
 
-<!-- <h1>Aguja de Buffon</h1> -->
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Multiplicación de Matrices</h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
+
+
 <hr>
-If we have two matrices defined by:
+Si tenemos dos matrices definidas por:
 <center>
   \( \begin{pmatrix}
     a & c \\
@@ -46,7 +78,7 @@ If we have two matrices defined by:
     \end{pmatrix}
   \)
 </center>
-Then, the product of these two matrices is defined as:
+Entonces, el producto de ellas se define como:
 <center>
   \( \begin{pmatrix}
     a & c \\
@@ -61,22 +93,35 @@ Then, the product of these two matrices is defined as:
     \end{pmatrix}
   \)
 </center>
-This seems like a weird way to define matrix product, but why do we do it like this? <br>
-
-<p> To see why, we need to remember the interpretation of a matrix which I explained on the "matrix" section. According to this interpretation, the matrix \( \begin{pmatrix}  a & c \\ b & d\end{pmatrix} \) encodes all the information about a linear transformation \( T: R^2 \rightarrow R^2\). As we saw, this matrix represent a linear transformation that sends the vector \((1,0)\) to \((a,b)\) and the vector \((0,1)\) to \((c,d)\), the function applied to any other number can be obtained using linearity. </p>
-
-<p> Now, suppose we have two linear functions \(T: R^2 \rightarrow R^2 \) and \( S : R^2 \rightarrow R^2 \) and say they are represented by the matrices   \( \begin{pmatrix}  a & c \\ b & d\end{pmatrix} \) and  \( \begin{pmatrix}  e & g \\ f & h\end{pmatrix} \) respectively. </p>
-<p> Now consider the composition of these two functions, that is, the function \(T \circ S : R^2 \rightarrow R^2 \). That means applying first the function \(S\) and then applying the function \(T\) to the resulting vector. </p>
-<p> What would be the matrix that represents this composition?</p>
-
-<p> To construct it, we need to apply \( T \circ S\) to \((1,0)\) and to \( (0,1)\) and write those results as colums of our matrix: </p>
+Esto parece una forma extraña de definir el producto de matrices, pero ¿por qué lo hacemos así? <br>
+<br>
+<p> Para ver por qué, necesitamos recordar la interpretación de una matriz que expliqué en la eplicación de "matrices".
+   Según esta interpretación, la matriz \( \begin{pmatrix}  a & c \\ b & d\end{pmatrix} \) 
+   codifica toda la información sobre una transformación lineal 
+   \( T: R^2 \rightarrow R^2\). Como vimos, esta matriz representa una transformación lineal 
+   que envía el vector \((1,0)\) a \((a,b)\) y el vector \((0,1)\) a \((c,d)\), la función 
+   aplicada a cualquier otro número se puede obtener usando linealidad. </p>
+<br>
+<p> Ahora, supongamos que tenemos dos funciones lineales \(T: R^2 \rightarrow R^2 \) y 
+  \( S : R^2 \rightarrow R^2 \) y digamos que están representadas 
+  por las matrices   \( \begin{pmatrix}  a & c \\ b & d\end{pmatrix} \) y 
+   \( \begin{pmatrix}  e & g \\ f & h\end{pmatrix} \) respectivamente. </p>
+<p> Ahora consideremos la composición de estas dos funciones, es decir, la 
+  función \(T \circ S : R^2 \rightarrow R^2 \). Eso significa aplicar primero
+   la función \(S\) y luego aplicar la función \(T\) al vector resultante. </p>
+<p> ¿Cuál sería la matriz que representa esta composición?</p>
+<br>
+<p> Para construirla, necesitamos aplicar \( T \circ S\) a \((1,0)\) y a \( (0,1)\) y escribir
+   esos resultados como columnas de nuestra matriz: </p>
 <center>
   \(T \circ S ((1,0)) = T(S((1,0))) = T((e,f)) = e T((1,0)) + f T((0,1)) =\) <br>
   \( = e (a,b) + f(c,d) = (ae + cf, be + df) \) <br> <br>
    \(T \circ S ((0,1)) = T(S((0,1))) = T((g,h)) = g T((1,0)) + h T((0,1)) =\) <br>
   \( = g (a,b) + h (c,d) = (ag + ch, bg + dh) \)
 </center>
-<p> Then, as we saw earlier, the matrix representation of a function  \( T \circ S\) is obtained by applying  it to the basis vectors \((1,0)\) and \((0,1)\) , and write these results as columns. Therefore, the matrix representation of \( T \circ S\) is:</p>
+<p> Luego, como vimos antes, la representación matricial de una función  \( T \circ S\) se obtiene
+   aplicándola a los vectores base \((1,0)\) y \((0,1)\), y escribiendo estos 
+   resultados como columnas. Por lo tanto, la representación matricial de \( T \circ S\) es:</p>
 <center>
   \(\begin{pmatrix}
     ae + cf & ag + ch \\
@@ -85,13 +130,25 @@ This seems like a weird way to define matrix product, but why do we do it like t
   \)
 </center>
 <br>
-<p> And that is why we define matrix product as we do. We do it so that applying the product of two matrices gives out the matrix that represents the composition of the fucntions represented by the original matrices. That way, whenever we want to see how a composition of functions looks like, we only need to multiply their matrices with this definition</p> 
+<p> Y por eso definimos el producto de matrices de la manera en que lo hacemos.
+   Lo hacemos para que aplicar el producto de dos matrices dé la matriz que representa 
+   la composición de las funciones representadas por las matrices originales. 
+   De esta manera, siempre que queramos ver cómo se ve una composición de funciones, 
+   solo necesitamos multiplicar sus matrices con esta definición.</p> 
 
 <br>
-<h4> Notes</h4>
+<h4> Notas</h4>
 <ul>
-  <li> This explanation can be generalized to matrices of other sizes. The only condition is that the amount of columns in the  matrix \( S\) is equal to the number of rows in the matrix \( T\). Which simply means that the function \(S\) takes the vectors to a space of the same dimension as the domain of \( T\), so it makes sense to compose them. </li>
+  <li> Esta explicación se puede generalizar a matrices de otros tamaños. 
+    La única condición es que la cantidad de columnas en la matriz \( S\) sea igual al número
+     de filas en la matriz \( T\). Lo que simplemente significa que la función \(S\) lleva 
+     los vectores a un espacio de la misma dimensión que el dominio de \( T\), por lo 
+     que tiene sentido componerlas. </li>
 </ul>
+
+
+
+
 
 
   <div id="footerwrap">
@@ -102,7 +159,7 @@ This seems like a weird way to define matrix product, but why do we do it like t
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>

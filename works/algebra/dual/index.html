@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Dual Space</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title>Espacio Dual</title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,61 +27,112 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Dual Space</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Espacio Dual</h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
 <!-- <h1>Aguja de Buffon</h1> -->
 <hr>
-<h2> Definition </h2>
+<h2> Definición </h2>
 
-We start by considering any vector space \(V\) over a field \(F\) (which could be \(R\) or \(C\)). Then the dual space, denoted by \(V^*\) is defined as the set of all linear maps \(\phi : V \rightarrow F\), that is:
+Comenzamos considerando cualquier espacio vectorial \(V\) sobre un campo \(F\) (que podría ser \(R\) o \(C\)). Luego, el espacio dual, denotado por \(V^*\), se define como el conjunto de todos los mapas lineales \(\phi : V \rightarrow F\), es decir:
 <center>
-  \( V^* = \{\phi \; | \; \phi: V \rightarrow F \; \text{is linear} \}\)
+  \( V^* = \{\phi \; | \; \phi: V \rightarrow F \; \text{es lineal} \}\)
 </center>
-This dual space is itself a vector space over the same field \( F\) when we define it an adittion and scalar multiplication:
+Este espacio dual es en sí mismo un espacio vectorial sobre el mismo campo \( F\) cuando definimos la adición y la multiplicación escalar:
 <ul>
   <li> \( (\phi + \psi)(x) = \phi(x) + \psi(x) \)</li>
-  <li> \((a \phi) (x) = a (\phi(x))\)</li>
+  <li> \((a \phi) (x) = a (\phi(x))\),</li>
 </ul>
-For \(\phi , \psi \in V^* \; ,\; x \in V \; ,\; a \in F \).
+para \(\phi , \psi \in V^* \; ,\; x \in V \; ,\; a \in F \).
+<br>
+<h4> Base</h4>
 
-<h4> Basis</h4>
-
-If we are in a finite dimensional vector space, such that the basis of \(V\) is given by \(\{e_1 , e_2 , \cdots , e_n\} \), we can construct a basis for \(V^*\) quite simply. <br>
-<p> To do it, we define a set \( \{ e^1 , \cdots , e^n \} \)of elements of \(V^*\) defined by:</p>
+Si estamos en un espacio vectorial de dimensión finita,
+ tal que la base de \(V\) está dada por \(\{e_1 , e_2 , \cdots , e_n\} \),
+  podemos construir una base para \(V^*\) de manera bastante sencilla. <br>
+<p> Para hacerlo, definimos un conjunto \( \{ e^1 , \cdots , e^n \} \) de elementos de \(V^*\) 
+  definidos por:</p>
 <center>
  \( e^i(e_j) = \delta_{j}^i\)
 </center>
-That is, the element \(e^i\) of \(V^*\) is a functional defined in such a way that when we apply it to the ith element of the basis of \(V\) the result is 1, and when we apply it to any other element of the basis of \(V\), the result is 0. <br>
-<p> It is easy to convince oneself  and prove that this is really a basis for \(V^*\). </p>
-<p> So \(V\) and \(V^*\) have the same dimension and given a basis of \(V\), we can find a basis of \(V^*\). </p>
-
-<h2> Bi Dual Space</h2>
-<p> Now we will consider the space \( (V^*)^*\) which is the dual space of \(V^*\). According to our definition of dual, this space is defined as: </p>
+Es decir, el elemento \(e^i\) de \(V^*\) es un funcional definido de tal manera 
+que cuando lo aplicamos al \(i\)-ésimo elemento de la base de \(V\), el resultado es 1,
+ y cuando lo aplicamos a cualquier otro elemento de la base de \(V\), el resultado es 0. <br>
+<p> Es fácil convencerse y probar que esto es realmente una base para \(V^*\). </p>
+<p> Así que \(V\) y \(V^*\) tienen la misma dimensión y dada una base de \(V\),
+   podemos encontrar una base de \(V^*\). </p>
+<br><br>
+<h2> Espacio Bi-Dual</h2>
+<p> Ahora consideraremos el espacio \( (V^*)^*\) que es el espacio dual de \(V^*\).
+   Según nuestra definición de dual, este espacio se define como: </p>
 <center>
-  \( (V^*)^* = \{ \alpha \; | \; \alpha: V^* \rightarrow F \;\; \text{is linear} \} \)
+  \( (V^*)^* = \{ \alpha \; | \; \alpha: V^* \rightarrow F \;\; \text{es lineal} \} \)
 </center>
-That is, \( (V^*)^* \) is the set of all linear functions that take an element of \(V^*\) and output an element of the field \(F\). <br>
-<p> It can be a little bit difficult to wrap one's head around this space, but there is an amazing correspondance between \( (V^*)^* \) and \(V\) that makes it way easier. </p>
+Es decir, \( (V^*)^* \) es el conjunto de todas las funciones lineales
+ que toman un elemento de \(V^*\) y devuelven un elemento del campo \(F\). <br>
+<p> Puede ser un poco difícil entender este espacio, 
+  pero existe una correspondencia increíble entre \( (V^*)^* \) y \(V\) que lo hace mucho más fácil. </p>
 
-<p> Consider any vector \(x\) living in \(V\), then, we can find a vector \(\bar{x}\) in \((V^*)^* \) defined as:</p>
+<p> Consideremos cualquier vector \(x\) que pertenezca a \(V\), 
+  entonces, podemos encontrar un vector \(\bar{x}\) en \((V^*)^*\) definido como:</p>
 <center>
   \( \bar{x}(\phi) := \phi(x) \)
 </center>
-<p> For any \( \phi \in V^* \). We define the action of \(\bar{x}\) on \(\phi \in V^*\) as being given by \(\phi(x)\), which is an element of \(F\). It is easy to see that this \( \bar{x}\) is truly an element of \((V^*)^*\) because it is also linear: \( \widehat{x} (\phi + \psi) := (\phi + \psi)(x) = \phi(x) + \psi(x) = \bar{x}(\phi) + \bar{x}(\psi) \). </p>
-<p> Therefore, for any element of \(V\) we can find a corresponding element of \((V^*)^*\). Furthermore, because dual spaces have the same dimension as the original spaces, \((V^*)^*\) has the same dimension as \(V\). So we can conclude that this correspondance is biyective. This is an amazing fact, that there exists a very natural correspondance between \(V\) and \((V^*)^*\) that doesn't depend on basis representation or anything else.</p>
+<p> Para cualquier \( \phi \in V^* \). 
+  Definimos la acción de \(\bar{x}\) sobre \(\phi \in V^*\) como dada por \(\phi(x)\), 
+  que es un elemento de \(F\). Es fácil ver que este \( \bar{x}\) es verdaderamente un elemento 
+  de \((V^*)^*\) porque también es lineal: 
+  \( \widehat{x} (\phi + \psi) := (\phi + \psi)(x) = \phi(x) + \psi(x) = \bar{x}(\phi) + \bar{x}(\psi) \). </p>
+<p> Por lo tanto, para cualquier elemento de \(V\) podemos encontrar un elemento 
+  correspondiente en \((V^*)^*\). Además, dado que los espacios duales tienen 
+  la misma dimensión que los espacios originales, \((V^*)^*\) tiene la misma 
+  dimensión que \(V\). Así que podemos concluir que esta correspondencia es biyectiva. 
+  Este es un hecho increíble, que existe una correspondencia muy natural entre
+   \(V\) y \((V^*)^*\) que no depende de la representación de la base ni de nada más.</p>
+
+
+
+
+
+
+
+
 
   <div id="footerwrap">
     <div class="container">
@@ -81,7 +142,7 @@ That is, \( (V^*)^* \) is the set of all linear functions that take an element o
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>

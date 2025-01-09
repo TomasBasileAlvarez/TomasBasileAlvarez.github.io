@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Other Types of Circles</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title>Otros tipos de Círculos</title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,85 +27,129 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Other Types of Circles</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>Otros Tipos de Círculos</h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
-
-
-
-<!-- <h1>Aguja de Buffon</h1> -->
 <hr>
-<h2> What is a Circle?</h2>
+<h2> ¿Qué es un Círculo?</h2>
 
-<p> A circle is simply the set of all points that are at the same distance from a certain central point. </p>
-<p>  If we set the origin at (0,0), the unit circle is the set of all points a distance 1 from the origin. We measure the distance from the origin to \( (x,y) \) as \( \sqrt{x^2 + y^2} \), so the unit circle would be the set of all coordinates \( (x,y) \) satisfying the equation: </p>
+<p> Un círculo es simplemente el conjunto de todos los puntos que están a la misma distancia
+   de un punto central determinado. </p>
+<p>  Si colocamos el centro en (0,0), el círculo unitario (con radio 1) es el conjunto de todos los puntos
+   a una distancia de 1 del origen. Medimos la distancia desde el origen hasta
+    \( (x,y) \) como \( \sqrt{x^2 + y^2} \), por lo que el círculo unitario sería el 
+    conjunto de todas las coordenadas \( (x,y) \) que satisfacen la ecuación: </p>
 <center>
   \( 1 = \sqrt{x^2 + y^2} \)
 </center>
-The solution to these equations gives us our well known form of a circle: <br>
+La solución a estas ecuaciones nos da la forma bien conocida de un círculo: <br>
 
 <center>
-<img class = "smallimg" src="circle.PNG" alt="Unit Circle">
-<figcaption>Unit Circle </figcaption>
+<img class = "smallimg" src="circle.PNG" alt="Círculo Unitario">
+<figcaption>Círculo Unitario </figcaption>
 </center>
 
-<p> The interesting thing is that we can generalize this idea. There seems to be no way to generalize it, what other types of circle could we think of? </p>
-<p> We see that we actually made an assumption when constructing the circle, our definition of distance. We defined the distance from the origin to (x,y) (which we will call norm) as:  </p>
+<p> Lo interesante es que podemos generalizar esta idea.
+   Parece que no hay forma de generalizarla, ¿qué otros tipos de círculo podríamos pensar? </p>
+<p> Vemos que en realidad hicimos una suposición al construir el círculo,
+   nuestra definición de distancia. Definimos la distancia desde el origen 
+   hasta \( (x,y) \) (que llamaremos norma) como:  </p>
 <center>
   $$||(x,y)|| = \sqrt{x^2 + y^2}$$
 </center>
-<p> The norm is defined this way because that is how distances work in the real world. However, in mathematics we are free to define norms that don't have anything to do with the real world and see to what we are led by these definitions. </p>
-<p> However, we can not define a norm however we want it, there most be some restrictions for a function to be interpreted as a norm, these are: </p>
+<p> La norma se define de esta manera porque así es como funcionan las distancias en el mundo real (y es fácil de verlo usando el teorema de Pitágoras).
+   Sin embargo, en matemáticas somos libres de definir normas que no tengan nada que ver con el mundo real
+    y ver a qué nos llevan estas definiciones. </p>
+<p> Sin embargo, no podemos definir una norma como queramos, debe haber algunas 
+  restricciones para que una función sea interpretada como una norma, estas son: </p>
 
 <ol>
-  <li>The norm must be a function that takes a point \( (x,y) \) and gives a non negative real number \( ||(x,y)|| \) <br> 
-    That is, norms cannot be negative, just as we would expect from a distance.
+  <li>La norma debe ser una función que tome un punto \( (x,y) \) y dé un número real 
+    no negativo \( ||(x,y)|| \) <br> 
+    Es decir, las normas no pueden ser negativas, tal como esperaríamos de una distancia.
   </li>
-  <li> Positive Definiteness: For all \( (x,y) \), if \( ||(x,y)|| = 0 \) then \( (x,y) = (0,0) \) <br>
-  That is, only the origin has a norm of 0, all other points have positive norms </li>
-  <li> Homogeneity: \( ||a(x,y)|| = |a| \cdot ||(x,y)|| \) <br>
-  That is, if we scale the vector by a constant \(a\), then the norm should be bigger by \( |a| \) </li>
-  <li> Triangle inequality  \( ||(x,y) + (w,z)|| \leq ||(x,y)|| + ||(w,z)|| \) <br> 
-  That is, if we want to go from the origin to \( (x+w,y+z) \), it is faster (or equally fast) to go directly than to go to \( (x,y) \) and then to \( (x,y) + (w,z) \).
+  <li> Definida positiva: Para todo \( (x,y) \), si \( ||(x,y)|| = 0 \) entonces \( (x,y) = (0,0) \) <br>
+  Es decir, solo el origen tiene una norma de 0, todos los demás puntos tienen normas positivas </li>
+  <li> Homogeneidad: \( ||a(x,y)|| = |a| \cdot ||(x,y)|| \) <br>
+  Es decir, si escalamos el vector por una constante \(a\), entonces la norma 
+  debería ser mayor en \( |a| \) </li>
+  <li> Desigualdad triangular  \( ||(x,y) + (w,z)|| \leq ||(x,y)|| + ||(w,z)|| \) <br> 
+  Es decir, si queremos ir desde el origen hasta \( (x+w,y+z) \), es más rápido
+   (o igualmente rápido) ir directamente que ir a \( (x,y) \) y luego a \( (x,y) + (w,z) \).
   </li>
 </ol>
 
-These are some pretty restrictive conditions, still, we can find a whole family of norms that fulfill these conditions. 
+Estas son algunas condiciones bastante restrictivas, sin embargo, 
+podemos encontrar toda una familia de normas que cumplen con estas condiciones. 
 
+<br>
 <hr>
-<h3> LP Metric </h3>
+<h3> Métrica LP </h3>
 
-We define a new type of norm as:
+Definimos un nuevo tipo de norma como:
 <center>
   \( ||(x,y)||_p = (|x|^p + |y|^p)^{1/p} \)
 </center>
-Where \( p \) is a number with \( p \geq 1 \). We see that for \( p=2 \) we recover the old Euclidean metric, but for other values of \( p \) we have other interesting norms. <br>
-<p> Not all norms have this particular form, but we will study only these ones</p>
-<p> To actually call this a norm, we should prove tht it satisfies the requirements we mentioned. The first requirements are easy to see, but the last one requires a little more work and it is called the Minkowski inequality. </p>
+Donde \( p \) es un número con \( p \geq 1 \). Vemos que para \( p=2 \) recuperamos la antigua 
+métrica euclidiana, pero para otros valores de \( p \) tenemos otras normas interesantes. <br>
+<p> No todas las normas tienen esta forma particular, pero solo estudiaremos estas.</p>
+<p> Para realmente llamar esto una norma, deberíamos demostrar que satisface los requisitos
+   que mencionamos. Los primeros requisitos son fáciles de ver, pero el último requiere un
+    poco más de trabajo y se llama la desigualdad de Minkowski. </p>
 
 <hr>
-<h3> Circles in LP norm</h3>
+<h3> Círculos en la norma LP</h3>
 
-<p> Using this definition of norm, we can define circles in different norms. A unit circle in LP norm would be the set of all points with \( ||(x,y)||_p = 1 \)</p>
-<p> That is, all points with:</p>
+<p> Usando esta definición de norma, podemos definir círculos en diferentes normas.
+   Un círculo unitario en la norma LP sería el conjunto de todos los puntos con \( ||(x,y)||_p = 1 \)</p>
+<p> Es decir, todos los puntos con:</p>
 <center>
   \( (|x|^p + |y|^p)^{1/p} = 1 \)<br>
   \( \Rightarrow \;\; |x|^p + |y|^p = 1 \)
 </center>
-<p> This is a generalization of the definition of circle. For \( p=2 \) we obtain the Euclidean circle, while for any other value of \( p \geq 1 \), we get circles in different norms and they take different forms. </p>
+<p> Esta es una generalización de la definición de círculo. Para \( p=2 \) obtenemos 
+  el círculo euclidiano, mientras que para cualquier otro valor de \( p \geq 1 \), obtenemos 
+  círculos en diferentes normas y toman formas diferentes. </p>
 
-<p>  In the following interactive program, you can see how unit circles in different norms would look like. You can control the value of \( p \) and see the set of solutions of \( |x|^p  + |y|^p = 1 \) (that is, the circle in \( p \) norm).   </p>
+<p>  En el siguiente programa interactivo, puedes ver cómo se verían los círculos unitarios 
+  en diferentes normas. Puedes controlar el valor de \( p \) y ver el conjunto de
+   soluciones de \( |x|^p  + |y|^p = 1 \) (es decir, el círculo en la norma \( p \)).   </p>
 
 
 <center>
@@ -103,24 +157,32 @@ Where \( p \) is a number with \( p \geq 1 \). We see that for \( p=2 \) we reco
 </iframe>
 </center>
 
-<p> We can see that the 'circles' take funny forms for different values of \( p \). </p>
+<p> Podemos ver que los 'círculos' toman formas curiosas para diferentes valores de \( p \). </p>
 
-<strong> Special Cases</strong> <br>
-For special values of p, we get interesting drawings:
+<strong> Casos Especiales</strong> <br>
+Para valores especiales de \( p \), obtenemos dibujos interesantes:
 <ul>
   <li> \( p=2 \): <br>
-  For this value, we recover the original Euclidean metric and the drawing is a regular old circle
+  Para este valor, recuperamos la métrica euclidiana original y el dibujo es un círculo regular
   </li>
   <li> \( p=1 \) </li>
-  For this value, the equation the metric is \( ||(x,y) || = |x| + |y| \). <br>
-  That is, the distance to \( ||(x,y)|| \) is found by adding the distance along the x axis and the distance along the y axis. That is, intuitively, in this norm, we 'cannot' move in diagonal, we can only move parallel to the axis. <br>
-  This is called the Manhattan norm, because this would be the distance to move around a city like Manhattan. If we want to go from a certain point in Manhattan to a point 3 streets east and 2 streets north, we cannot move in diagonal, we can only move in the directions determined by the city blocks but not in diagonal. <br>
-  Therefore, the distance between these two points would be of 5 = 2+3. <br>
-  The metric for \( p=1 \) encapsulates this. <br>
+  Para este valor, la ecuación de la métrica es \( ||(x,y) || = |x| + |y| \). <br>
+  Es decir, la distancia a \( ||(x,y)|| \) se encuentra sumando la distancia a lo largo del eje x y
+   la distancia a lo largo del eje y. Intuitivamente, en esta norma, 'no podemos' movernos en diagonal, 
+   solo podemos movernos paralelo a los ejes. <br>
+  Esto se llama la norma de Manhattan, porque esta sería la distancia para moverse por
+   una ciudad como Manhattan. Si queremos ir desde un cierto punto en Manhattan a un punto 3 calles al 
+   este y 2 calles al norte, no podemos movernos en diagonal, solo podemos movernos en las direcciones 
+   determinadas por los bloques de la ciudad. <br>
+  Por lo tanto, la distancia entre estos dos puntos sería de 5 = 2+3. <br>
+  La métrica para \( p=1 \) encapsula esto. <br>
   <li> \( p = \infty \)</li>
-  Though this norm is not included in the program, we can think of it as the limit when p gets larger. Therefore, if \( p \) is very large, we have that \( ||(x,y)||_{\infty} = \lim_{p \rightarrow \infty} (|x|^p + |y|^p)^{1/p} = \max (|x|, |y|) \) <br>
-  So, the distance to a point is equal to the maximum of tis coordinates.    
+  Aunque esta norma no está incluida en el programa, podemos considerarla como el límite
+   cuando \( p \) se hace muy grande. Por lo tanto, si \( p \) es muy grande, 
+   tenemos que \( ||(x,y)||_{\infty} = \lim_{p \rightarrow \infty} (|x|^p + |y|^p)^{1/p} = \max (|x|, |y|) \) <br>
+  Así que la distancia a un punto es igual al máximo de sus coordenadas.    
 </ul>
+
 
 
 
@@ -136,7 +198,7 @@ For special values of p, we get interesting drawings:
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>
