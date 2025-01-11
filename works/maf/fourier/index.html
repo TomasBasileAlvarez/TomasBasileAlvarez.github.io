@@ -1,12 +1,24 @@
+
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Fourier Series</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title> Series de Fourier </title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,18 +29,42 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../index.html">Home</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Fourier Series</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>  Series de Fourier </h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 <hr>
@@ -45,6 +81,33 @@ In some sense, this means that the set of functions \({ \cos \left( \dfrac{\pi x
 
 
 
+<hr>
+    <h2>¿Qué es una Serie de Fourier?</h2>
+
+    <p>En términos simples, una Serie de Fourier es una forma de escribir una función como una suma de senos y cosenos.</p>
+
+    <p>Por ejemplo, supongamos que tenemos una función \( f \) definida en un intervalo \( [-L, L] \).  
+    La serie de Fourier de esta función nos permite escribir \( f(x) \) en este intervalo como una suma de cosenos y senos de diferentes frecuencias.  
+    Es decir, podemos expresar \( f(x) \) como:</p>
+
+    <center>
+        \( f(x) = \dfrac{a_0}{2} + \sum\limits_{n=1}^{\infty} \left[a_n \cos \left( \dfrac{n\pi x}{L}\right) + b_n \sin \left( \dfrac{n\pi x}{L} \right) \right] \)
+    </center>
+
+    <p>Aquí, \( a_n \) y \( b_n \) son números reales cuyos valores dependen de la función \( f(x) \).</p>
+
+    <p>En cierto sentido, esto significa que el conjunto de funciones:</p>
+
+    <center>
+        \({ \cos \left( \dfrac{\pi x}{L}\right),\sin \left( \dfrac{\pi x}{L}\right),\cos \left( \dfrac{2\pi x}{L}\right),\sin \left( \dfrac{2\pi x}{L}\right),\cos \left( \dfrac{3\pi x}{L}\right),\sin \left( \dfrac{3\pi x}{L}\right), \cdots  }\)
+    </center>
+
+    <p>actúa como una base para todas las funciones definidas en el intervalo \([-L, L]\).  
+    Esto significa que cualquier función en este intervalo puede expresarse como una combinación de estas funciones trigonométricas.</p>
+
+</body>
+</html>
+
   <div id="footerwrap">
     <div class="container">
       <div class="row centered">
@@ -53,7 +116,7 @@ In some sense, this means that the set of functions \({ \cos \left( \dfrac{\pi x
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>
