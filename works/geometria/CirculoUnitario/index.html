@@ -1,15 +1,24 @@
+
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Trigonometric Functions</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
-
-
+<title>Círculo Unitario</title>
+  <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/font-awesome.min.css" rel="stylesheet">
+  </script>
 </head>
 
 
@@ -19,89 +28,144 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Trigonometric Functions</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
 
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../index.html">Inicio</a></li>
+      <li><a href="../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
 
 
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>   Círculo Unitario </h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
-<!-- <h1>Aguja de Buffon</h1> -->
 <hr>
 
-<p> We are going to define trigonometric functions using the unit circle and use this to find intuitive ways to understand trigonometric identities. </p>
+
+    <h2>Definición de Funciones Trigonométricas</h2>
+
+    <p>Vamos a definir las funciones trigonométricas usando el círculo unitario y emplear esta definición para encontrar formas intuitivas de entender las identidades trigonométricas.</p>
+
+    <h3>Definición de Seno y Coseno</h3>
+
+    <p>Primero, necesitamos definir el seno y el coseno (luego podemos definir las demás funciones trigonométricas).  
+    Estas funciones toman un ángulo como entrada y devuelven un número real como salida.</p>
+
+    <p>Para definir el seno y el coseno, lo mejor es usar el siguiente programa interactivo y luego revisar la explicación.</p>
+
+    <center>
+        <iframe src="principalindex.html" width="535" height="705"></iframe>
+    </center>
+
+    <p>Después de experimentar con la aplicación, se hace evidente la definición de estas funciones trigonométricas.</p>
+
+    <ul>
+        <li>Tomamos un ángulo <em>t</em> como entrada. Este ángulo puede ser cualquier número real (el ángulo se repite después de 360 grados).</li>
+        <li>Dibujamos un punto en el círculo unitario con este ángulo <em>t</em> con respecto a la horizontal (el punto negro en el círculo).</li>
+        <li>Este punto se mueve alrededor del círculo dependiendo del ángulo elegido.</li>
+    </ul>
+
+    <p>Entonces, la definición del seno y el coseno es muy sencilla:</p>
+
+    <ul>
+        <li><strong>sin(t)</strong>: Es la coordenada vertical del punto en el círculo unitario con ángulo <em>t</em>.</li>
+        <li><strong>cos(t)</strong>: Es la coordenada horizontal del punto en el círculo unitario con ángulo <em>t</em>.</li>
+    </ul>
+
+    <p>Otras funciones como la tangente o la secante se definen en términos del seno y el coseno. Por esta razón, no es realmente necesario preocuparse mucho por ellas, ya que cualquier expresión que las involucre se puede convertir en términos de seno y coseno.</p>
+
+    <p>Las demás funciones trigonométricas también tienen una interpretación geométrica equivalente a su definición funcional en términos de seno y coseno. Sin embargo, como mencioné antes, no es estrictamente necesario profundizar en ellas.</p>
+
+    <p>Para completar, aquí presento la definición geométrica de otras funciones trigonométricas comunes.</p>
+
+    <center>
+        <iframe src="secondaryindex.html" width="535" height="705"></iframe>
+    </center>
+
+    <p>Este diagrama es un poco más complicado, y por eso prefiero utilizar solo el seno y el coseno (ya que cualquier expresión trigonométrica puede reducirse a estas dos funciones con solo usar definiciones).</p>
+
+    <h2>Propiedades Intuitivas</h2>
+
+    <p>Podemos usar la definición geométrica para entender algunas identidades trigonométricas básicas del seno y el coseno:</p>
+
+    <ul>
+        <li><strong>Rango:</strong>  
+            <p>El rango de las funciones <em>cos(t)</em> y <em>sin(t)</em> está entre -1 y 1.  
+            Esto se ve directamente en la definición: como el punto está dentro del círculo unitario, sus coordenadas nunca pueden ser mayores que 1 ni menores que -1.</p>
+        </li>
+
+        <li><strong>Valores específicos:</strong>  
+            <p>Podemos ver intuitivamente que <em>cos(0) = 1</em> y <em>sin(0) = 0</em>, ya que cuando el ángulo es cero, el punto en el círculo está en la coordenada (1,0).  
+            De manera similar, podemos determinar valores específicos de seno y coseno usando el círculo unitario.</p>
+        </li>
+
+        <li><strong>Identidad pitagórica:</strong>  
+            <p>En el dibujo del círculo unitario, se forma un triángulo rectángulo con lados de longitudes <em>|cos(t)|</em>, <em>|sin(t)|</em> y 1.  
+            Aplicando el teorema de Pitágoras, obtenemos:</p>
+
+            <p><em>cos²(t) + sin²(t) = 1</em></p>
+        </li>
+
+        <li><strong>Desplazamientos (shifts):</strong>  
+            <ul>
+                <li>Podemos ver que el coseno toma los mismos valores que el seno, pero desplazados 90 grados, por lo que:  
+                    <p><em>sin(t + π /2) = cos(t)</em></p>
+                </li>
+
+                <li>Similarmente:  
+                    <p><em>cos(t + π /2) = -sin(t)</em></p>
+                </li>
+
+                <li>Si sumamos 180 grados al ángulo (llevando el punto del círculo unitario a la posición opuesta), las coordenadas cambian de signo:  
+                    <p><em>sin(t + π) = -sin(t)</em>, <em>cos(t + π) = -cos(t)</em></p>
+                </li>
+
+                <li>Como girar 360 grados no cambia el punto en el círculo unitario, concluimos que las funciones tienen un período de 360 grados:  
+                    <p><em>sin(t + 2π) = sin(t)</em> y <em>cos(t + 2π) = cos(t)</em></p>
+                </li>
+
+                <li>Si cambiamos el ángulo de <em>t</em> a <em>-t</em>, el punto en el círculo unitario se refleja respecto al eje <em>x</em>,  
+                    lo que significa que la coordenada <em>y</em> cambia de signo mientras que la coordenada <em>x</em> permanece igual.  
+                    Por lo tanto:  
+                    <p><em>cos(-t) = cos(t)</em> y <em>sin(-t) = -sin(t)</em></p>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</body>
+</html>
 
 
-<p> First of all, we need to define cosine and sine ( we can later define the rest of the trigonometric functions).     </p>
-<p> These functions take an angle as input and give as output a real number. </p>
-<p> To define cosine and sine, it is best to use the following interactive program and later see the explanation.</p>
-
-<p><br></p> 
-<center>
-<iframe src="principalindex.html" width="535" height="705">
-</iframe>
-</center>
-
-<p> After playing around with the application, it is easy to see the definition of these trigonometric functions </p>
-<p> First, we take an angle 't' as input, this angle can be any real number (of course, the angle goes around the circle after 360 degrees). <br>
-Then, we draw a dot in the unit circle with this angle 't' with respect to the horizontal (the black dot on the circle). <br>
-As you can see, this dot moves around the circle depending on the angle chosen.
-</p>
-
-<p> Then, the definition of Sine and Cosine are very simple </p>
-<ul>
-  <li> Sin(t) : It is the vertical coordinate of the point in the unit circle with angle t.</li>
-  <li> Cos(t) : It is the horizontal coordinate of the point in the unit circle with angle t. </li>
-</ul>
-
-<p> That's all. The definitions are that simple, and it is a good idea to have these definitions always in mind when using trigonometric functions. </p>
-
-<p> Other trigonometric functions like Tangent  or Secant are actually defined using Cosine and Sine. So in my opinion, there is no need to really worry about them, as any expression involving other trigonometric functions can be converted into sines and cosines. <br> 
-The other trigonometric functions also have a geometric interpretation equivalent to their functional definition in terms of sine and cosine, but as I said before, it is not necessary to go deeper into these definitions. 
-</p>
-Still, for completeness, here I present the geometrical defintion of other common trigonometric functions.
 
 
-<p><br></p> 
-<center>
-<iframe src="secondaryindex.html" width="535" height="705">
-</iframe>
-</center>
-
-<p> This drawing is a little convoluted, and that is why I prefer to stick to only using sines and cosines (as I said earlier, any trigonometric expression can be reduced to these two functions using only definitions). </p>
-<p> Also, it is an interesting excercise to see how these geometric defintions are equivalent to the common definitions for tan, sec, csc, cot. For example, try to prove using geometry that the blue line in the drawing denoting the cosecant really has a length equal to 1/sen(t) as it should by the common definition of csc. </p>
-
-<hr>
-<h3> Intuitive Properties: </h3>
-
-<p> Now, we can see how some trigonometric identities involving Sine and Cosine by using the geometric definition:</p>
-
-<ul>
-  <li> <strong> Range: </strong>  The range of the functions cos and sin are  between -1 and 1. <br>
-  This can be seen directly from the definition, cosine and sine will always have a value between -1 and 1 because the point is inside the unit circle </li>
-  <li> <strong> Some values of Trigonometric functions:</strong> For example, we can intuitively see that cos(0) = 1 and sin(0) = 0. Because when the angle is cero, the point on the circle is exactly in the coordinates (1,0). <br>
-  We can similarly obtain values of cosine and sine at specific points using the unit circle. </li>
-  <li> <strong> Pithagorean Identity: </strong> Seeing the drawing of the unit circle, it is clear that a rectangular triangle is formed with sides of length |cos(t)| , |sin(t)| , 1. So using the Pithagorean theorem, we see that \( \cos^2(t) + \sin^2(t) = 1 \)</li>
-  <li> <strong> Shifts</strong>
-  <ul>
-    <li> We can see that cosine takes the same values as sine but with a shift of 90 degrees. Therefore, we conclude \( \sin(t + \pi /2) = \cos (t) \) </li>
-    <li> Similarly, \( \cos(t + \pi /2) = - \sin(t) \)</li>
-    <li> We can also see that if we add 180 degrees to the angle (that is take the point in the unit circle to the antipodal location), then the coordinates of the point will change sign, so  \( \sin(t + \pi)  = - \sin (t) \;\;\; , \;\;\; \cos(t + \pi) = - \cos (t) \) </li>
-    <li> We can see that the functions have a period of 360 degrees, because turning 360 degrees doesn't change the point on the unit circle. Therefore \( \sin(t + 2\pi) = \sin(t) \) and \( \cos (t + 2\pi) = \cos (t) \) </li>
-    <li> If we change the angle from t to -t, then the point on the unit circle will be reflected with respect to the x axis, so the y coordinate changes sign while the x coordinate stays the same. Therefore, \( \cos(-t) = \cos(t) \) and \( \sin(-t) = -\sin(t) \)</li>
-  </ul>
-  </li>
-</ul>
 
 
 
@@ -119,7 +183,7 @@ Still, for completeness, here I present the geometrical defintion of other commo
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>
