@@ -1,12 +1,23 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Derivative Calculated Geometrically</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title>Derivada Calculada Geométricamente</title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,81 +28,120 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Derivative Calculated Geometrically</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>  Derivada Calculada Geométricamente </h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
-
-
-
-<!-- <h1>Aguja de Buffon</h1> -->
 <hr>
-<h2> Derivative</h2>
-Given a function \( f(x): R \rightarrow R \), the derivative is defined as:
+<h2> Derivada</h2>
+Dada una función \( f(x): R \rightarrow R \), la derivada se define como:
 <center>
   \( f'(x) = \lim\limits_{dx \rightarrow 0} \dfrac{f(x+dx) - f(x)}{dx} \)
 </center>
-if the limit exists. <br>
+si el límite existe. <br>
 
-<p> The interpretation of the derivative is very easy to understand. If we have a function \(f(x)\), then \( f(x+dx) - f(x) \) is the difference of the function between two very near points (the points \( x\) and \(x+dx\)). It is a measure of how much \(f \) is changing close to \(x\). The denominator is the length of the step taken from \(x\) to \(x+dx\). </p>
-<p> Therefore, the quotient \( \dfrac{f(x+h)-f(x)}{h} \)  is just the ratio of the change in the value of \(f\) to the change in value of \(x\), we could express it as \( \dfrac{\Delta f}{\Delta x} \)</p>
-<p> When we take the limit, we are basically making the step as small as possible, and therefore, the derivative measures the instantaneous rate of change of the function \(f\) at the point \( x\). </p>
+<p> La interpretación de la derivada es muy fácil de entender. Si tenemos una función \(f(x)\), entonces \( f(x+dx) - f(x) \) es la diferencia de la función entre dos puntos muy cercanos (los puntos \( x\) y \(x+dx\)). Es una medida de cuánto está cambiando \(f \) cerca de \(x\). El denominador es la longitud del paso tomado de \(x\) a \(x+dx\). </p>
 
-<h2> Derivative of \(x^2\)</h2>
-Consider the function \(f(x) = x^2\) and lets calculate its derivative. To calculate it, we could directly use the definition of the derivative:
+<p> Por lo tanto, el cociente \( \dfrac{f(x+h)-f(x)}{h} \) es simplemente la razón del cambio en el valor de \(f\) con respecto al cambio en el valor de \(x\), que podemos expresar como \( \dfrac{\Delta f}{\Delta x} \).</p>
+
+<p> Al tomar el límite, estamos haciendo que el paso sea lo más pequeño posible, y por lo tanto, la derivada mide la tasa de cambio instantánea de la función \(f\) en el punto \( x\). </p>
+
+<h2> Derivada de \(x^2\)</h2>
+Consideremos la función \(f(x) = x^2\) y calculemos su derivada. Para calcularla, podemos usar directamente la definición de la derivada:
 <center>
   \( f'(x) = \lim\limits_{dx \rightarrow 0} \dfrac{f(x+dx) - f(x)}{dx} = \lim\limits_{dx \rightarrow 0} \dfrac{(x+dx)^2 - x^2}{dx} =\) <br> 
   \( =\lim\limits_{dx \rightarrow 0} \dfrac{2x dx + dx^2}{dx} = \lim\limits_{dx \rightarrow 0} (2x + dx) = 2x\)
 </center>
-But there is a geometrical way of calculating the derivative. For that, we first define the function in a more geometrical way. <br>
-<p> Originally, we think of \(x^2\) as a function that takes a real number and returns that number squared. But we will change our interpretation and think of \(x^2\) as a function that takes in a real number, then draws a line of length \(x\), constructs a square with this side length  and calculates its area (which will give a result of \(x^2\) )</p>
-<center>
-<img class = "smallimg" src="im4.PNG" alt="Square">
-<figcaption>Square of length \(x\)</figcaption>
-</center>
-<p> Both definitions are the same (well, the second one only makes sense for positive numbers), so we may calculate the derivative using the geometrical definition instead of the analytical one.</p>
-<p> For using the definition, we first need to calculate \(f(x+dx) - f(x) \), for this, we expand the side length by an amount \(dx\) and create a new square of side length \(x+dx\). Then, the area of the big square is \(f(x+dx)\) and the area of the small one is still \(f(x) = x^2\).  </p>
-<center>
-<img class = "smallimg" src="im3.PNG" alt="Square">
-<figcaption>Square of length \(x\) and \(x+dx\)</figcaption>
-</center>
-Then, the difference between the areas of the big square and the small one is the value of \( f(x+dx) - f(x)\). Seeing the figure we may calculate these difference in areas by dividing it into a square and two rectangles. We can see that the  difference is \(f(x+dx)-f(x) = xdx+xdx+dx^2 = 2xdx + dx^2\) 
-<p> When the step \(dx\) is small enough (remember we need to take the limit \(dx \rightarrow 0\)), then \(dx^2\) tends to 0 much much faster than \(2x dx\), so the difference is  \( f(x+dx) - f(x) = 2xdx\) when \(dx\) is small enough</p>  
-<p>So we calculated this difference geometrically, now we can see that the ratio between the difference in \(f\) and the difference in \(x\) (which is \(dx\)) is \(\dfrac{df}{dx} = \dfrac{2xdx}{dx} = 2x \) </p> 
 
-<h2> Derivative of \( \sin(x)\)</h2>
-<p> In this case, we will turn directly to the geometrical definition. As I've written in the Trigonometric functions explanaition, given an angle \(x\) in the unit circle, \(\sin(x)\) is defined to be the length of the red line in the figure: </p>
+<p> Pero hay una manera geométrica de calcular la derivada. Para ello, primero definimos la función de una manera más geométrica. </p>
+
+<p> Originalmente, pensamos en \(x^2\) como una función que toma un número real y devuelve ese número al cuadrado. Pero cambiaremos nuestra interpretación y pensaremos en \(x^2\) como una función que toma un número real, dibuja una línea de longitud \(x\), construye un cuadrado con este lado y calcula su área (lo que da como resultado \(x^2\)). </p>
+
 <center>
-<img class = "smallimg" src="im5.PNG" alt="Square">
+<img class="smallimg" src="im4.PNG" alt="Cuadrado">
+<figcaption>Cuadrado de longitud \(x\)</figcaption>
+</center>
+
+<p> Ambas definiciones son equivalentes (aunque la segunda solo tiene sentido para números positivos), por lo que podemos calcular la derivada utilizando la definición geométrica en lugar de la analítica.</p>
+
+<p> Para usar la definición, primero debemos calcular \(f(x+dx) - f(x) \). Para ello, expandimos la longitud del lado en una cantidad \(dx\) y creamos un nuevo cuadrado de lado \(x+dx\). Luego, el área del cuadrado grande es \(f(x+dx)\) y el área del pequeño sigue siendo \(f(x) = x^2\). </p>
+
+<center>
+<img class="smallimg" src="im3.PNG" alt="Cuadrado">
+<figcaption>Cuadrado de longitud \(x\) y \(x+dx\)</figcaption>
+</center>
+
+<p> La diferencia entre las áreas del cuadrado grande y el pequeño es el valor de \( f(x+dx) - f(x)\). Viendo la figura, podemos calcular esta diferencia dividiendo el área en un cuadrado y dos rectángulos. Podemos ver que la diferencia es \(f(x+dx)-f(x) = xdx+xdx+dx^2 = 2xdx + dx^2\). </p>
+
+<p> Cuando el paso \(dx\) es lo suficientemente pequeño (recordemos que tomamos el límite \(dx \rightarrow 0\)), \(dx^2\) tiende a 0 mucho más rápido que \(2x dx\), por lo que la diferencia es \( f(x+dx) - f(x) = 2xdx\) cuando \(dx\) es suficientemente pequeño. </p>
+
+<p> Así, hemos calculado esta diferencia geométricamente, y ahora podemos ver que la razón entre la diferencia en \(f\) y la diferencia en \(x\) (que es \(dx\)) es \(\dfrac{df}{dx} = \dfrac{2xdx}{dx} = 2x \). </p> 
+
+<h2> Derivada de \( \sin(x)\)</h2>
+
+<p> En este caso, recurriremos directamente a la definición geométrica. Como mencioné en la explicación de las funciones trigonométricas, dado un ángulo \(x\) en el círculo unitario, \(\sin(x)\) se define como la longitud de la línea roja en la figura: </p>
+
+<center>
+<img class="smallimg" src="im5.PNG" alt="Seno">
 <figcaption>\(\sin(x) \)</figcaption>
 </center>
-To calculate the derivative, we first need to step up \(x\) by a small amount \(dx\) and see how \(\sin(x)\) changes. So, lets add an amount \(dx\) to the angle and calculate the sine again.
+
+<p> Para calcular la derivada, primero debemos incrementar \(x\) en una pequeña cantidad \(dx\) y ver cómo cambia \(\sin(x)\). Así que añadimos una cantidad \(dx\) al ángulo y calculamos el seno nuevamente. </p>
 
 <center>
-<img class = "smallimg" src="im1.PNG" alt="Square">
-<figcaption>\(\sin(x)\) and \(\sin(x+dx\)</figcaption>
+<img class="smallimg" src="im1.PNG" alt="Seno">
+<figcaption>\(\sin(x)\) y \(\sin(x+dx\)</figcaption>
 </center>
-We need to calculate how much did the function change, for that, we need the difference between the blue and red lines. We will need to zoom in into the small triangle drawn in the figure above.
+
+<p> Necesitamos calcular cuánto ha cambiado la función, es decir, la diferencia entre las líneas azul y roja. Para ello, necesitamos hacer zoom en el pequeño triángulo dibujado en la figura anterior.</p>
 
 <center>
-<img class = "smallimg" src="im2.PNG" alt="Square">
-<figcaption>Zoomed in \(\sin(x)\) and \(\sin(x+dx)\)</figcaption>
+<img class="smallimg" src="im2.PNG" alt="Zoom">
+<figcaption>Zoom de \(\sin(x)\) y \(\sin(x+dx)\)</figcaption>
 </center>
-When we zoom in, we see that the blue line (\( \sin(x+dx)\)) is slightly larger than \(\sin(x)\), we need to calculate this difference. For that, we draw the triangle shown in the figure. This is a rectangular triangle. We can see that \(dx\) is the arc length between the two points (because that is the magnitude of the small angle \(dx\) and when we look close enough, the circle is almost a straight line). Also, it is easy to prove by using similarity of triangles that the upper angle of this little triangle measures \(x \). <br>
 
-With this, and using that the triangle is rectangular, we can see that the difference of length between the two lines has a length of \(\cos(x) dx\). <br> <br>
+<p> Al hacer zoom, vemos que la línea azul (\( \sin(x+dx)\)) es ligeramente más grande que \(\sin(x)\), y necesitamos calcular esta diferencia. Para ello, dibujamos el triángulo mostrado en la figura. Este es un triángulo rectángulo. Podemos ver que \(dx\) es la longitud del arco entre los dos puntos (porque es la magnitud del pequeño ángulo \(dx\) y, cuando observamos de cerca, la circunferencia parece una línea recta). Además, es fácil demostrar usando la similitud de triángulos que el ángulo superior de este pequeño triángulo mide \(x \). </p>
 
-Therefore, if we change the input of the function by a small amount \(dx\), the value of the function changes by \( \cos(x) dx \), therefore, the rate of change, or derivative, is \(\cos(x)\). 
+<p> Con esto, y usando que el triángulo es rectángulo, podemos ver que la diferencia de longitud entre las dos líneas tiene una longitud de \(\cos(x) dx\). </p>
+
+<p> Por lo tanto, si cambiamos la entrada de la función en una pequeña cantidad \(dx\), el valor de la función cambia en \( \cos(x) dx \), por lo que la tasa de cambio o derivada es \(\cos(x)\). </p>
+
+
 
 
 
