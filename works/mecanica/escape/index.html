@@ -1,12 +1,24 @@
+
+ 
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Escape Velocity</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title> Velocidad de Escape </title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,63 +29,113 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Escape Velocity</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>  Velocidad de Escape </h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
+
+  
 
 
 
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocidad de Escape</title>
+</head>
+<body>
 
+    <hr>
 
+    <p>Supongamos que estás en la superficie de la Tierra y lanzas un objeto verticalmente hacia arriba con una velocidad inicial \(v\). Notarás que, debido a la gravedad de la Tierra, el objeto eventualmente regresará a la superficie.</p> 
 
-<!-- <h1>Aguja de Buffon</h1> -->
-<hr>
+    <p>Sin embargo, debe existir una velocidad inicial suficientemente alta, \(v_{s}\), tal que si lanzas un objeto al menos con esta velocidad, nunca regresará; continuará alejándose indefinidamente hasta que ya no sienta la atracción gravitacional de la Tierra. A esta velocidad se le llama <b>velocidad de escape</b>.</p>
 
-Suppose you are on the surface of Earth (well I suppose you truly are there) and you throw something vertically upwards with an initial speed \(v\). You will notice that due to the Earth's gravity, the object will eventually come back to the surface. <br> <br>
+    <p>Cada vez que queremos enviar algo muy lejos de la Tierra, como un satélite, debemos considerar esta velocidad y asegurarnos de que la velocidad inicial del satélite sea mayor que la velocidad de escape.</p>
 
-However, there most be some initial high speed \(v_{s}\) such that when you throw something  at least this fast, it will never come back, it will go out infinitely far until it doesn't feel Earth's gravitational pull any more. This speed is called <b> Escape velocity</b> <br> <br>
+    <h2>Cálculo de la Velocidad de Escape</h2>
 
-Whenever we want to send something like a satellite very far away from the Earth, we need to consider this speed and give the satellite an initial speed higher than it. <br><br>
+    <p>Vamos a calcular esta velocidad mínima necesaria. Para hacerlo, utilizaremos la conservación de la energía e ignoraremos cualquier efecto de fricción o pérdida de energía. Supongamos que lanzamos un objeto de masa \( m \) con exactamente la velocidad de escape, de modo que apenas logra escapar del campo gravitatorio de la Tierra. <br> Consideremos que al lanzar el objeto, tiene una velocidad de \(v_{s}\) y está a una distancia \(R\) del centro de la Tierra (donde \(R\) es el radio terrestre). Entonces, usando la expresión de la energía potencial gravitacional, su energía inicial es:</p>
 
-<h2> Calculating the Escape Velocity</h2>
+    <center>
+        \( E_1 = \dfrac{1}{2} m v_s^2 - \dfrac{GMm}{R} \)
+    </center>
 
-Let's calculate this minimum velocity needed. To do it, we will use conservation of energy and ignore any effects caused by friction or any type of loss fo energy. Let's say we throw an object of mass \( m \) with exactly the escape velocity so that it barely escapes Earth's gravitational field. <Br> Consider that when we just throw the object, it has a speed of \(v_{s}\) and it is a distance \(R\) from the center of the Earth (with \(R\) being Earth's radius). Then, using the expression for gravitational potential energy, its initial energy is: <br>
-<center>
-  \( E_1 = \dfrac{1}{2} m v_s^2 - \dfrac{GMm}{R} \)
-</center>
-Where \(M\) is the mass of the Earth. <br>
+    <p>Aquí, \(M\) es la masa de la Tierra.</p>
 
-<p> Given that the object has just the right initial speed in order to scape Earth's field, it will continue moving away until it is infinitely far. Since it has just barely the speed necessary, it won't have any remaining kinetic energy once it is infinitely far. Therefore, the final kinetic energy is 0. But as it is very very far away, its gravitational potential energy is also 0. Which means that the total energy at the end is equal to:</p>
-<center>
-  \(E_2 = 0\)
-</center>
-Since energy is conserved, we can equate these two expressions:
-<center>
-  \( \dfrac{1}{2} m v_s^2 - \dfrac{GMm}{R} = 0\)
-  <br> 
-  \( \Rightarrow \;\; v_s = \sqrt{\dfrac{2GM}{R}} \)
-</center>
-And that is the escape velocity for a planet of mass M and radius S. We see some intuitive results from this. First of all, more massive planets have a higher scape velocity. And planets with a bigger radius but same mass have a lower escape velocity, since we are already farther from the center. Notice that the escape velocity doesn't depend on \(m\).<br><Br>
+    <p>Dado que el objeto tiene justo la velocidad inicial necesaria para escapar del campo gravitatorio de la Tierra, continuará alejándose hasta que esté infinitamente lejos. Como tiene apenas la velocidad suficiente, no le quedará energía cinética una vez que esté en el infinito. Además, como está extremadamente lejos, su energía potencial gravitacional también será 0. Esto significa que la energía total al final es:</p>
 
-<p> In the following animation you can try varying the initial speed using the slider and see what happens when you throw an object at that speed by pressing start. The value \(y\) is the height reached by the object, measured from the center of the planet, which has a radius of \(0.2\).</p>
-<p> As discussed, there will be some minimum speed after which the object will always escape the gravitational field.</p>
+    <center>
+        \(E_2 = 0\)
+    </center>
 
-<p><br></p>
-<center>
-<iframe src="principal.html" width="805" height="805">
-</iframe>
-</center>
-<p><br></p>
-<p> In this case, for writting the code of the animation, I made \(G = 1\), \(M=1\) , \(R = 0.2\). Therefore, the escape velocity should be \(v_s = \sqrt{2/0.15} =  3.16 \). Try different speeds and notice that when the speed is higher than 3.16, the object seems to go out to infinity, but it returns to the Earth for lower speeds (though it takes a long time for speeds close to 3.16).</p>
+    <p>Como la energía se conserva, podemos igualar estas dos expresiones:</p>
+
+    <center>
+        \( \dfrac{1}{2} m v_s^2 - \dfrac{GMm}{R} = 0\)
+        <br> 
+        \( \Rightarrow \;\; v_s = \sqrt{\dfrac{2GM}{R}} \)
+    </center>
+
+    <p>Y esta es la velocidad de escape para un planeta de masa \(M\) y radio \(R\). Podemos notar algunos resultados intuitivos. En primer lugar, los planetas más masivos tienen una velocidad de escape mayor. Además, los planetas con un radio más grande pero con la misma masa tienen una velocidad de escape menor, ya que el objeto comienza más lejos del centro. También es importante notar que la velocidad de escape no depende de la masa \(m\) del objeto lanzado.</p>
+
+    <p>En la siguiente animación puedes variar la velocidad inicial usando el control deslizante y observar qué sucede al lanzar un objeto con esa velocidad al presionar "Iniciar". El valor \(y\) representa la altura alcanzada por el objeto, medida desde el centro del planeta, cuyo radio es \(0.2\).</p>
+
+    <p>Como discutimos, habrá una velocidad mínima a partir de la cual el objeto escapará siempre del campo gravitatorio.</p>
+
+    <center>
+        <iframe src="principal.html" width="805" height="805"></iframe>
+    </center>
+
+    <p>Para escribir el código de la animación, usé los valores \(G = 1\), \(M=1\), \(R = 0.2\). Por lo tanto, la velocidad de escape debería ser:</p>
+
+    <center>
+        \( v_s = \sqrt{\dfrac{2}{0.15}} = 3.16 \)
+    </center>
+
+    <p>Prueba diferentes velocidades y observa que cuando la velocidad es mayor que 3.16, el objeto parece irse al infinito, mientras que para velocidades menores siempre regresa a la Tierra (aunque puede tardar mucho tiempo si la velocidad está cerca de 3.16).</p>
+
+</body>
+</html>
+
+  
+
+  
 
   <div id="footerwrap">
     <div class="container">
@@ -83,7 +145,7 @@ And that is the escape velocity for a planet of mass M and radius S. We see some
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>
