@@ -1,12 +1,24 @@
+
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Work and Energy</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title> Trabajo y Energía </title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,95 +29,159 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Work and Energy</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>  Trabajo y Energía </h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
-
-
-
-
-<!-- <h1>Aguja de Buffon</h1> -->
 <hr>
-<h2>Work </h2>
 
-<p> Given a force \( F(\vec{r}) \), if we move a particle from a point \( 1 \) to a point \(2\), using a certain path, we define the work done as:</p>
+<h2>Trabajo</h2>
+
+<p>Dada una fuerza \( \vec{F}(\vec{r}) \), si movemos una partícula desde un punto \( 1 \) hasta un punto \( 2 \) siguiendo una cierta trayectoria, definimos el trabajo realizado como:</p>
+
 <center>
-  \(  W_{1,2} = \int\limits_{1}^{2} \vec{F} \cdot d\vec{r} \)
+  \( W_{1,2} = \int\limits_{1}^{2} \vec{F} \cdot d\vec{r} \)
 </center>
 
-<p> Where the integral is taken in the specific path that the particle followed. </p>
+<p>donde la integral se evalúa a lo largo de la trayectoria específica que siguió la partícula.</p>
 
-<p> <b> Conservative Force:</b> A conservative force is one in which the work done doesn't depend on the path taken, but only on the intial and final points. From vector calculus, we know that a force is conservative if its curl is 0.  </p>
+<p><b>Fuerza Conservativa:</b>  
+Una fuerza es conservativa si el trabajo realizado no depende de la trayectoria, sino únicamente de los puntos inicial y final. Desde el cálculo vectorial, sabemos que una fuerza es conservativa si su rotacional es cero.</p>
 
-<h2> Kinetic Energy </h2>
-We can change a little bit the term inside the integral using Newton's second law \(\vec{F} = m d\vec{v}/dt \) and the fact that \( d\vec{r} = d\vec{r}/dt dt \): 
-<br>
+<hr>
 
-<center> 
-  \( \vec{F} \cdot d \vec{r} = m \dfrac{d \vec{v}}{dt} \cdot \dfrac{d\vec{r}}{dt} dt = m \dfrac{d \vec{v}}{dt} \cdot \vec{v} dt = \dfrac{m}{2} \dfrac{d}{dt} (\vec{v} \cdot \vec{v}) dt = \dfrac{m}{2} \dfrac{d}{dt} (v^2) dt = d \left( \dfrac{1}{2} m v^2 \right)   \)
-</center>
-Therefore, the total work done between two points will be given by:
+<h2>Energía Cinética</h2>
+
+<p>Podemos modificar ligeramente el término dentro de la integral utilizando la segunda ley de Newton, \( \vec{F} = m \frac{d\vec{v}}{dt} \), y la relación \( d\vec{r} = \frac{d\vec{r}}{dt} dt \):</p>
+
 <center>
-  \(W_{1,2} = \int_{1}^{2} \vec{F} \cdot d \vec{r} = \int_1^2   d \left( \dfrac{1}{2} m v^2 \right)   = \dfrac{1}{2} m v_2^2 - \dfrac{1}{2} mv_1^2 \)
+  \( \vec{F} \cdot d\vec{r} = m \frac{d\vec{v}}{dt} \cdot \frac{d\vec{r}}{dt} dt = m \frac{d\vec{v}}{dt} \cdot \vec{v} dt \)
+  <br>
+  \( = \frac{m}{2} \frac{d}{dt} (\vec{v} \cdot \vec{v}) dt = \frac{m}{2} \frac{d}{dt} (v^2) dt = d \left( \frac{1}{2} m v^2 \right) \)
 </center>
-We define the term on the right to be the <b> kinetic energy </b>, \( K := \dfrac{1}{2} mv^2 \). So, in conclusion, we found that:
+
+<p>Por lo tanto, el trabajo total realizado entre dos puntos será:</p>
+
+<center>
+  \(W_{1,2} = \int_{1}^{2} \vec{F} \cdot d \vec{r} = \int_1^2   d \left( \frac{1}{2} m v^2 \right)   = \frac{1}{2} m v_2^2 - \frac{1}{2} mv_1^2 \)
+</center>
+
+<p>Definimos el término en el lado derecho como la <b>energía cinética</b>, \( K := \frac{1}{2} mv^2 \). Así, encontramos que:</p>
+
 <center>
   \(W_{1,2}   = K_2 - K_1 \)
 </center>
-This is called the <b> Work - Energy</b> theorem. It tells us that the work done from one point to the other is equal to the change in kinetic energy. This is true regardless of if the force is conservative or not. <br>
 
+<p>Esto se conoce como el <b>teorema trabajo-energía</b>. Nos dice que el trabajo realizado entre dos puntos es igual a la variación de la energía cinética. Esto es cierto sin importar si la fuerza es conservativa o no.</p>
 
+<hr>
 
+<h2>Energía Potencial</h2>
 
-<h2> Potential Energy </h2>
+<p>En el caso particular de fuerzas conservativas, podemos definir una nueva función llamada <b>energía potencial</b>:</p>
 
-
-<p>  In the special case of conservative forces, we can define a new function called <b> potential energy: </b> </p>
 <center>
   \( U(x,y,z) = - \int_P^{(x,y,z)} \vec{F} \cdot d \vec{s} \)
 </center>
-Where \( P\) is an arbitrary point in space, which is usually taken to be infinity. This function \( U(x,y,z) \) is well defined because the integral doesn't depend on the path taken (because it is a conservative force). So, as long as we go from \( P \) to \( (x,y,z) \), the integral will take the same value regardless of the path. <br>
 
-<p> Then, it can be easily seen that the work between two points is:</p>
+<p>donde \( P\) es un punto arbitrario en el espacio, que usualmente se elige en el infinito. Esta función \( U(x,y,z) \) está bien definida porque la integral no depende de la trayectoria tomada (ya que la fuerza es conservativa). Por lo tanto, mientras vayamos de \( P \) a \( (x,y,z) \), la integral tomará el mismo valor sin importar la trayectoria.</p>
+
+<p>De aquí se sigue que el trabajo entre dos puntos es:</p>
+
 <center>
-  \( W_{1,2} = \int_1^2 \vec{F} \cdot d \vec{r} = \int_1^{P} \vec{F} \cdot d \vec{r} + \int_{P}^2 \vec{F} \cdot d \vec{r} = -\int^1_{P} \vec{F} \cdot d \vec{r} + \int_{P}^2 \vec{F} \cdot d \vec{r} = U(1) - U(2) \)
+  \( W_{1,2} = \int_1^2 \vec{F} \cdot d \vec{r} = \int_1^{P} \vec{F} \cdot d \vec{r} + \int_{P}^2 \vec{F} \cdot d \vec{r} \)
+  <br>
+  \( = -\int^1_{P} \vec{F} \cdot d \vec{r} + \int_{P}^2 \vec{F} \cdot d \vec{r} = U(1) - U(2) \)
 </center>
 
-<h2> Energy </h2>
+<hr>
 
-This last formula, together with the work energy theorem leads to the following equation:
+<h2>Energía Total</h2>
+
+<p>Esta última ecuación, junto con el teorema trabajo-energía, nos lleva a la siguiente relación:</p>
+
 <center>
   \( K(2) - K(1) = U(1) - U(2) \) <br>
   \( \rightarrow \;\; U(1) + K(1)  = U(2) + K(2) \)
 </center>
-This means that the quantity \( U + K\) is conserved throughout the motion of the particle!. Therefore, we define the total energy of the particle to be \( U + K \) and we know that it will be conserved (as long as the forces involved are conservative). <br>
 
-<p> In summary, we began with a force \( F \) and then defined the work across a certain path. Then, we showed that this work is equal to the difference of a quantity which we called kinetic energy. And we saw that for conservative forces, we could define something called potential energy and that the work done was equal to minus the difference in potential energy through the path. Finally, this lead us to define the total energy as the sum of these kinetic and potential. </p> 
+<p>Esto significa que la cantidad \( U + K\) se conserva durante todo el movimiento de la partícula. Definimos entonces la <b>energía total</b> de la partícula como \( U + K \), que se mantiene constante siempre que las fuerzas involucradas sean conservativas.</p>
 
-<p>Now we will find the potential energy for different common forces:</p>
+<p>En resumen, comenzamos con una fuerza \( \vec{F} \) y definimos el trabajo a lo largo de una trayectoria. Luego demostramos que este trabajo es igual a la diferencia de una cantidad que llamamos energía cinética. Para fuerzas conservativas, definimos la energía potencial y vimos que el trabajo es igual a menos la diferencia de energía potencial. Finalmente, esto nos llevó a la conservación de la energía total, que es la suma de la energía cinética y la potencial.</p>
 
-<ul> 
-  <li> <b> Gravitational field close to Earth: </b> Close to the Earth, the gravitational force is \( \vec{F} = -mg \vec{z} \). And we can define the potential energy as \( U(x,y,z)= - \int_P^{(x,y,z)} \vec{F} \cdot d \vec{r} \). Where, as a convention, we take the reference point \(P\) to be any point in the surface of the Earth, were we set the potential energy equal to 0. Then, the potential at a point \(x,y,z\) will be  \( U(x,y,z)= - \int_0^{z} \vec{F} \cdot d \vec{r} = -\int_0^z -mg dz = mgz \) </li>
-  <li> <b> Spring: </b> In a spring, the force is equal to \( \vec{F} = -kx \widehat{x} \) where  \( x\) is the deformation of the spring with respect to its relaxed position. We define the point \(P\) to be the equilibrium position and set the potential energy to 0 there. Therefore, at any other point \(x\), the potential is \( U(x) = - \int_P^{x} \vec{F} \cdot d \vec{r} = -\int_0^x (-kx) dx = \dfrac{1}{2} kx^2 \)  </li>
-  <li> <b> Gravitational Field: </b> </li> The force is given by \(\vec{F} = -GMm\vec{r}/r^3 \). We define \(P \) to be the point at infinity, where we set the energy equal to 0. Therefore, the potential energy  at a point at distance \(r\) is equal to \( U(r) =  - \int_{\infty}^r (-GMm \vec{r}/r^3 \cdot d\vec{r}) = \dfrac{GMm}{r} \)
+<p>Ahora encontraremos la energía potencial para algunas fuerzas comunes:</p>
+
+<ul>
+  <li><b>Campo gravitatorio cerca de la Tierra:</b>  
+    Cerca de la Tierra, la fuerza gravitatoria es \( \vec{F} = -mg \hat{z} \). Definimos la energía potencial como:  
+    \( U(x,y,z) = - \int_P^{(x,y,z)} \vec{F} \cdot d \vec{r} \).  
+    Como convención, tomamos el punto de referencia \(P\) en la superficie de la Tierra, donde fijamos \( U = 0 \).  
+    Entonces, la energía potencial en un punto \( z \) es:  
+    \( U(x,y,z) = - \int_0^{z} \vec{F} \cdot d \vec{r} = -\int_0^z (-mg dz) = mgz \).
+  </li>
+
+  <li><b>Resorte:</b>  
+    En un resorte, la fuerza es \( \vec{F} = -kx \hat{x} \), donde \( x \) es la deformación respecto a la posición de equilibrio.  
+    Tomamos \( P \) en la posición de equilibrio y fijamos \( U = 0 \).  
+    Entonces, la energía potencial en un punto \( x \) es:  
+    \( U(x) = - \int_P^{x} \vec{F} \cdot d \vec{r} = -\int_0^x (-kx dx) = \frac{1}{2} kx^2 \).
+  </li>
+
+  <li><b>Campo gravitatorio general:</b>  
+    La fuerza gravitatoria es \( \vec{F} = -\frac{GMm}{r^3} \vec{r} \).  
+    Tomamos \( P \) en el infinito, donde fijamos \( U = 0 \).  
+    La energía potencial en un punto a distancia \( r \) es:  
+    \( U(r) = - \int_{\infty}^r (-GMm \vec{r}/r^3 \cdot d\vec{r}) = \frac{GMm}{r} \).
+  </li>
 </ul>
-In these cases and many others, knowing the expression for the potential energy and using the fact that energy is conserved can be a very easy tool to use in order to solve a great variety of problems. <br>
 
-\( E\)
+<p>En estos y muchos otros casos, conocer la expresión de la energía potencial y la conservación de la energía es una herramienta útil para resolver una gran variedad de problemas.</p>
+  
 
 
-<p> </p>
+
+
+
+
+ 
+
+
+
 
 
   <div id="footerwrap">
@@ -116,7 +192,7 @@ In these cases and many others, knowing the expression for the potential energy 
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>
