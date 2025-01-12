@@ -1,12 +1,23 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Kepler's Laws</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" id="MathJax-script" async
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+  <title> Leyes de Kepler </title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
   </script>
 </head>
 
@@ -17,17 +28,42 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Kepler's Laws</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>  Leyes de Kepler </h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
@@ -35,123 +71,103 @@
 
 
 
-<!-- <h1>Aguja de Buffon</h1> -->
+
+
 <hr>
 
-<h2> Problem description</h2>
-We want to figure out the orbits followed by planets when going around the sun. For that, suppose the sun has a mass \( M \) and located at the origin of coordinates. And we have a planet with mass \(m\) whose position we can describe using polar coordinates. We will suppose that the sun is kept still.<br>
+<h2>Descripción del problema</h2>
+Queremos determinar las órbitas que siguen los planetas al moverse alrededor del Sol. Para ello, supongamos que el Sol tiene una masa \( M \) y está ubicado en el origen de coordenadas. También tenemos un planeta con masa \( m \) cuya posición podemos describir usando coordenadas polares. Supondremos que el Sol permanece fijo.<br>
 
-<p> Because the sun is at the center of our coordinates, the gravitational force felt by the Earth is given by:</p>
+<p> Dado que el Sol está en el centro de nuestras coordenadas, la fuerza gravitacional que siente el planeta está dada por:</p>
 
 <center>
   \( \vec{F} = - \dfrac{GMm}{r^2} \widehat{r} \)
 </center>
-Then, we use Newton's second law \( \vec{F} = m \vec{a} \) using the expression for acceleration written in polar coordinates, and therefore we get:
+Luego, usamos la segunda ley de Newton \( \vec{F} = m \vec{a} \) utilizando la expresión para la aceleración escrita en coordenadas polares, obteniendo:
 
 <center>
   \( (\ddot{r} - r \dot{\theta}^2 ) \widehat{r} + (r \ddot{\theta} + 2 \dot{r} \dot{\theta}) \widehat{\theta} = - \dfrac{GM}{r^2} \widehat{r}  \)
 </center>
-Which gives us two coupled differential equations:
+Esto nos da dos ecuaciones diferenciales acopladas:
 <ul>
   <li> \( \ddot{r} - r \dot{\theta}^2 = - \dfrac{GM}{r^2} \)</li>
   <li> \( r\ddot{\theta} + 2 \dot{r}\dot{\theta} = 0 \)</li>
 </ul>
-It is easy to see that the second equation can be written as \(\dfrac{1}{r} \dfrac{d}{dt} (r^2 \dot{\theta}) =0\). So this implies that \(r^2 \dot{\theta} \) is constant. We usually multiply it by \(m\), which is also constant, and so we define:
+Es fácil ver que la segunda ecuación se puede escribir como \(\dfrac{1}{r} \dfrac{d}{dt} (r^2 \dot{\theta}) =0\). Esto implica que \(r^2 \dot{\theta} \) es constante. Usualmente la multiplicamos por \(m\), que también es constante, y definimos:
 <center>
   \( L := mr^2 \dot{\theta} \)
 </center>
 <br>
-Which we call the <b> Angular momentum</b> and it is a constant throughout the orbit. <br><br>
+A esto lo llamamos el <b>momento angular</b>, que es constante a lo largo de la órbita. <br><br>
 
-Nest, we have that \( \dot{\theta} = \dfrac{L}{mr^2}\), which we can substitute into the first equation to get: \( \ddot{r} -  \dfrac{L^2}{m^2r^3} = - \dfrac{GM}{r^2}\).  We can multiply this equation by \(\dot{r}\) and then integrate with respect to time:
+A continuación, tenemos que \( \dot{\theta} = \dfrac{L}{mr^2}\), que podemos sustituir en la primera ecuación para obtener: \( \ddot{r} -  \dfrac{L^2}{m^2r^3} = - \dfrac{GM}{r^2}\). Multiplicamos esta ecuación por \(\dot{r}\) y luego integramos respecto al tiempo:
 <center>
   \( \int \ddot{r} \dot{r}  dt - \int \dfrac{L^2}{m^2 r^3} \dot{r} dt = - \int \dfrac{GM}{r^2} \dot{r} dt \)<br>  <br>
   \(\Rightarrow \;\;\; \dfrac{\dot{r}^2}{2} + \dfrac{L^2}{2 m^2 r^2} = \dfrac{GM}{r} + E\)
 </center>
-Where \(E\) is an integration constant, we can simplify it to: 
+Donde \(E\) es una constante de integración, que podemos simplificar como: 
 <center>
   \(\dfrac{1}{2} m\dot{r}^2 + \dfrac{L^2}{2mr^2} - \dfrac{GMm}{r} = E \)
 </center>
-This is a very interesting equation which gives a qualitative understanding of the orbits. We can see that there is no dependance on \(\theta\) any more. Also, the first term looks exactly like the kinetic energy for a particle moving in one dimension with coordinate \(r\). <br>
-Meanwhile, the right side is constant number \(E\). So this kind of looks like an equation of conservation of energy. We already have the kinetic energy in the first term, so maybe we could think of the other two terms as making some kind of potential energy for the system, which we will call <b> effective potential </b> \(V_{eff}\). Therefore:
+Esta es una ecuación muy interesante, ya que nos da una comprensión cualitativa de las órbitas. Podemos notar que ya no hay dependencia de \(\theta\). Además, el primer término es exactamente la energía cinética de una partícula en una dimensión con coordenada \(r\). <br>
+
+El lado derecho es una constante \(E\), lo que hace que esta ecuación se parezca a la conservación de la energía. El primer término representa la energía cinética, así que podemos considerar los otros dos términos como una especie de energía potencial efectiva \(V_{eff}\), definiéndola como:
 <br><br>
 <center>
 \( \dfrac{1}{2} m \dot{r}^2 + V_{eff}(r) = E \;\;\;\;\;\;\; (1)\)
 </center>
-Which looks exactly like a conservation of energy equation. The real potential for the system is the gravitational potential \(V = - \dfrac{GMm}{r} \). But this new effective potential allows us to write the equation with only the variable \(r\) and in such a way that we get the typical conservation of energy \(KE + V  = E\). <br>
 
-<p> Now, we will try to plot the effective potential \(V_{eff} = \dfrac{L^2}{2mr^2} - \dfrac{GMm}{r} \)</p>
-
+La energía potencial efectiva es:
+<center>
+\( V_{eff} = \dfrac{L^2}{2mr^2} - \dfrac{GMm}{r} \)
+</center>
 
 <center>
-<img class = "smallimg" src="im1.png" alt="agujas">
-<figcaption>Plot of \(V_{eff}\)</figcaption>
+<img class="smallimg" src="im1.png" alt="Gráfica de \(V_{eff}\)">
+<figcaption>Gráfica de \(V_{eff}\)</figcaption>
 </center>
-This function is plotted for some arbitrary values of \(L,M,m\) just to see the general form. <br>
-We see that the function goes to infinity when \(r\) tends to 0, then it has a minimum with a value below zero and it then tends to \(0\) as \(r\) increases.<br>
 
-<p> The interesting thing is that equation (1) says tat \( \dfrac{1}{2} m\dot{r}^2 + V_{eff}\) is equal to a constant \(E\) which is the total energy of the system. But \(\dfrac{1/2} m \dot{r}^2\) needs to always be a positive number, so we must always have that \(E > V_{eff}(r)\) throughout the orbit.  </p>
-<p> This implies that given a (constant) value of \(E\), this determines the possible values of \(r\) for the orbit, which will be those for which \(E > V_{eff}(r)\). </p>
+Analizando esta ecuación y su gráfica, podemos clasificar las órbitas dependiendo de la energía \(E\):
 
-<p> This will give us a couple of different possibilities for the orbits depending on the value of \(E\):</p>
 <ul>
-  <li> <b>E < \(V_{min}\):</b>
-  Where \(V_{min}\) is the minimum value taken by the effective potential. This case is impossible, because there will be no value of \(r\) such that \(E > V_{eff}(r)\). Therefore, there is no way of satisfying equation (1) </li>
-  <li> <b> E = \(V_{min}\):</b> </li> As we said before, the only possible values for \(r\) are those for which \(V_{eff}(r) < E\). In this cases, because \(E\) is equal to the minimum of \(V_{eff}\), there is just one valid value of \(r\), which we may call \(r_{min}\). Therefore, the orbit is at all times at some fixed distance from the sun, so it must be a circle. <br>
-
-  <li> <b> 0>E>\(V_{min}\): </b> </li>
-  <center>
-<img class = "smallimg" src="im2.png" alt="agujas">
-<figcaption>Plot of \(V_{eff}\) and \(E\)</figcaption>
-</center>
-In this case we have plotted the function \(V_{eff}(r)\) as well as the constant value \(E\). As we said before, the possible values of \(r\) that the planet will have while going throught its orbit will be those for which \(V_{eff}(r) < E\). So in this case, there is a whole section of possible values of \(r\) to take, limited by the values \(r_{1}\) and \(r_2\). Therefore, the orbit will be some kind of curve that at a moment gets to a  closest distance \(r_1\) to the sun and at another moment is at the farthest distance \(r_2\).
-
-<li> <b> E \(\geq\) 0:</b></li>
-In this case, the values of \(r\) such that \(V_{eff}(r) < E\) has a minimum value as before, but includes arbitrary large values. So the planet can go infinitely far from the sun in its orbit. This is what we would call an unbounded orbit. The planet would not be "orbiting" in the literal meaning of the word, it would come close to the sun once, and then go infinitely far and never return.
+  <li> <b>E < \(V_{min}\):</b> No hay valores de \(r\) para los cuales \(E > V_{eff}(r)\), por lo que la órbita es imposible. </li>
+  <li> <b> E = \(V_{min}\):</b> Solo hay un valor de \(r\), lo que implica una órbita circular. </li>
+  <li> <b> 0>E>\(V_{min}\): </b> Se obtienen órbitas elípticas con un radio mínimo \(r_1\) y un máximo \(r_2\).</li>
+  <li> <b> E \(\geq\) 0:</b> Las órbitas son parabólicas o hiperbólicas, es decir, el planeta no está ligado gravitacionalmente y escapa al infinito. </li>
 </ul>
 
-Therefore, we can have a qualitative understanding of the form of the orbits with this analysis, though we don't know the exact formulas for the orbits yet. <br>
-
-<h2> Equations of the Orbits:</h2>
-Now we will try to solve for the equation of the orbit. To do that we begin with the two equations we have:
+<h2>Ecuaciones de las Órbitas</h2>
+Para encontrar la ecuación de la órbita \(r(\theta)\), partimos de:
 <center>
   \( mr^2 \dot{\theta} = L \)
   \( \dfrac{1}{2} m \dot{r}^2 + \dfrac{L^2}{2mr^2} - \dfrac{GMm}{r} = E\)
 </center>
-The procedure to find the orbit equation \(r(\theta)\) is long but generally straightforward, so I won't do it completely. The first step would be to isolate \(\dot{r}\) in the second equation and then divide both sides by \(L^2\), with that, we get:
-<center>
-  \( \left( \dfrac{1}{r^2} \dfrac{dr}{d\theta}  \right)^2 = \dfrac{2mE}{L^2} - \dfrac{1}{r^2} - \dfrac{2mV(r)}{L^2} \)
-</center>
-Finally, we solve for \(\dfrac{dr}{d\theta}\) in this equation and then integrate in order to get \(r(\theta)\) after many steps. The solution turns out to be:
+
+Después de varios pasos matemáticos, la solución obtenida es:
 <center>
   \( r(\theta)= \dfrac{L^2}{m\alpha(1+\epsilon \cos \theta)} \)
 </center>
-Where we have defined \(\epsilon := \sqrt{1+ \dfrac{2EL^2}{m\alpha^2}}\) and \(\alpha := GMm\). <br>
+Donde:
+<ul>
+  <li>\(\epsilon := \sqrt{1+ \dfrac{2EL^2}{m\alpha^2}}\) (excentricidad)</li>
+  <li>\(\alpha := GMm\)</li>
+</ul>
 
-This result gives us the orbit of the planet in polar equations, giving us the value of \(r\) for any \(\theta\). The incredible thing is that this equation can be shown to be the polar representation of a <b> conic section</b> with eccentricity \(\epsilon\). So we have shown that planets always move in orbits with the forms of conic sections. The conic section in particular depends on the value of \(\epsilon\). <br>
+Esta ecuación muestra que las órbitas son <b>secciones cónicas</b> (círculos, elipses, parábolas o hipérbolas) dependiendo de \(\epsilon\). La relación entre la energía y la excentricidad confirma los resultados obtenidos cualitativamente antes.
 
-<p> It is easy to prove using standard calculus, that the minimum value of the effective potential is \(V_{eff} = - \dfrac{\alpha^2}{2L^2}\) </p>
-<p> Therefore, the eccentricity can be writen as:</p>
+<p> A continuación, puedes ver una animación de estas órbitas. Selecciona la posición y velocidad inicial en las direcciones \(x\) y \(y\) usando los controles deslizantes. Luego presiona "Iniciar" para observar la órbita generada. </p>
 
 <center>
-  \(\epsilon = \sqrt{1 - \dfrac{E}{V_{min}}} \)
+<iframe src="kepindex.html" width="805" height="805"></iframe>
 </center>
-<p> Which explains the cases for the orbits we found earlier. If \(E = V_{min}\), the eccentricity is \(\epsilon = \sqrt{0} = 0\), which means that the orbit is a circle, just as we showed quantitatively earlier. </p> 
-<p> If \(E < V_{min}\), we have the square root of a negative number, and the solution makes no sense, as we had concluded earlier. If \( V_{min} < E < 0\), then \(0 < \epsilon < 1\), which mwans that the orbit is an ellipse. This coincides with the behaviour we described earlier, the orbit has a closest and a farthest point. </p>
-<p> Finally, when \(E=0\), then \(\epsilon = 1\), so the orbit is a Parabola and if \(E >0\), then  \(\epsilon > 1\) and the orbit is a hyperbola. In either case, the planet only gets close to the sun once and then goes to infinity, just as we described earlier. </p>
-  <br>
-<p> You can see this orbits using the following animation. Select the starting position and velocity of the planet in the x and y direction using the sliders. Then press start to see what orbit the planet makes. The program divides the motion in many little steps, and in each one of them it calculates the gravitational force and accelerates the planet accordingly. The program doesn't know what the orbit will look like, it just draws step by step according to the acceleration given by gravity. Still, you can see that the results are conic orbits, which assures us once again, now computationally, that the gravitational force leads to conic orbits. </p>
 
-<p><br></p>
-<center>
-<iframe src="kepindex.html" width="805" height="805">
-</iframe>
-</center>
-<p><br></p>
-Try varying the initial speed and notice how for high speeds (which have high energy), the orbits are usually unbounded. <br><br>
+<p>Prueba variando la velocidad inicial y observa cómo a altas velocidades (mayor energía) las órbitas tienden a ser no ligadas.</p>
 
-The fact that gravitational orbits are conic sections is known as Kepler's first law. <br>
-<br>
+<p>El hecho de que las órbitas gravitacionales sean secciones cónicas es conocido como la <b>Primera Ley de Kepler</b>.</p>
+
+
+
+
 
 
 
@@ -164,7 +180,7 @@ The fact that gravitational orbits are conic sections is known as Kepler's first
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>
