@@ -1,19 +1,25 @@
+
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Brownian motion</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
-<script type="text/javascript"
-  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-
-
+  <title>  Movimiento Browniano</title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
+  </script>
 </head>
 
 
@@ -23,18 +29,42 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Brownian Motion</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
 
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>  Movimiento Browniano </h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
@@ -42,22 +72,27 @@
 
 <hr>
 
-Brownian motion is the random trajectory described by particles suspended in a medium. <br>
-That is, when we have some particle moving in such a way that it changes its direction in small random fluctuations, we say it is following a brownian motion. <br> <br>
+<h2>Movimiento Browniano</h2>
 
-This motion was first investigated by Brown when he described the rapid oscillatory motion of microscopic particles within the pollen grains of a flower when suspended under water as seen by a microscope. <br> <br>
+<p>El movimiento browniano es la trayectoria aleatoria descrita por partículas suspendidas en un medio.</p>
+<p>Es decir, cuando una partícula se mueve de tal manera que cambia su dirección en pequeñas fluctuaciones aleatorias, decimos que sigue un movimiento browniano.</p>
 
-The first explanation attributed the motion to thermal convection currents in the fluid. However, observations of two nearby particles describing very different Brownian motions refuted this theory. <br> <br>
+<p>Este movimiento fue investigado por primera vez por Brown, quien describió el rápido movimiento oscilatorio de partículas microscópicas dentro de los granos de polen de una flor suspendidos en agua, tal como se observa bajo un microscopio.</p>
 
-Then, Einstein proposed that this motion was a consequence of the kinetic theory of gasses. According to this theory, particles in a fluid are constantly in motion, colliding and bouncing off between them. The explanation of Brownian motion was that the particles of the fluid also collided with the small pollen particle in random unpredictable ways, causing it to move in arbitrary directions. <br> <br>
+<p>La primera explicación atribuía el movimiento a corrientes de convección térmica en el fluido. Sin embargo, la observación de dos partículas cercanas describiendo movimientos brownianos muy diferentes refutó esta teoría.</p>
 
-The following animations represents a random walk, as that which a particle in brownian motion would describe.
+<p>Posteriormente, Einstein propuso que este movimiento era una consecuencia de la teoría cinética de los gases. Según esta teoría, las partículas en un fluido están en constante movimiento, chocando y rebotando entre sí. La explicación del movimiento browniano era que las partículas del fluido también chocaban con la pequeña partícula de polen de manera aleatoria e impredecible, haciendo que se moviera en direcciones arbitrarias.</p>
+
+<p>La siguiente animación representa un paseo aleatorio, similar al que describiría una partícula en movimiento browniano.</p>
 
 <p><br></p> 
+
 <center>
-<iframe src="principal.html" width="505" height="505">
-</iframe>
+<iframe src="principal.html" width="505" height="505"></iframe>
 </center>
+
+
+
 
 
 
@@ -69,7 +104,7 @@ The following animations represents a random walk, as that which a particle in b
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>
