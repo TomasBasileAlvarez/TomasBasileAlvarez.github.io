@@ -25,10 +25,10 @@ function setup(){
    text('1', 85,15);
    state=0;
    strokeWeight(2);
-  dr = createButton('Draw');
+  dr = createButton('Dibujar');
   dr.position(100,650);
   dr.mousePressed(change0);
-  nex = createButton('Next');
+  nex = createButton('Siguiente');
   nex.position(300,650);
   nex.mousePressed(change1);
 }

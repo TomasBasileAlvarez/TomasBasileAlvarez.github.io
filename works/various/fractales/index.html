@@ -1,14 +1,25 @@
-  
+
+
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Self Similar Fractals 1</title>
-  <link rel="stylesheet" href="../../../assets/css/style.css">
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
 </script>
+
+  <title> Fractales 1</title>
+  <link href="../../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../assets/css/style.css" rel="stylesheet">
+    <link href="../../../assets/css/font-awesome.min.css" rel="stylesheet">
+  </script>
 </head>
 
 
@@ -18,109 +29,124 @@
 
 <body>
 
-  <div id="headerwrap2">
-      <div class="container">
-      <div class="row">
-        <p class="hip"><a href="../../../works.html">Back</a> 
-        <div class="col-lg-6 col-lg-offset-3">
-          <h1>Self Similar Fractals</h1>
-          <h5>Tomás Basile</h5>
-        </div>
-      </div><! --/row -->
-      </div> <!-- /container -->
-  </div><! --/headerwrap -->
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+
+      </div>
+      <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../../../index.html">Inicio</a></li>
+      <li><a href="../../../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+    <li><a href="../../../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+    <li><a href="../../../cursos.html">Cursos Escolares y Notas</a></li>
+    <li><a href="../../../otros.html">Otros Cursos y Premios</a></li>
+    <li><a href="../../../docencia.html">Docencia</a></li>
+    <li class="active"><a href="../../../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+    </ul>
+    </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+
+<div id="headerwrap">
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3">
+        <h1>  Fractales 1 </h1>
+      </div>
+    </div><! --/row -->
+    </div> <!-- /container -->
+</div><! --/headerwrap -->
 
 
 
-
-
-
-<!-- <h1>Aguja de Buffon</h1> -->
-<hr>
-<h2> Introduction</h2>
-
-<p> The concept of a fractal is pretty general in mathematics, so we will consider only a special type of fractals. </p>
-<p> The types of fractals we will consider are what we will call self similar fractals. That is, as a first definition,  sets that have subsets that are similar to the complete set. Moreover, we will concentrate only on fractals defined inside \( R^2 \).</p>
-
-
-
-<p> To understand this, we will need some definitions first</p>
-
-<h4> Similarity Transformation</h4>
-
-<p> We will define a similarity transformation on a set \( V \) as a function \( f: R^2 \rightarrow R^2 \) that 'preserves forms'. That is, for any subset of \( R^2 \) on which we apply the transformation, the result is similar to \( V \) (it has the same form, only rotated, scaled and/or translated) </p>
-<p> We will only care for transformations conformed of a composition of rotations around the origin, translations and homogeneous scaling. These transformations clearly 'preserve forms'.</p>
-<p> If a set B can be obtained by applying a similarity transformation to a set A, we say that A and B are similar sets (intuitively, A and B have the same form, only rotated, translated and scaled).</p>
-
-
-
-<h4> Self similar set</h4>
-
-<p> We will define a self similar set (what we will call a fractal) as a set \( E \subset R^2 \) such that there exists a set of similary transformations \( f_1, f_2, \cdots , f_n : R^2 \rightarrow R^2 \) with:</p>
-<ol>
-  <li> \( f_i(E) \subset E \;\;\;\; \forall i \)</li>
-  <li> \( E = f_1(E) \cup f_2(E) \cup f_3(E) \cdots \cup f_n(E) \)</li>
-</ol>
-
-<p> The first condition tells us that applying any of the functions to the whole set E, gives us as a result a part of E. Since the functions are similarity transformations, this encapsulates the intuitive definition of a fractal, that a part of it is similar to the whole set. </p>
-<p> The second condition just tells us that the set E can be constructed from applying every function to E and joining the results. That is, the set E is formed by n parts (each one beign \( f_i(E) \) ) that are each similar to the whole set. </p>
-
-<p> To understand this better, we can see the following example:</p>
-
-<center>
-<img class = "smallimg" src="fig1.PNG" alt="Sierpinski Triangle">
-<figcaption>Sierpinski Triangle</figcaption>
-</center>
-
-<p> This famous set is called the Sierpinski triangle and it is the quintessential example of a self similar fractal. </p>
-<p> It is easy to see that the set is divided in three subsets that are similar to the triangle as a whole (the red, blue and green subtriangles). This means that each of these three subtriangles can be obtained by applying a similarity transformation to the whole triangle.</p>
-<p> That is, there is a similarity transformation \( f_1 \) that when applied to the whole triangle gives as a result the red subtriangle. And there is another function \( f_2 \) that when applied to the whole triangle gives as a result the blue subtriangle, and a function \( f_3 \) that gives as a result the green one.  </p>
-<p> In this case, the functions \( f_1, f_2 , f_3 \) consist only in scaling the whole triangle by 1/2 and then translating it in different directions for each function.</p>
-<p> That way, we could say that the triangle is composed of three subparts that are similar to the whole set. We can see that this set with this three functions satisfies the definition we gave for a fractal.</p>
-
-<hr> 
-<h2> Examples</h2>
-
-<p> We now proceed with some examples and animations. </p>
-
-<h4> Sierpinski Triangle</h4>
-<p> We already saw the Sierpinski triangle in the previous section. It is a set that consists of three selfsimilar parts. </p>
-<p> In the following animation, you can see how these three functions work to transform the whole triangle in each of the three subtriangles to which it is similar. In the animation, the triangle is drawn in the cartesian plane with a length of 1 unit. Try applying each transformation and see how it transforms the triangle into each subtriangle. The animation includes a general description of what each function is doing when applied. </p>
-
-
-
-<p><br></p> 
-<center>
-<iframe src="sierpinski.html" width="705" height="705">
-</iframe>
-</center>
-
-
-<br>
-<br>
-<h4> Koch Curve</h4>
-
-<p> The Koch curve is another famous fractal now consisting of 4 selfsimilarities. That is, the set can be seen as composed of 4 subsets, each similar to the complete set. </p>
-<p> Two of these functions now involve rotations. Use the following animation to see the functions in action.</p>
-
-<p><br></p> 
-<center>
-<iframe src="koch.html" width="705" height="705">
-</iframe>
-</center>
-
-<br>
-<br>
-<h4> Dragon Curve</h4>
-
-<p> The Dragon curve is a self similar fractal that consists of only 2 selfsimilarities. That is, the set can be seen as composed of 2 subsets, each similar to the complete set. </p>
-<p> Both functions involve rotations, scaling and translation. Use the following animation to see the functions in action.</p>
-
-<p><br></p> 
-<center>
-<iframe src="dragon.html" width="905" height="905">
-</iframe>
-</center>
+  <hr>
+  <h2> Introducción</h2>
+  
+  <p> El concepto de un fractal es bastante general en matemáticas, por lo que consideraremos solo un tipo especial de fractales. </p>
+  <p> Los tipos de fractales que consideraremos son los que llamaremos fractales autosemejantes. Es decir, como una primera definición, conjuntos que tienen subconjuntos que son similares al conjunto completo. Además, nos concentraremos solo en fractales definidos dentro de \( R^2 \).</p>
+  
+  <p> Para entender esto, primero necesitaremos algunas definiciones.</p>
+  
+  <h4> Transformación de similitud</h4>
+  
+  <p> Definiremos una transformación de similitud en un conjunto \( V \) como una función \( f: R^2 \rightarrow R^2 \) que 'preserva formas'. Es decir, para cualquier subconjunto de \( R^2 \) al que apliquemos la transformación, el resultado es similar a \( V \) (tiene la misma forma, solo que rotado, escalado y/o trasladado). </p>
+  <p> Solo nos interesarán transformaciones conformadas por una composición de rotaciones alrededor del origen, traslaciones y escalado homogéneo. Estas transformaciones claramente 'preservan formas'.</p>
+  <p> Si un conjunto B se puede obtener aplicando una transformación de similitud a un conjunto A, decimos que A y B son conjuntos similares (intuitivamente, A y B tienen la misma forma, solo que rotados, trasladados y escalados).</p>
+  
+  <h4> Conjunto autosemejante</h4>
+  
+  <p> Definiremos un conjunto autosemejante (lo que llamaremos un fractal) como un conjunto \( E \subset R^2 \) tal que existe un conjunto de transformaciones de similitud \( f_1, f_2, \cdots , f_n : R^2 \rightarrow R^2 \) con:</p>
+  <ol>
+    <li> \( f_i(E) \subset E \;\;\;\; \forall i \)</li>
+    <li> \( E = f_1(E) \cup f_2(E) \cup f_3(E) \cdots \cup f_n(E) \)</li>
+  </ol>
+  
+  <p> La primera condición nos dice que aplicar cualquiera de las funciones al conjunto completo E da como resultado una parte de E. Dado que las funciones son transformaciones de similitud, esto encapsula la definición intuitiva de un fractal: que una parte de él es similar al conjunto completo. </p>
+  <p> La segunda condición simplemente nos dice que el conjunto E se puede construir aplicando cada función a E y uniendo los resultados. Es decir, el conjunto E está formado por n partes (cada una siendo \( f_i(E) \) ) que son cada una similar al conjunto completo. </p>
+  
+  <p> Para entender esto mejor, podemos ver el siguiente ejemplo:</p>
+  
+  <center>
+  <img class = "smallimg" src="fig1.PNG" alt="Triángulo de Sierpinski">
+  <figcaption>Triángulo de Sierpinski</figcaption>
+  </center>
+  
+  <p> Este famoso conjunto se llama el triángulo de Sierpinski y es el ejemplo por excelencia de un fractal autosemejante. </p>
+  <p> Es fácil ver que el conjunto se divide en tres subconjuntos que son similares al triángulo como un todo (los subtriángulos rojo, azul y verde). Esto significa que cada uno de estos tres subtriángulos se puede obtener aplicando una transformación de similitud al triángulo completo.</p>
+  <p> Es decir, existe una transformación de similitud \( f_1 \) que, al aplicarse al triángulo completo, da como resultado el subtriángulo rojo. Y hay otra función \( f_2 \) que, al aplicarse al triángulo completo, da como resultado el subtriángulo azul, y una función \( f_3 \) que da como resultado el verde. </p>
+  <p> En este caso, las funciones \( f_1, f_2 , f_3 \) consisten solo en escalar el triángulo completo por 1/2 y luego trasladarlo en diferentes direcciones para cada función.</p>
+  <p> De esta manera, podríamos decir que el triángulo está compuesto por tres subpartes que son similares al conjunto completo. Podemos ver que este conjunto con estas tres funciones satisface la definición que dimos para un fractal.</p>
+  
+  <hr> 
+  <h2> Ejemplos</h2>
+  
+  <p> Ahora procederemos con algunos ejemplos y animaciones. </p>
+  
+  <h4> Triángulo de Sierpinski</h4>
+  <p> Ya vimos el triángulo de Sierpinski en la sección anterior. Es un conjunto que consta de tres partes autosemejantes. </p>
+  <p> En la siguiente animación, puedes ver cómo funcionan estas tres funciones para transformar el triángulo completo en cada uno de los tres subtriángulos a los que es similar. En la animación, el triángulo se dibuja en el plano cartesiano con una longitud de 1 unidad. Intenta aplicar cada transformación y observa cómo transforma el triángulo en cada subtriángulo. La animación incluye una descripción general de lo que hace cada función cuando se aplica. </p>
+  
+  <p><br></p> 
+  <center>
+  <iframe src="sierpinski.html" width="705" height="705">
+  </iframe>
+  </center>
+  
+  <br>
+  <br>
+  <h4> Curva de Koch</h4>
+  
+  <p> La curva de Koch es otro fractal famoso que ahora consta de 4 autosemejanzas. Es decir, el conjunto puede verse como compuesto de 4 subconjuntos, cada uno similar al conjunto completo. </p>
+  <p> Dos de estas funciones ahora involucran rotaciones. Usa la siguiente animación para ver las funciones en acción.</p>
+  
+  <p><br></p> 
+  <center>
+  <iframe src="koch.html" width="705" height="705">
+  </iframe>
+  </center>
+  
+  <br>
+  <br>
+  <h4> Curva del Dragón</h4>
+  
+  <p> La curva del Dragón es un fractal autosemejante que consta de solo 2 autosemejanzas. Es decir, el conjunto puede verse como compuesto de 2 subconjuntos, cada uno similar al conjunto completo. </p>
+  <p> Ambas funciones involucran rotaciones, escalado y traslación. Usa la siguiente animación para ver las funciones en acción.</p>
+  
+  <p><br></p> 
+  <center>
+  <iframe src="dragon.html" width="905" height="905">
+  </iframe>
+  </center>
+  
 
 
 
@@ -132,7 +158,7 @@
         </div>
     
         <div class="col-lg-4">
-          <p>tbasilealvarez@ciencias.unam.mx</p>
+          <p>tbasilealvarez@gmail.com</p>
         </div>
       </div>
     </div>
@@ -142,16 +168,3 @@
     <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete

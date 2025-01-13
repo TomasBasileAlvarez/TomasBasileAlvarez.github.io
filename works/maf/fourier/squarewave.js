@@ -12,11 +12,11 @@ function setup(){
     x[i]=2*i/lon;
     suma[i]=0;
   }
-  res = createButton('reset');
+  res = createButton('resetear');
   res.position(200,650);
   res.mousePressed(reseteo);
 
-  nex = createButton('next');
+  nex = createButton('siguiente');
   nex.position(400,650);
   nex.mousePressed(next);
 

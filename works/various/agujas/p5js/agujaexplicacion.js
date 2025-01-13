@@ -30,11 +30,11 @@ function draw() {
  stroke(0);
  fill(0);
  strokeWeight(1);
- text("x Position:",220,530);
+ text("Posición x:",220,530);
  text(sliderx.value()/100,450,530);
- text("y Position:",220,570);
+ text("Posición y:",220,570);
  text((slidery.value()-50)/100,450,570);
- text("Angle:",220,610);
+ text("Ángulo:",220,610);
  text(sliderang.value(),450,610);
 
 
@@ -89,7 +89,7 @@ function draw() {
   strokeWeight(0.8);
   stroke(0);
   fill(0);
-  text("Distance from the center of the needle to the closest line",20,650);
+  text("Distancia del centro de la aguja a la linea más cercana",20,650);
   strokeWeight(1.4)
   stroke(0,50,200);
   fill(0,50,200);

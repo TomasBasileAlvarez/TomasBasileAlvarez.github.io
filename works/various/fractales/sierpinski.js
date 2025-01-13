@@ -10,20 +10,20 @@ function setup(){
 
   reset();
 
-  trans1 = createButton('transformation 1');
+  trans1 = createButton('transformación 1');
   trans1.position(100, 600);
   trans1.mousePressed(t1);
 
-  trans2 = createButton('transformation 2');
+  trans2 = createButton('transformación 2');
   trans2.position(250, 600);
   trans2.mousePressed(t2);
 
-  trans3 = createButton('transformation 3');
+  trans3 = createButton('transformación 3');
   trans3.position(400, 600);
   trans3.mousePressed(t3);
 
 
-  res = createButton('reset');
+  res = createButton('resetear');
   res.position(250, 650);
   res.mousePressed(reset);
 }
@@ -104,7 +104,7 @@ function draw(){
     noStroke();
     fill(200,20,20);
     textSize(16);
-    text('Scale by 1/2', 370,50);
+    text('Escalar por 1/2', 370,50);
 
     }
 
@@ -137,7 +137,7 @@ function draw(){
     noStroke();
     fill(20,200,20);
     textSize(16);
-    text('Translate by 1/2 and scale by 1/2', 370,50);
+    text('Trasladar por 1/2 y escalar por 1/2', 370,50);
 
     }
 
@@ -167,7 +167,7 @@ function draw(){
     noStroke();
     fill(50,50,250);
     textSize(16);
-    text('Translate by 1/4 in x dirction and sqrt(3)/4 in y and scale by 1/2', 110,50);
+    text('Trasladar por 1/4 en la dirección x, sqrt(3)/4 en y, y escalar 1/2', 110,50);
 
     }
 }

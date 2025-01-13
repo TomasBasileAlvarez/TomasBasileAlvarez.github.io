@@ -20,10 +20,10 @@ function setup(){
   text('1', 605,515);
   text('1', 85,15);
 
-  dr = createButton('Draw');
+  dr = createButton('Dibujar');
   dr.position(100,650);
   dr.mousePressed(change0);
-  nex = createButton('Next');
+  nex = createButton('Siguiente');
   nex.position(300,650);
   nex.mousePressed(change1);
 }
@@ -130,7 +130,7 @@ function muevea(){
     noStroke();
     fill(200,20,20);
     textSize(20);
-    text('Scale by 1/3', 150,50);
+    text('Escalar por 1/3', 150,50);
 
   }
 

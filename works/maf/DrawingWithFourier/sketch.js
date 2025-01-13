@@ -41,7 +41,7 @@ function setup() {
   fill(255);
   textAlign(CENTER);
   textSize(54);
-  text("Draw Something", width/2, height/2);
+  text("Dibujar algo", width/2, height/2);
 }
 
 function epicycles(x, y, rotation, fourier) {

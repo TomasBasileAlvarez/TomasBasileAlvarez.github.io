@@ -16,11 +16,11 @@ function setup() {
   }
   frameRate(30);
 
-  button = createButton('Start');
+  button = createButton('Empezar');
   button.position(350,470 );
   button.mousePressed(begin);
 
-  button = createButton('Reset');
+  button = createButton('Repetir');
   button.position(440,470 );
   button.mousePressed(reset);
 

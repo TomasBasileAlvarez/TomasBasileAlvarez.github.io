@@ -68,20 +68,6 @@
 
 
 <hr>
-<h2> What is a Fourier Series?</h2>
-Putting it simple, a Fourier Series is a way of writing a function as a sum of sines and cosines. <br>
-For example, suppose we have a function \( f \) defined over an interval \( [-L,L] \). The fourier series of this function is a way of writting \(f(x)\) on this interval as a sum of cosines and sines of different frequencies. That is, we can write \(f(x)\) as:
-<center>
-  \(f(x) = \dfrac{a_0}{2} + \sum\limits_{n=1}^{\infty} \left[a_n \cos \left( \dfrac{n\pi x}{l}\right) + b_n \sin \left( \dfrac{n\pi x}{l} \right) \right] \)
-</center>
-Where \(a_n\) and \(b_n\) are real numbers, whose values depend on the function \(f(x)\). <br>
-
-In some sense, this means that the set of functions \({ \cos \left( \dfrac{\pi x}{l}\right),\sin \left( \dfrac{\pi x}{l}\right),\cos \left( \dfrac{2\pi x}{l}\right),\sin \left( \dfrac{2\pi x}{l}\right),\cos \left( \dfrac{3\pi x}{l}\right),\sin \left( \dfrac{3\pi x}{l}\right), \cdots  \}\) is like a basis for all functions defined on the interval \([-L,L]\). Because any function 
-
-
-
-
-<hr>
     <h2>¿Qué es una Serie de Fourier?</h2>
 
     <p>En términos simples, una Serie de Fourier es una forma de escribir una función como una suma de senos y cosenos.</p>
@@ -104,6 +90,14 @@ In some sense, this means that the set of functions \({ \cos \left( \dfrac{\pi x
 
     <p>actúa como una base para todas las funciones definidas en el intervalo \([-L, L]\).  
     Esto significa que cualquier función en este intervalo puede expresarse como una combinación de estas funciones trigonométricas.</p>
+
+      <br><br>
+
+      En el siguiente ejemplo puedes observar cómo se ve la serie de Fourier de una onda cuadrada. Al apretar siguiente, se añade un término más a la serie de Fourier. El término se muestra en verde y la serie completa de Fourier hasta dicho término se muestra en rojo. 
+    <center>
+      <iframe src="squarewave.html" width="705" height="705">
+      </iframe>
+      </center>
 
 </body>
 </html>

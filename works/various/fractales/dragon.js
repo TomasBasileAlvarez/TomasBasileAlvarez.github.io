@@ -9,15 +9,15 @@ function setup(){
 
   reset();
 
-  trans1 = createButton('transformation 1');
+  trans1 = createButton('transformación 1');
   trans1.position(100, 700);
   trans1.mousePressed(t1);
 
-  trans2 = createButton('transformation 2');
+  trans2 = createButton('transformación 2');
   trans2.position(250, 700);
   trans2.mousePressed(t2);
 
-  res = createButton('reset');
+  res = createButton('resetear');
   res.position(250, 750);
   res.mousePressed(reset);
 }
@@ -89,7 +89,7 @@ function draw(){
     noStroke();
     fill(200,20,20);
     textSize(16);
-    text('Scale by 1/2, rotate -60 degrees and translate by 1', 370,50);
+    text('Escalar por 1/2, rotar -60 grados y trasladar por 1', 370,50);
 
     }
 
@@ -122,7 +122,7 @@ function draw(){
     noStroke();
     fill(20,200,20);
     textSize(16);
-    text('Scale by 1/2, rotate 60 degrees', 370,50);
+    text('Escalar por 1/2, rotar 60 grados', 370,50);
 
     }
 }
