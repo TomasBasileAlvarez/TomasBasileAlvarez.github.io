@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-    <title>Cursos</title>
+    <title>Proyectos en Matemáticas y Física</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
@@ -31,8 +31,8 @@
         </div>
         <div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-			  <li class="active"><a href="index.html">Inicio</a></li>
-			  <li><a href="proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+			  <li><a href="index.html">Inicio</a></li>
+			  <li  class="active"><a href="proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
 			<li><a href="proyectos_ml.html">Proyectos en Programación y ML</a></li>
 			<li><a href="cursos.html">Cursos Escolares y Notas</a></li>
 			<li><a href="otros.html">Otros Cursos y Premios</a></li>
@@ -48,7 +48,7 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3">
-					<h1>Cursos Escolares y Notas</h1>
+					<h1>Proyectos en Matemáticas y Física</h1>
 				</div>
 			</div><! --/row -->
 	    </div> <!-- /container -->
@@ -86,7 +86,7 @@
 <br><br>
 
 
-<h2> 2. Quantum simulation of Pauli channels and dynamical maps: Algorithm and implementation (Artículo de investigación publicado como autor principal en la revista Plos ONE) </h2> <br>
+<h2> 2. Quantum simulation of Pauli channels and dynamical maps: Algorithm and implementation (Autor principal de artículo de investigación publicado como autor principal en la revista Plos ONE) </h2> <br>
 
 Mientras trabajábamos en la tesis de licenciatura del punto anterior, mi asesor y yo decidimos ampliar el trabajo y escribir un artículo de investigación para publicarlo en una revista internacional de física (en este caso, la revista Plos ONE en su área de información y computación cuántica). 
 En dicho artículo aparezco yo como el autor principal y tiene las siguientes ampliaciones respecto al trabajo de tesis:
@@ -114,7 +114,7 @@ En dicho artículo aparezco yo como el autor principal y tiene las siguientes am
 </center>
 <br><br>
 
-<h2> 3. Weyl channels for multipartite systems (Artículo de investigación publicado en la revista Physical Review A)  </h2> <br>
+<h2> 3. Weyl channels for multipartite systems (Autor principal de artículo de investigación publicado en la revista Physical Review A)  </h2> <br>
 
 Este proyecto inició mientras trabajaba con mi asesor de tesis de licenciatura, el Dr. Carlos Pineda. Él me mostró un proyecto que acababa de realizar su grupo de investigación, el cual me interesó mucho. Tras pensar mucho sobre dicho proyecto, se me ocurrió una forma de hacer sus resultados más simples, generales y aplicables.
 Tras proponerle a mi asesor este nuevo proyecto, empezamos a trabajarlo junto con un alumno de maestría y otros dos investigadores de física. El resultado es un artículo del cual soy autor principal publicado en la prestigiosa revista Physical Review A.
@@ -152,9 +152,53 @@ También presenté una versión preliminar de este trabajo con un póster en la 
 	<br>
 
 
-<h2> Learning Optimal Erasure of a Static Random Access Memory (Artículo dr Investigación próximo a publicarse en New Journla Physics) </h2>
-Este articulo de investigación inició como un proyecto en el instituto Neils Bohr en Copenhague durante mi maestría, que luego mi asesor y yo decidimos extender para poder publicarlo. <br>
+
+<h2> 4. Learning Optimal Erasure of a Static Random Access Memory (Autor principal de artículo de Investigación próximo a publicarse en New Journla Physics) </h2> <br>
+Este articulo de investigación inició como un proyecto en el instituto Neils Bohr en Copenhague durante mi maestría, que luego mi asesor y yo decidimos extender para poder publicarlo. Ahora está en proceso de ser publicado, siendo yo el autor principal.<br>
 	  A grandes razgos, la idea del proyecto es usar la teoría de termodinámica estocástica para modelar una memoria RAM y obtener una forma de calcular el calor que libera la memoria al borrar un bit. Posteriormente, se usan técnicas de Machine learning y diferenciación automática para encontrar el protocolo que se debe de seguir para borrar la memoria de la forma que produzca la menor cantidad de calor posible. <br>
+
+	  <div style="text-align: center;">
+		<img src="assets/img/ram.PNG" alt="Imagen articulo RAM">
+		<p> Imagen de uno de los resultados del proyecto.</p>
+	</div>
+	<br>
+ 
+Más a detalle, lo que hicimos en este trabajo es lo siguiente:
+<ul>
+	<li> Se describe la teoría de una celda de memoria RAM, llegando hasta una ecuación maestra que sea termodinámicamente consistente.</li>
+	<li> Se encuentra una expresión matemática para la entropía producida por una celda de memoria RAM al borrar un bit de información de la memoria.</li>
+	<li> Usando la librería JAX de Python, se crea un algoritmo que dado un protocolo para borrar un bit, calcula la entropía producida y el estado final del bit. 
+		Luego, utilizando diferenciación automática de la librería JAX, se calcula el gradiente de la entropía producida con respecto a los parámetros que definen al protocolo usado para borrar el bit. </li>
+	<li> Se usa descendencia de gradiente con el optimizador ADAM para encontrar el protocolo que minimiza la producción de entropía pero también maximiza qué tanto fue borrado el bit (es decir, se usa optimización multiobjetivo para tomar en cuenta los dos objetivos que se buscan optimizar).</li>
+	<li> Se repite lo anterior para distintas duraciones del protocolo, para concluir sobre cómo cambia la producción de entropía respecto a la duración del protocolo </li>
+	<li> Se concluye que es posible borrar una celdad de memoria RAM  arbitrariamente rápido con una disipación de calor que no crece demasiado al disminuir el tiempo de protocolo. Además, se encuentran explícitamente los protocolos de borrado que minimizan la disipación de calor.  </li>
+</ul>
+<center>
+	<h3><a href="projects/articulo_ram.pdf" target="_blank"> <b> Leer el artículo </b></a> </h3>
+	</center>
+	<br>
+
+
+<br>
+
+<h2> 5. Learning Entropy Production in Stochastic Systems (Tesis para la maestría en física de sistemas complejos en la Universidad de Copenhague)</h2>
+
+<h2>6. Mapa Iterativo de Gauss en Números Complejos (Pequeño proyecto computacional para la materia de licenciatura de Sistemas Dinámicos y Caos) </h2>
+
+
+
+<h2> 7.  Periodic Spin Chain (pequeño proyecto computacional para la materia de maestría de Complex Physics)</h2>
+
+
+<h2> 8.  Percolation and Avalanches (pequeño proyecto computacional para la materia de maestría de Complex Physics)</h2>
+
+
+
+<h2> 9. Modeling proteasome dynamics in Parkinson's disease (pequeño proyecto computacional para la materia de maestría de Physics of Molecular Diseases)</h2>
+
+
+
+
 
 	<div id="footerwrap">
 		<div class="container">

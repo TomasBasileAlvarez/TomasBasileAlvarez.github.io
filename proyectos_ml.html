@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.ico">
 
-    <title>Cursos</title>
+    <title>Poyectos de Programación y ML</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
@@ -31,9 +31,9 @@
         </div>
         <div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-			  <li class="active"><a href="index.html">Inicio</a></li>
+			  <li><a href="index.html">Inicio</a></li>
 			  <li><a href="proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
-			<li><a href="proyectos_ml.html">Proyectos en Programación y ML</a></li>
+			<li  class="active"><a href="proyectos_ml.html">Proyectos en Programación y ML</a></li>
 			<li><a href="cursos.html">Cursos Escolares y Notas</a></li>
 			<li><a href="otros.html">Otros Cursos y Premios</a></li>
 			<li><a href="docencia.html">Docencia</a></li>
@@ -48,7 +48,7 @@
 	    <div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3">
-					<h1>Cursos Escolares y Notas</h1>
+					<h1>Proyectos en Programación y ML</h1>
 				</div>
 			</div><! --/row -->
 	    </div> <!-- /container -->
@@ -56,61 +56,42 @@
 	
 	
 	<br>
-	Here I've compiled  the classes I've taken during my university studies every semester in the order I took them. For each course, I´ve written out the syllabus and assembled all the homeworks, notes and exams I could (for some of the early courses I couldn't find my work to put it here). Also, for some topics in some courses, I included small explanations as a summary.  <br><br>
+	
+	Aquí muestro algunos de los proyectos relacionados con temas de física o matemáticas que realicé durante la licenciatura en física en la UNAM o durante la maestría en física de sistemas complejos en la Universidad de Copenhague. <br>
+<br>
 
-	<h3> Semester 1</h3>
-	<ul>
-		<li> <a href="clases/algebra.html"> Algebra</a></li>
-		<li> <a href="clases/geometria1.html"> Analytical Geometry 1</a></li>
-		<li> <a href="clases/compu.html"> Programming </a></li>
-		<li> <a href="clases/calculo1.html"> Calculus 1</a></li>
-		<li> <a href="clases/fisica.html"> Contemporary Physics</a></li>
-	</ul> 
+<h2> 1. Learning Optimal Erasure of a Static Random Access Memory (Autor principal de artículo de Investigación próximo a publicarse en New Journla Physics) </h2> <br>
+Este articulo de investigación inició como un proyecto en el instituto Neils Bohr en Copenhague durante mi maestría, que luego mi asesor y yo decidimos extender para poder publicarlo. Ahora está en proceso de ser publicado, siendo yo el autor principal.<br>
+	  A grandes razgos, la idea del proyecto es usar la teoría de termodinámica estocástica para modelar una memoria RAM y obtener una forma de calcular el calor que libera la memoria al borrar un bit. Posteriormente, se usan técnicas de Machine learning y diferenciación automática para encontrar el protocolo que se debe de seguir para borrar la memoria de la forma que produzca la menor cantidad de calor posible. <br>
 
-	<h3> Semester 2</h3>
-	<ul>
-		<li> <a href="clases/algebralineal1.html"> Linear Algebra 1</a></li>
-		<li> <a href="clases/geometria2.html"> Analytical Geometry 2</a></li>
-		<li> <a href="clases/mecanica.html"> Classical Mechanics </a></li>
-		<li> <a href="clases/calculo2.html"> Calculus 2</a></li>
-		<li> <a href="clases/labmecanica.html"> Mechanics Laboratory</a></li>
-	</ul> 
+	  <div style="text-align: center;">
+		<img src="assets/img/ram.PNG" alt="Imagen articulo RAM">
+		<p> Imagen de uno de los resultados del proyecto.</p>
+	</div>
+	<br>
+ 
+Más a detalle, lo que hicimos en este trabajo es lo siguiente:
+<ul>
+	<li> Se describe la teoría de una celda de memoria RAM, llegando hasta una ecuación maestra que sea termodinámicamente consistente.</li>
+	<li> Se encuentra una expresión matemática para la entropía producida por una celda de memoria RAM al borrar un bit de información de la memoria.</li>
+	<li> Usando la librería JAX de Python, se crea un algoritmo que dado un protocolo para borrar un bit, calcula la entropía producida y el estado final del bit. 
+		Luego, utilizando diferenciación automática de la librería JAX, se calcula el gradiente de la entropía producida con respecto a los parámetros que definen al protocolo usado para borrar el bit. </li>
+	<li> Se usa descendencia de gradiente con el optimizador ADAM para encontrar el protocolo que minimiza la producción de entropía pero también maximiza qué tanto fue borrado el bit (es decir, se usa optimización multiobjetivo para tomar en cuenta los dos objetivos que se buscan optimizar).</li>
+	<li> Se repite lo anterior para distintas duraciones del protocolo, para concluir sobre cómo cambia la producción de entropía respecto a la duración del protocolo </li>
+	<li> Se concluye que es posible borrar una celdad de memoria RAM  arbitrariamente rápido con una disipación de calor que no crece demasiado al disminuir el tiempo de protocolo. Además, se encuentran explícitamente los protocolos de borrado que minimizan la disipación de calor.  </li>
+</ul>
+<center>
+	<h3><a href="projects/articulo_ram.pdf" target="_blank"> <b> Leer el artículo </b></a> </h3>
+	</center>
+	<br>
 
-	<h3> Semester 3</h3>
-	<ul>
-		<li> <a href="clases/algebralineal2.html"> Elective:  Linear Algebra 2</a></li>
-		<li> <a href="clases/fenomenos.html"> Collective Phenomena</a></li>
-		<li> <a href="clases/labfenomenos.html"> Collective Phenomena Laboratory </a></li>
-		<li> <a href="clases/calculo3.html"> Calculus 3</a></li>
-	</ul> 
 
-	<h3> Semester 4</h3>
-	<ul>
-		<li> <a href="clases/ecuaciones1.html"> Differential Equations 1</a></li>
-		<li> <a href="clases/electro1.html"> Electromagnetism 1</a></li>
-		<li> <a href="clases/labelectro.html"> Electromagnetism Laboratory </a></li>
-		<li> <a href="clases/calculo4.html"> Calculus 4</a></li>
-		<li> <a href="clases/optica.html"> Optics</a></li>
-	</ul> 
+<h2> 2. Statistical analysis of word flow among five Indo-European languages </h2>
 
-	<h3> Semester 5</h3>
-	<ul>
-		<li> <a href="clases/maf.html"> Advanced Mathematics for Physics</a></li>
-		<li> <a href="clases/mecanicaanalitica.html"> Analytical Mechanics</a></li>
-		<li> <a href="clases/ifc.html"> Introduction to Quantum Physics </a></li>
-		<li> <a href="clases/variablecompleja.html"> Complex variable</a></li>
-		<li> <a href="clases/algebramoderna.html"> Elective: Modern Algebra</a></li>
-		<li> <a href="clases/calculotensorial.html"> Elective: Tensor Calculus</a></li>
-	</ul> 
+	
+<h2> 3.  Learning Entropy Production in Stochastic Systems (Tesis para la maestría en física de sistemas complejos en la Universidad de Copenhague)</h2>
 
-	<h3> Semester 6</h3>
-	<ul>
-		<li> <a href="clases/relatividad.html"> Relativity</a></li>
-		<li> <a href="clases/mecanicacuantica.html"> Quantum Mechanics</a></li>
-		<li> <a href="clases/laboptica.html"> Optics Laboratory </a></li>
-		<li> <a href="clases/electro2.html"> Electromagnetism 2</a></li>
-		<li> <a href="clases/fisicacomputacional.html"> Computational Physics</a></li>
-	</ul> 
+<h2> 4.  </h2>
 
 
 
