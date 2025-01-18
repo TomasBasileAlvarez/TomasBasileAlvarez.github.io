@@ -154,7 +154,7 @@ También presenté una versión preliminar de este trabajo con un póster en la 
 
 
 <h2> 4. Learning Optimal Erasure of a Static Random Access Memory (Autor principal de artículo de Investigación próximo a publicarse en New Journla Physics) </h2> <br>
-Este articulo de investigación inició como un proyecto en el instituto Neils Bohr en Copenhague durante mi maestría, que luego mi asesor y yo decidimos extender para poder publicarlo. Ahora está en proceso de ser publicado, siendo yo el autor principal.<br>
+Este articulo de investigación inició como un proyecto en el Instituto Neils Bohr en Copenhague durante mi maestría, que luego mi asesor y yo decidimos extender para poder publicarlo. Ahora está en proceso de ser publicado, siendo yo el autor principal.<br>
 	  A grandes razgos, la idea del proyecto es usar la teoría de termodinámica estocástica para modelar una memoria RAM y obtener una forma de calcular el calor que libera la memoria al borrar un bit. Posteriormente, se usan técnicas de Machine learning y diferenciación automática para encontrar el protocolo que se debe de seguir para borrar la memoria de la forma que produzca la menor cantidad de calor posible. <br>
 
 	  <div style="text-align: center;">
@@ -181,22 +181,117 @@ Más a detalle, lo que hicimos en este trabajo es lo siguiente:
 
 <br>
 
-<h2> 5. Learning Entropy Production in Stochastic Systems (Tesis para la maestría en física de sistemas complejos en la Universidad de Copenhague)</h2>
+<h2> 5. Machine Learning for Entropy Production in Stochastic Systems (Tesis para la maestría en física de sistemas complejos en la Universidad de Copenhague)</h2>
+Este proyecto es mi tesis de maestría en el Instituto Neils Bohr. La tesis consiste en estudiar el movimiento de células, las cuales se mueven de forma estocástica debido a 
+colisiones con otras células alrededor y hacer algunos cálculos teóricos sobre sus propiedades termodinámicas (producción de entropía, eficiencia, calor, etc.). <br>
+
+Además, la parte central de la tesis es el entrenamiento de redes neuronales para que dada la trayectoria de una de estas células, puedan predecir la producción de entropía de la célula. <br>
+
+<div style="text-align: center;">
+	<img src="assets/img/tesis_m.PNG" alt="Imagen articulo RAM">
+	<p> Imagen de uno de los resultados del proyecto.</p>
+</div>
+
+Más a detalle, lo que se hace en la tesis es lo siguiente:<br>
+<ul>
+	<li> Se describe la teoría de la termodinámica estocástica. </li>
+	<li> Se crea y entrena una red neuronal para estimar la tasa de producción de entropía de varios sistemas físicos estocásticos sencillos.</li>
+	<li> Se prueba que es imposible usar la red neuronal para sistemas estocásticos que tengan ruido activo (que sean autoprupulsados, como una bacteria que se desplaza con un flagelo). </li>
+	<li> Para estudiar células con ruido activo, se entrenan otras redes neuronales, ahora siendo redes neuronales recurrentes para que predigan la cantidad de ruido activo de las trajectorias. </li>
+</ul>
+</ul>
+<center>
+	<h3><a href="projects/tesis_m.pdf" target="_blank"> <b> Tesis (versión actual, incompleta) </b></a> </h3>
+	</center>
+	<br>
+
 
 <h2>6. Mapa Iterativo de Gauss en Números Complejos (Pequeño proyecto computacional para la materia de licenciatura de Sistemas Dinámicos y Caos) </h2>
+Éste es un pequeño proyecto que hice como parte de la materia de licenciatura de Sistemas Dinámicos y Caos. En este proyecto extiendo la definición de un mapa iterativo conocido como mapa iterativo de Gauss
+y luego lo programo en Python y estudio varias de sus propiedades, mientras genero muchas imágenes como la siguiente:
 
-
+<div style="text-align: center;">
+	<img src="assets/courses/sistemas_dinamicos_y_caos/gauss.png" alt="Imagen Gauss">
+	<p> Figura creada en Python de algunos de los fractales que surgen al extender el mapa iterativo de Gauss a los números complejos.
+	</p>
+</div>
+ 
+Más a detalle, se hace lo siguiente:<br>
+<ul>
+	<li> Se estudia un poco la teoría de los mapas dinámicos, como en particular el mapa logístico.</li>
+	<li> Se estudia un poco sobre los fractales como el de Mandelbrot y su relación con el mapa logístico.</li>
+	<li> Se define el mapa iterativo de Gauss y se extiende a los números complejos.</li>
+	<li> Se crean diagramas de bifurcación del mapa de Gauss y se estudian sus propiedades.</li>
+	<li> Se estudian los fractales que surgen al extender el mapa de Gauss a los números complejos y se explica el surgimiento de fractales de Mandelbrot. </li>
+</ul>
+<center>
+	<h3><a href="assets/courses/sistemas_dinamicos_y_caos/TrabajoFinal-TomasBasile.pdf" target="_blank"> <b> Trabajo </b></a> </h3>
+	</center>
+	<br>
+	<center>
+		<h3><a href="assets/courses/sistemas_dinamicos_y_caos/Proyecto Final.html" target="_blank"> <b> Código del trabajo </b></a> </h3>
+		</center>
+		<br>
+		
 
 <h2> 7.  Periodic Spin Chain (pequeño proyecto computacional para la materia de maestría de Complex Physics)</h2>
+Éste es un pequeño proyecto que hice como parte de la materia de maestría "Complex Physics" en la Universidad de Copenhague. 
+El proyecto consiste en estudiar una cadena de espines y programar un algoritmo de Montecarlo para calcular algunas cosas como la magnetización promedio o la energía.
+Luego, se varía la temperatura del sistema y se estudian los cambios de fase que sucedan como función de la temperatura. 
+
+<div style="text-align: center;">
+	<img src="assets/img/midterm1.PNG" alt="Imagen Midterm 1">
+	<p> Figura creada en Python de algunos de los resultados.
+	</p>
+</div>
+<center>
+	<h3><a href="projects/Midterm1-TomasBasile.pdf" target="_blank"> <b> Trabajo </b></a> </h3>
+	</center>
+	<br>
+	<center>
+		<h3><a href="projects/Midterm 1 - Tomas Basile.html" target="_blank"> <b> Código del trabajo </b></a> </h3>
+		</center>
+		<br>
 
 
 <h2> 8.  Percolation and Avalanches (pequeño proyecto computacional para la materia de maestría de Complex Physics)</h2>
+Éste es un pequeño proyecto que hice como parte de la materia de maestría "Complex Physics" en la Universidad de Copenhague. 
+El proyecto consiste en estudiar un problema conocido como percolación en una cuadrícula de 2 dimensiones. Se hace un programa en Python para estudiar este problema y se 
+calculan algunas cantidades, como la dimensión fractal de las avalanchas ceadas en la percolación.
 
+<div style="text-align: center;">
+	<img src="assets/img/midterm2.PNG" alt="Imagen Midterm 1">
+	<p> Figura creada en Python de una de las avalanchas.
+	</p>
+</div>
+<center>
+	<h3><a href="projects/Midterm2-TomasBasile.pdf" target="_blank"> <b> Trabajo </b></a> </h3>
+	</center>
+	<br>
+	<center>
+		<h3><a href="projects/Midterm 2 - Tomas Basile.html" target="_blank"> <b> Código del trabajo </b></a> </h3>
+		</center>
+		<br>
 
 
 <h2> 9. Modeling proteasome dynamics in Parkinson's disease (pequeño proyecto computacional para la materia de maestría de Physics of Molecular Diseases)</h2>
+Éste es un pequeño proyecto para la materia de maestría de Physics of Molecular Diseases. El proyecto consiste en estudiar y resolver computacionalmente
+un sistema de ecuaciones que se propone como modelo para el desarrollo de Parkinson's. <br>
+Luego se proponen modelos alternativos, se estudian sus propiedades matemáticas y se ponen a prueba al programarlos en Python. <br>
 
-
+<div style="text-align: center;">
+	<img src="assets/img/proteasome.PNG" alt="Imagen Proteasomas">
+	<p> Figura creada en Python de algunos de los resultados.
+	</p>
+</div>
+<center>
+	<h3><a href="projects/proteasome.pdf" target="_blank"> <b> Presentción del trabajo </b></a> </h3>
+	</center>
+	<br>
+	<center>
+		<h3><a href="projects/proteasome_code.pdf" target="_blank"> <b> Código del trabajo </b></a> </h3>
+		</center>
+		<br>
 
 
 

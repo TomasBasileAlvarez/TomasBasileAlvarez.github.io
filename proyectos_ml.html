@@ -90,12 +90,208 @@ Más a detalle, lo que hicimos en este trabajo es lo siguiente:
 
 	
 <h2> 3.  Learning Entropy Production in Stochastic Systems (Tesis para la maestría en física de sistemas complejos en la Universidad de Copenhague)</h2>
+Este proyecto es mi tesis de maestría en el Instituto Neils Bohr. La tesis consiste en estudiar el movimiento de células, las cuales se mueven de forma estocástica debido a 
+colisiones con otras células alrededor y hacer algunos cálculos teóricos sobre sus propiedades termodinámicas (producción de entropía, eficiencia, calor, etc.). <br>
 
-<h2> 4.  </h2>
+Además, la parte central de la tesis es el entrenamiento de redes neuronales para que dada la trayectoria de una de estas células, puedan predecir la producción de entropía de la célula. <br>
+
+<div style="text-align: center;">
+	<img src="assets/img/tesis_m.PNG" alt="Imagen articulo RAM">
+	<p> Imagen de uno de los resultados del proyecto.</p>
+</div>
+
+Más a detalle, lo que se hace en la tesis es lo siguiente:<br>
+<ul>
+	<li> Se describe la teoría de la termodinámica estocástica. </li>
+	<li> Se crea y entrena una red neuronal para estimar la tasa de producción de entropía de varios sistemas físicos estocásticos sencillos.</li>
+	<li> Se prueba que es imposible usar la red neuronal para sistemas estocásticos que tengan ruido activo (que sean autoprupulsados, como una bacteria que se desplaza con un flagelo). </li>
+	<li> Para estudiar células con ruido activo, se entrenan otras redes neuronales, ahora siendo redes neuronales recurrentes para que predigan la cantidad de ruido activo de las trajectorias. </li>
+</ul>
+</ul>
+<center>
+	<h3><a href="projects/tesis_m.pdf" target="_blank"> <b> Tesis (versión actual, incompleta) </b></a> </h3>
+	</center>
+	<br>
+
+
+<h2> 4. Learning Optimal Erasure of a Static Random Access Memory (Autor principal de artículo de Investigación próximo a publicarse en New Journla Physics) </h2> <br>
+	Este articulo de investigación inició como un proyecto en el Instituto Neils Bohr en Copenhague durante mi maestría, que luego mi asesor y yo decidimos extender para poder publicarlo. Ahora está en proceso de ser publicado, siendo yo el autor principal.<br>
+		  A grandes razgos, la idea del proyecto es usar la teoría de termodinámica estocástica para modelar una memoria RAM y obtener una forma de calcular el calor que libera la memoria al borrar un bit. Posteriormente, se usan técnicas de Machine learning y diferenciación automática para encontrar el protocolo que se debe de seguir para borrar la memoria de la forma que produzca la menor cantidad de calor posible. <br>
+	
+		  <div style="text-align: center;">
+			<img src="assets/img/ram.PNG" alt="Imagen articulo RAM">
+			<p> Imagen de uno de los resultados del proyecto.</p>
+		</div>
+		<br>
+	 
+	Más a detalle, lo que hicimos en este trabajo es lo siguiente:
+	<ul>
+		<li> Se describe la teoría de una celda de memoria RAM, llegando hasta una ecuación maestra que sea termodinámicamente consistente.</li>
+		<li> Se encuentra una expresión matemática para la entropía producida por una celda de memoria RAM al borrar un bit de información de la memoria.</li>
+		<li> Usando la librería JAX de Python, se crea un algoritmo que dado un protocolo para borrar un bit, calcula la entropía producida y el estado final del bit. 
+			Luego, utilizando diferenciación automática de la librería JAX, se calcula el gradiente de la entropía producida con respecto a los parámetros que definen al protocolo usado para borrar el bit. </li>
+		<li> Se usa descendencia de gradiente con el optimizador ADAM para encontrar el protocolo que minimiza la producción de entropía pero también maximiza qué tanto fue borrado el bit (es decir, se usa optimización multiobjetivo para tomar en cuenta los dos objetivos que se buscan optimizar).</li>
+		<li> Se repite lo anterior para distintas duraciones del protocolo, para concluir sobre cómo cambia la producción de entropía respecto a la duración del protocolo </li>
+		<li> Se concluye que es posible borrar una celdad de memoria RAM  arbitrariamente rápido con una disipación de calor que no crece demasiado al disminuir el tiempo de protocolo. Además, se encuentran explícitamente los protocolos de borrado que minimizan la disipación de calor.  </li>
+	</ul>
+	<center>
+		<h3><a href="projects/articulo_ram.pdf" target="_blank"> <b> Leer el artículo </b></a> </h3>
+		</center>
+		<br>
+	
+	
+<br>
+
+
+<h4> 5. 2do Lugar en el Concurso de Modelización Matemática (Instituto de Matemática Interdisciplinar, Universidad Complutense de Madrid, 2021) </h4>
+Quedé en segudo lugar en un concurso organizado por la Universidad Complutense de Madrid en el que participan cientos de equipos de iberoamérica. 
+Se podía hacer en grupos de hasta tres personas, pero yo participé solo y el premio incluía una compensación de 1200 euros. <br> 
+El concurso consistía en proponer una solución para un problema abierto de matemáticas de optimización, que involucra también mucha computación. Había que proponer un algoritmo para resolverlo
+y estudiar varias propiedades del problema. <br> 
+<div style="text-align: center;">
+	<img src="assets/img/steiner.PNG" alt="Imagen Steiner">
+	<p> Imagen sobre el trabajo</p>
+</div>
+<br>
+El trabajo consiste a grandes razgos en lo siguiente: 
+<ul>
+<li> Se define el problema del árbol euclídeo mínimo. En este problema se empieza con puntos ubicados aribtrariamente en el plano y se busca unir todos los puntos de manera que se pueda ir de cualquier punto a cualquier otro y que la longitud total de las
+	líneas sea lo más corta posible.  Un ejemplo se puede ver en la imagen de arriba (la subfigura de la izquierda).</li>
+<li> Se resuelve el problema del árbol euclídeo mínimo computacionalmente, usnado algoritmos ya bien conocidos como el de Prim o Kruskal.  </li>
+<li> Se extiende el problema a la versión poco conocida llamada problema de Steiner. En esta versión, es posible
+	agregar puntos adicionales a los que ya existen. Se pueden agregar tantos puntos como se quiera. Si se escogen bien los lugares para agregar puntos, es posible
+	conectar todos los puntos originales con una longitud total menor que en el problema del árbol euclídeo mínimo. En la figura de la derecha
+	se muestran los puntos originales (en negro) junto con los puntos ídeales que se pueden agregar (en rojo) para disminuir aún más la longitud total de las líenas.
+<li> Se estudian y demuestran algunas propiedades del problema de Steiner, que es un problema NP-difícil. Por ejemplo: En la solución ideal los puntos agregados siempre tienen 3 conexiones y a ángulos de 120 grados. </li>
+<li> Se propone un algoritmo heurístico para resolver el problema. Yo propuse uno en el que se empieza encontrando el árbol euclídeo mínimo y luego se recorre cada tercia de puntos conectados
+	del árbol y se ve si agregar un punto extra disminuye la longitud total. </li>
+<li> Se resuelven muchos ejemplos, incluyendo algunos en los que se calcula la solución óptima utilizando un algoritmo que siempre llega  a dicha solución(pero que es mucho más lento que el algoritmo heurístico propuesto). </li>
+<li> Se estudia la eficiencia del algoritmo propuesto.</li>
+</ul>
+<br>
+<b> <a href="projects/Steiner.pdf" target="_blank"> Pequeña presentación que hice de mi solución al concurso para mostrar en una clase (lamentablemente, no conservo el trabajo escrito completo) </a> </b><br>
+<b> <a href="https://blogs.mat.ucm.es/cmm/edicion-2021/" target="_blank">  Página del concurso </a></b> <br>
 
 
 
+<h4> 6. 1er Lugar en el Concurso de Modelización Matemática (Instituto de Matemática Interdisciplinar, Universidad Complutense de Madrid, 2022) </h4>
+Este premio es la edición siguiente del premio que se menciona en el punto anterior, sólo que esta vez participé en pareja y gané el primer lugar, con un premio de 2400 euros. 
+Además, nuestro trabajo fue publicado por la revista del Instituto de Matemáticas Interdisciplinar.<br>
+<div style="text-align: center;">
+	<img src="assets/img/champions.PNG" alt="Imagen Steiner">
+	<p> Imagen sobre el trabajo</p>
+</div>
+<br>
+El trabajo consiste a grandes razgos en lo siguiente: 
+<ul>
+<li> Se define el problema en cuestión, que es mejorar el sorteo que se hace en la Champions League para
+	emparejar los equipos que se enfrentarán en los octavos de final.  </li>
+	<li> Básicamente, en la fase anterior del torneo de la Champions, los equipos se dividen en 8 grupos, de los cuales pasan a octavos de final el campeón y subcampeón de cada grupo. 
+		Ya con estos 16 equipos, se hace un sorteo para elegir cómo se emparejarán los equipos en los octavos de final. Se tiene la restricción de que cada 
+		partido de octavos de final debe de tener un equipo campeón y un subcampeón de grupo (y que sean de grupos distintos) y además deben de jugar equipos de países distintos.</li>
+	<li>En el trabajo probamos que el método de sorteo que usa la UEFA para hacer el emparejamiento de equipos es injusto, dado que hay partidos que tienen
+		mucha más probabilidad de ser sorteados que otros. <br>
+		Esto se muestra en la figura, donde el eje vertical son los equipos que llegan como campeones a esta fase y el horizontal los subcampeones. 
+	En cada celda de la figura se pone la probabilidad de que un dado partido de campeón vs subcampeón salga escogido por el método de sorteo de la Champions. Se puede notar que algunos partidos son más probables de ser escogidos
+que otros y que algunos partidos no pueden suceder porque rompen las reglas (el campeón y subcampeón vienen del mismo grupo o son del mismo país).  </li>
+<li> Luego probamos que no existe ningún método de sorteo que sea totalmente justo (que todos los partidos válidos sean igual de probables de ser escogidos). </li>
+<li> Se proponen varias formas de cuantificar qué tan justo es un método de hacer el sorteo. </li>
+<li> Se propone un método para realizar el sorteo de tal forma que maximice cualquier medida de la justicia que se quiera considerar. El teorema está basado en el teorema de Birkhoff-Von Neumann sobre matrices doblemente estocásticas.</li>
+<li> Se estudian propiedades de este método </li>
+</ul>
 
+<b> <a href="projects/champions.pdf" target="_blank"> Trabajo completo (que fue publicado por la revista del Instituto de Matemática Interdisciplinar). </a>  </b> <br>
+<b> <a href="projects/CMM_IMI_2022.html" target="_blank"> Código escrito para el concurso</a>  </b>
+<b> <a href="https://blogs.mat.ucm.es/cmm/edicion-2022/" target="_blank">  Página del concurso </a></b> <br>
+
+<h2> 7. Análisis de datos: tipo de cambio USD/MXN (Pequeño proyecto hecho en la materia de licenciatura de Laboratorio de Física Contemporánea I)</h2>
+Este fue un pequeño trabajó que realicé en la empresa Grupo Base. Consiste en buscar todas las variables que puedan estar relacionadas con el tipo de cambio entre el dólar y el peso mexicano.
+Algunas variables son por ejemplo la cantidad de importaciones, el precio del petróleo, la incertidumbre política, etc. <br>
+Se propusieron todas estas variables, y luego se buscaron, descargaron y limpiaron los datos. Una vez que se tenían los datos, se 
+calcularon correlaciones entre las variables (como se ve en la figura de abajo), así como la causalidad. 
+<div style="text-align: center;">
+	<img src="assets/img/peso.PNG" alt="Imagen Steiner">
+	<p> Imagen de las correlaciones entre las variables</p>
+</div>
+<b> <a href="assets/courses/contempoI/Practica-GrupoBase.pdf" target="_blank"> Trabajo Escrito </a>  </b> <br>
+
+
+<h2> 8. The 2003 heatwave in 
+	Switzerland and the 
+	likelihoods of seeing it again  (pequeño proyecto para la materia de mastría "Climate Models and Observations") </h2>
+En este trabajo se usan modelos climáticos y grandes bases de datos climáticos para estudiar la ola de calor que hubo en Suiza en el año 2003.
+Se usan estos datos junto con análisis estadísticos para concluir sobre la probabilidad de que haya sucedido dicha ola de calor y se concluye que la probabilidad de que sucediera dicho evento es 1/4700. <br>
+Además, se estudian distintos modelos climáticos a futuro para conocer la probabilidad de que un evento de esta magnitud suceda entre los años 2060-2100. 
+Se concluye que en la situación en la que mejor se controle el cambio climático, la probabilidad de ver este evento será de 1/231 y en la situación en la que peor se controle,
+será de 1/11. <br>
+
+<div style="text-align: center;">
+	<img src="assets/img/heatwave.PNG" alt="Imagen Steiner">
+	<p> Imagen de las temperaturas medidas en Suiza y las predicciones a futuro según distintos modelos climáticos.</p>
+</div>
+<b> <a href="assets/courses/modelos_climaticos/Extreme events project.pdf" target="_blank"> Presentación del trabajo </a>  </b> <br>
+
+
+
+<h2>8. Mapa Iterativo de Gauss en Números Complejos (Pequeño proyecto computacional para la materia de licenciatura de Sistemas Dinámicos y Caos) </h2>
+Éste es un pequeño proyecto que hice como parte de la materia de licenciatura de Sistemas Dinámicos y Caos. En este proyecto extiendo la definición de un mapa iterativo conocido como mapa iterativo de Gauss
+y luego lo programo en Python y estudio varias de sus propiedades, mientras genero muchas imágenes como la siguiente:
+
+<div style="text-align: center;">
+	<img src="assets/courses/sistemas_dinamicos_y_caos/gauss.png" alt="Imagen Gauss">
+	<p> Figura creada en Python de algunos de los fractales que surgen al extender el mapa iterativo de Gauss a los números complejos.
+	</p>
+</div>
+ 
+Más a detalle, se hace lo siguiente:<br>
+<ul>
+	<li> Se estudia un poco la teoría de los mapas dinámicos, como en particular el mapa logístico.</li>
+	<li> Se estudia un poco sobre los fractales como el de Mandelbrot y su relación con el mapa logístico.</li>
+	<li> Se define el mapa iterativo de Gauss y se extiende a los números complejos.</li>
+	<li> Se crean diagramas de bifurcación del mapa de Gauss y se estudian sus propiedades.</li>
+	<li> Se estudian los fractales que surgen al extender el mapa de Gauss a los números complejos y se explica el surgimiento de fractales de Mandelbrot. </li>
+</ul>
+<center>
+	<h3><a href="assets/courses/sistemas_dinamicos_y_caos/TrabajoFinal-TomasBasile.pdf" target="_blank"> <b> Trabajo </b></a> </h3>
+	</center>
+	<br>
+	<center>
+		<h3><a href="assets/courses/sistemas_dinamicos_y_caos/Proyecto Final.html" target="_blank"> <b> Código del trabajo </b></a> </h3>
+		</center>
+		<br>
+
+	
+
+<h2> 9.  Periodic Spin Chain (pequeño proyecto computacional para la materia de maestría de Complex Physics)</h2>
+		Éste es un pequeño proyecto que hice como parte de la materia de maestría "Complex Physics" en la Universidad de Copenhague. 
+		El proyecto consiste en estudiar una cadena de espines y programar un algoritmo de Montecarlo para calcular algunas cosas como la magnetización promedio o la energía.
+		Luego, se varía la temperatura del sistema y se estudian los cambios de fase que sucedan como función de la temperatura. 
+		
+		<div style="text-align: center;">
+			<img src="assets/img/midterm1.PNG" alt="Imagen Midterm 1">
+			<p> Figura creada en Python de algunos de los resultados.
+			</p>
+		</div>
+		<center>
+			<h3><a href="projects/Midterm1-TomasBasile.pdf" target="_blank"> <b> Trabajo </b></a> </h3>
+			</center>
+			<br>
+			<center>
+				<h3><a href="projects/Midterm 1 - Tomas Basile.html" target="_blank"> <b> Código del trabajo </b></a> </h3>
+				</center>
+				<br>
+		
+	<h2>10. Poryecto Euler </h2>
+Finalmente, realicé algunos de los problemas del Proyecto Euler, que es una compilación de problemas matemáticos/computacionales que requieren habilidades de programación
+para resolver de forma eficiente. <br>
+<center>
+	<h3><a href="https://projecteuler.net/" target="_blank"> <b> Página Web del proyecto Euler </b></a> </h3>
+	</center>
+	<br>
+	<center>
+		<h3><a href="https://github.com/TomasBasileAlvarez/EulerProject" target="_blank"> <b> Repositorio de Github con mi solución a varios de los problemas </b></a> </h3>
+		</center>
+		<br>
 
 
 	<div id="footerwrap">
