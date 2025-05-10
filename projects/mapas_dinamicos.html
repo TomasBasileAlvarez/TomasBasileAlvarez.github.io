@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+	<script type="text/javascript" async 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Proyecto: Simulación de Mapas Dinámicos de Pauli de un Qubit en Computadoras Cuánticas (tesis de licenciatura)</title>
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+
+        </div>
+        <div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+			  <li><a href="../index.html">Inicio</a></li>
+			  <li><a href="../proyectos_mat.html">Proyectos en Matemáticas y Física</a></li>
+			<li><a href="../proyectos_ml.html">Proyectos en Programación y ML</a></li>
+			<li><a href="../cursos.html">Cursos Escolares y Notas</a></li>
+			<li><a href="../otros.html">Otros Cursos y Premios</a></li>
+			<li><a href="../docencia.html">Docencia</a></li>
+			<li><a href="../explicaciones.html">Animaciones y explicaciones matemáticas</a></li>
+			</ul>
+		  </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+	<div id="headerwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<h1>Proyecto: Simulación de Mapas Dinámicos de Pauli de un Qubit en Computadoras Cuánticas (tesis de licenciatura)</h1>
+				</div>
+			</div><! --/row -->
+	    </div> <!-- /container -->
+	</div><! --/headerwrap -->
+	
+	
+	<br>
+	
+<center>
+<h3><a href="projects/tesis.pdf" target="_blank"> <b> Ver la tesis </b></a> </h3>
+</center><br>
+<center>
+	<h3><a href="https://github.com/TomasBasileAlvarez/Quantum-simulation-of-Pauli-Channels" target="_blank"> <b> Directorio de Github del proyecto </b></a> </h3>
+	</center>
+<br><br>
+
+
+Este proyecto fue mi tesis de licenciatura para la carrera de Física en la UNAM. Empecé a trabajar en este proyecto como parte de una materia en abril de 2022 con mi asesor, el Dr. Carlos Pineda. Después de unos meses, decidimos ampliarlo para usarlo como tesis de licenciatura. 
+Finalmente, defendí  mi tesis en mayo de 2023 y aprobé con mención honorífica. Además, gané el <a href="assets/img/diploma_juan_manuel_lozano.jpg" target="_blank"> diploma Juan Manuel Lozano Mejía,  </a> otorgado a las mejores tesis del instituto de física. <br>
+<br>
+
+A grandes razgos, el proyecto consiste en lo siguiente:  
+<ul>
+	<li> Se estudia la teoría de los canales de Pauli, que son procesos cuánticos por los que puede pasar un qubit y se usan para modelar algunos tipos de decoherencia y ruido tiene una computadora cuántica. </li>
+	<li> Se propone un algoritmo cuántico, programado en la librería Qiskit de Python para simular estos canales de Pauli en computadoras cuánticas.</li>
+	<li> Se corre el algoritmo cuántico propuesto para una variedad de canales de Pauli. Esto se hace utilizando las computadoras cuánticas que tiene disponibles IBM a través de la nube.</li>
+	<li> Se generaliza el algortimo para simular ahora mapas dinámicos de Pauli, que se definen como una curva continua parametrizada de canales de Pauli. </li>
+	<li> Se corre el algoritmo para mapas dinámicos de Pauli en computadoras cuánticas y se estudian las consecuencias teóricas y computacionales de restringir el algoritmo a que use solamente una rotación cuántica parametrizada.</li>
+</ul>
+<br> <br>
+
+
+
+
+
+A continuación, daré un resumen más detallado del proyecto. <br> <br>
+
+<h2> Marco Teórico </h2>
+<ul>
+<li>Definimos algunos de los conceptos básicos de la mecánica cuántica, como sus postulados fundamentales.</li>
+<li> <b>Qubit:</b> Definimos el concepto de qubit, como un sistema cuántico que tieen dos estados ortonormales, los 
+cuales denotamos por \(|0\rangle\) y \(|1\rangle\). El estado general de un qubit es entonces:
+	\[ |\phi \rangle = a |0 \rangle + b |1 \rangle \]
+
+con \(a,b \in C \) y que cumplen \(|a|^2 + |b|^2 = 1\). 
+</li>
+
+</ul>
+
+
+	<div id="footerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-4">
+					<p><b>Ciudad de México</b></p>
+				</div>
+		
+				<div class="col-lg-4">
+					<p>tbasilealvarez@gmail.com</p>
+				</div>
+			</div>
+		</div>
+	</div><! --/footerwrap -->
+	
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
